@@ -24,8 +24,10 @@
     "tube": "quay.io/cdis/tube:master"
   },
   "arranger": {
-    "project_id": "dev"
-  },
+    "project_id": "dev",
+    "auth_filter_field": "gen3_resource_path",
+    "auth_filter_node_types": ["subject"]
+  },    
   "jupyterhub": {
     "enabled": "no"
   },
