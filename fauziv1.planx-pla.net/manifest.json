@@ -11,6 +11,7 @@
     "arranger": "quay.io/cdis/arranger:feat_indices",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "indexd": "quay.io/cdis/indexd:master",
@@ -22,6 +23,13 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "spark": "quay.io/cdis/gen3-spark:master",
     "tube": "quay.io/cdis/tube:master"
+  },
+  "arranger": {
+    "project_id": "dev",
+    "auth_filter_field": "gen3_resource_path",
+    "auth_filter_node_types": [
+      "subject"
+    ]
   },
   "jupyterhub": {
     "enabled": "yes"
