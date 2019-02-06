@@ -36,7 +36,7 @@
   },
   "global": {
     "environment": "raryav1",
-    "hostname": "raryav1.planx-pla.net",
+    "hostname": "rarya.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
     "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
     "portal_app": "dev",
