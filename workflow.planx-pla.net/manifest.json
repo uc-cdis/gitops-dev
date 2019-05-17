@@ -21,6 +21,9 @@
     "spark": "quay.io/cdis/gen3-spark:master",
     "tube": "quay.io/cdis/tube:master"
   },
+  "arborist": {
+    "deployment_version": "2"
+  },
   "global": {
     "environment": "devplanetv1",
     "hostname": "workflow.planx-pla.net",
