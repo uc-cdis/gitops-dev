@@ -1,9 +1,7 @@
-/* reuben customization */
-.footer {
-  background-color: #00ffff;
+.nav-bar__logo {
+  padding: 15px 0;
 }
 
-.button-primary-orange {
-  background-color: #0000ff;
+.nav-bar__logo-img {
+  height: 50px;
 }
-
