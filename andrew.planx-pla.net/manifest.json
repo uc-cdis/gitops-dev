@@ -85,5 +85,19 @@
   },
   "canary": {
     "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "andrew_etl",
+        "type": "case"
+      },
+      {
+        "index": "andrew_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "andrew_array-config",
+    "auth_filter_field": "auth_resource_path"
   }
 }
