@@ -25,7 +25,8 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "spark": "quay.io/cdis/gen3-spark:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
-    "tube": "quay.io/cdis/tube:master"
+    "tube": "quay.io/cdis/tube:master",
+    "dashboard": "quay.io/cdis/gen3-statics:master"
   },
   "arborist": {
     "deployment_version": "2"
@@ -56,7 +57,7 @@
     "netpolicy": "on"
   },
   "peregrine": {
-    "sidecar_timeout" : 60,
+    "sidecar_timeout": 60,
     "sidecar": "True"
   },
   "canary": {
