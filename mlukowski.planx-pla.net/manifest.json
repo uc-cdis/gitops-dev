@@ -26,7 +26,8 @@
     "tube": "quay.io/cdis/tube:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
     "guppy": "quay.io/cdis/guppy:master",
-    "sower": "quay.io/cdis/sower:master"
+    "sower": "quay.io/cdis/sower:master",
+    "dashboard": "quay.io/cdis/gen3-statics:master"
   },
   "arranger": {
     "project_id": "dev",
