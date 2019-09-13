@@ -90,7 +90,7 @@
             "cpu": "400m"
           }
         }
-      }
+      },
       "s3sidecar": {
         "name": "mariner-s3sidecar",
         "image": "quay.io/cdis/mariner-s3sidecar:feat_k8s",
