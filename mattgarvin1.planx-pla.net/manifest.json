@@ -104,7 +104,7 @@
         },
         "securitycontext": {
           "privileged": true
-        },
+        }
       },
       "task": {
         "name": "mariner-task",
