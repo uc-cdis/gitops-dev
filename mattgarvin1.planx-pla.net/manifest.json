@@ -114,7 +114,7 @@
         "resources": {
           "limits": {
             "memory": "256Mi",
-            "cpu": "1000m"
+            "cpu": "100m"
           }
         },
         "securitycontext": {
