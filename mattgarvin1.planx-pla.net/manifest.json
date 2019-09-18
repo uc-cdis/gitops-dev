@@ -106,6 +106,21 @@
           "privileged": true
         },
       },
+      "gen3fusesidecar": {
+        "name": "mariner-gen3fusesidecar",
+        "image": "quay.io/cdis/gen3fuse-sidecar:master",
+        "pull_policy": "always",
+        "command": ["/bin/bash", "/sidecarDockerrun.sh"],
+        "resources": {
+          "limits": {
+            "memory": "256Mi",
+            "cpu": "1000m"
+          }
+        },
+        "securitycontext": {
+          "privileged": true
+        },
+      },
       "task": {
         "name": "mariner-task",
         "image": "alpine",
