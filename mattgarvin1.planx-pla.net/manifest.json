@@ -95,7 +95,7 @@
         "name": "mariner-s3sidecar",
         "image": "quay.io/cdis/mariner-s3sidecar:feat_k8s",
         "pull_policy": "always",
-        "command": ["/bin/sh", "./s3sidecarDockerrun.sh"],
+        "command": ["/bin/sh", "./marinerRun.sh"],
         "resources": {
           "limits": {
             "memory": "256Mi",
