@@ -112,7 +112,7 @@
         },
         "securitycontext": {
           "privileged": true
-        },
+        }
       },
       "gen3fusesidecar": {
         "name": "mariner-gen3fusesidecar",
