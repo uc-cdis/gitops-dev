@@ -103,7 +103,7 @@
         "name": "mariner-s3sidecar",
         "image": "quay.io/cdis/mariner-s3sidecar:feat_k8s",
         "pull_policy": "always",
-        "command": ["/bin/sh", "./marinerRun.sh"],
+        "command": ["/bin/sh", "./s3sidecarDockerrun.sh"],
         "resources": {
           "limits": {
             "memory": "256Mi",
@@ -118,7 +118,7 @@
         "name": "mariner-gen3fusesidecar",
         "image": "quay.io/cdis/gen3fuse-sidecar:feat_mariner_bash",
         "pull_policy": "always",
-        "command": ["/bin/bash", "/sidecarDockerrun.sh"],
+        "command": ["/bin/bash", "/marinerRun.sh"],
         "resources": {
           "limits": {
             "memory": "256Mi",
