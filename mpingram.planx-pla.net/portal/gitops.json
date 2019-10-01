@@ -31,18 +31,18 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "The Andrew Commons Portal",
+    "appName": "The Michael Commons Portal",
     "index": {
       "introduction": {
-        "heading": "Andrew Commons",
-        "text": "The Andrew Commons supports the management, analysis and sharing of Andrew for the research community and aims to accelerate discovery and development of Andrew",
+        "heading": "Michael Commons",
+        "text": "The Michael Commons supports the management, analysis and sharing of Michael for the research community and aims to accelerate discovery and development of Michael",
         "link": "/submission"
       },
       "buttons": [
         {
           "name": "Define Data Field",
           "icon": "data-field-define",
-          "body": "The Andrew Commons defines its data in a cool way.",
+          "body": "The Michael Commons defines its data in a cool way.",
           "link": "/DD",
           "label": "Learn less"
         },
@@ -56,7 +56,7 @@
         {
           "name": "Access Data",
           "icon": "data-access",
-          "body": "Bla bla bla Andrew.",
+          "body": "Bla bla bla Michael.",
           "link": "/query",
           "label": "Query data"
         },
@@ -70,7 +70,7 @@
       ]
     },
     "navigation": {
-      "title": "Andrew Commons",
+      "title": "Michael Commons",
       "items": [
         {
           "icon": "dictionary",
@@ -111,7 +111,7 @@
       ]
     },
     "login": {
-      "title": "Andrews Commons",
+      "title": "Michaels Commons",
       "subTitle": "search, compare, and ignore data",
       "text": "A centralized, cloud-based discovery portal that is super buzzword compliant impacting the brain.",
       "contact": "If you have any questions about access or the registration process, please contact ",
@@ -237,5 +237,73 @@
       "accessibleValidationField": "project_id"
     },
     "getAccessButtonLink": "https://dbgap.ncbi.nlm.nih.gov/"
+  },
+  "fileExplorerConfig": {
+    "charts": {
+      "data_type": {
+        "chartType": "stackedBar",
+        "title": "File Type"
+      },
+      "data_format": {
+        "chartType": "stackedBar",
+        "title": "File Format"
+      }
+    },
+    "filters": {
+      "tabs": [
+        {
+          "title": "File",
+          "fields": [
+            "project_id",
+            "data_type",
+            "data_format"
+          ]
+        }
+      ]
+    },
+    "table": {
+      "enabled": true,
+      "fields": [
+        "project_id",
+        "file_name",
+        "file_size",
+        "object_id"
+      ]
+    },
+    "guppyConfig": {
+      "dataType": "file",
+      "fieldMapping": [
+        { "field": "object_id", "name": "GUID" }
+      ],
+      "nodeCountTitle": "Files",
+      "manifestMapping": {
+        "resourceIndexType": "case",
+        "resourceIdField": "case_id",
+        "referenceIdFieldInResourceIndex": "object_id",
+        "referenceIdFieldInDataIndex": "object_id"
+      },
+      "accessibleFieldCheckList": ["project_id"],
+      "accessibleValidationField": "project_id",
+      "downloadAccessor": "object_id"
+    },
+    "buttons": [
+      {
+        "enabled": true,
+        "type": "file-manifest",
+        "title": "Download Manifest",
+        "leftIcon": "datafile",
+        "rightIcon": "download",
+        "fileName": "file-manifest.json",
+        "dropdownId": "download"
+      },
+      {
+        "enabled": true,
+        "type": "export-files-to-workspace",
+        "title": "Export to Workspace",
+        "leftIcon": "datafile",
+        "rightIcon": "download"
+      }
+    ],
+    "dropdowns": {}
   }
 }
