@@ -7,17 +7,19 @@
     "autodeploy": "yes"
   },
   "versions": {
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
+    "ambassador-gen3": "quay.io/datawire/ambassador:0.60.3",
     "arborist": "quay.io/cdis/arborist:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "guppy": "quay.io/cdis/guppy:master",
     "hatchery": "quay.io/cdis/hatchery:master",
-    "indexd": "quay.io/cdis/indexd:master",
+    "indexd": "quay.io/cdis/indexd:feat_index-record-alias-api",
     "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
     "peregrine": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:master",
-    "portal": "quay.io/cdis/data-portal:master",
+    "portal": "quay.io/cdis/data-portal:feat_fullscreen-workspace",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
@@ -30,8 +32,11 @@
   "arborist": {
     "deployment_version": "2"
   },
+  "indexd": {
+    "arborist": "true"
+  },
   "hatchery": {
-    "user-namespace": "jupyter-pods",
+    "user-namespace": "jupyter-pods-mpingram",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "10Gi",
     "sidecar": {
@@ -39,7 +44,7 @@
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:master",
       "env": {
-        "NAMESPACE": "default",
+        "NAMESPACE": "mpingram",
         "HOSTNAME": "mpingram.planx-pla.net"
       },
       "args": [],
@@ -109,7 +114,10 @@
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
+    "tier_access_level": "regular",
+    "tier_access_limit": 50,
+    "public_datasets": true
   },
   "canary": {
     "default": 0
