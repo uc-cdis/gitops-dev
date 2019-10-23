@@ -7,6 +7,8 @@
     "autodeploy": "yes"
   },
   "versions": {
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
+    "ambassador-gen3": "quay.io/datawire/ambassador:0.60.3",
     "arborist": "quay.io/cdis/arborist:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:master",
@@ -30,8 +32,11 @@
   "arborist": {
     "deployment_version": "2"
   },
+  "indexd": {
+    "arborist": "true"
+  },
   "hatchery": {
-    "user-namespace": "jupyter-pods",
+    "user-namespace": "jupyter-pods-mpingram",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "10Gi",
     "sidecar": {
@@ -39,7 +44,7 @@
       "memory-limit": "256Mi",
       "image": "quay.io/cdis/gen3fuse-sidecar:master",
       "env": {
-        "NAMESPACE": "default",
+        "NAMESPACE": "mpingram",
         "HOSTNAME": "mpingram.planx-pla.net"
       },
       "args": [],
@@ -109,7 +114,10 @@
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
+    "tier_access_level": "regular",
+    "tier_access_limit": 50,
+    "public_datasets": true
   },
   "canary": {
     "default": 0

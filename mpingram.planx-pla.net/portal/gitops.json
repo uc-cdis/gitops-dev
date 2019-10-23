@@ -157,6 +157,7 @@
       "enabled": true,
       "fields": [
         "project_id",
+        "auth_resource_path",
         "race",
         "ethnicity",
         "gender"
@@ -265,6 +266,8 @@
       "enabled": true,
       "fields": [
         "project_id",
+        "auth_resource_path",
+        "data_format",
         "file_name",
         "file_size",
         "object_id"
@@ -286,6 +289,7 @@
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
+    "useArboristUI": true,
     "buttons": [
       {
         "enabled": true,
