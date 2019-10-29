@@ -126,9 +126,9 @@
         ],
         "volumeMounts": [
           {
-            "name": "peregrine-creds-volume",
+            "name": "sheepdog-creds-volume",
             "readOnly": true,
-            "mountPath": "/peregrine-creds.json",
+            "mountPath": "/sheepdog-creds.json",
             "subPath": "creds.json"
           }
         ],
@@ -137,9 +137,9 @@
       },
       "volumes": [
         {
-          "name": "peregrine-creds-volume",
+          "name": "sheepdog-creds-volume",
           "secret": {
-            "secretName": "peregrine-creds"
+            "secretName": "sheepdog-creds"
           }
         }
       ],
