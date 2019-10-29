@@ -27,7 +27,8 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "spark": "quay.io/cdis/gen3-spark:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
-    "tube": "quay.io/cdis/tube:master"
+    "tube": "quay.io/cdis/tube:master",
+    "acronymbot": "quay.io/cdis/acronym-bot:master"
   },
   "arborist": {
     "deployment_version": "2"
