@@ -181,6 +181,12 @@
     }
   },
   "mariner": {
+    "storage": {
+      "s3": {
+        "name": "workflow-engine-garvin",
+        "region": "us-east-1"
+      }
+    },
     "secrets": {
       "awsusercreds": {
         "name": "workflow-bot-g3auto",
