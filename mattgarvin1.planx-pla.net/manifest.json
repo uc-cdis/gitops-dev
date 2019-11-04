@@ -207,7 +207,9 @@
         "name": "mariner-engine",
         "image": "quay.io/cdis/mariner-engine:feat_k8s",
         "pull_policy": "always",
-        "command": ["/bin/sh"],
+        "command": [
+          "/bin/sh"
+        ],
         "resources": {
           "limits": {
             "memory": "256Mi",
@@ -219,7 +221,17 @@
         "name": "mariner-s3sidecar",
         "image": "quay.io/cdis/mariner-s3sidecar:feat_k8s",
         "pull_policy": "always",
-        "command": ["/bin/sh", "./s3sidecarDockerrun.sh"],
+        "command": [
+          "/bin/sh",
+          "./s3sidecarDockerrun.sh"
+        ],
+        "lifecycle": {
+          "prestop": [
+            "/bin/sh",
+            "-c",
+            "fusermount -u -z /$ENGINE_WORKSPACE"
+          ]
+        },
         "resources": {
           "limits": {
             "memory": "256Mi",
@@ -234,7 +246,17 @@
         "name": "mariner-gen3fusesidecar",
         "image": "quay.io/cdis/gen3fuse-sidecar:feat_mariner_bash",
         "pull_policy": "always",
-        "command": ["/bin/bash", "/marinerRun.sh"],
+        "command": [
+          "/bin/bash",
+          "/marinerRun.sh"
+        ],
+        "lifecycle": {
+          "prestop": [
+            "/bin/bash",
+            "-c",
+            "fusermount -u /$COMMONS_DATA"
+          ]
+        },
         "resources": {
           "limits": {
             "memory": "256Mi",
@@ -249,7 +271,9 @@
         "name": "mariner-task",
         "image": "alpine",
         "pull_policy": "always",
-        "command": ["/bin/sh"],
+        "command": [
+          "/bin/sh"
+        ],
         "resources": {
           "limits": {
             "memory": "512Mi",
