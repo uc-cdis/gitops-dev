@@ -158,7 +158,7 @@
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "netpolicy": "on",
+    "netpolicy": "off",
     "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
     "dispatcher_job_num": "10"
   },
