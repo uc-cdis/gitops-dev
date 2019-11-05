@@ -260,7 +260,7 @@
           "prestop": [
             "/bin/bash",
             "-c",
-            "fusermount -u /$COMMONS_DATA"
+            "fusermount -u -z /$COMMONS_DATA"
           ]
         },
         "resources": {
