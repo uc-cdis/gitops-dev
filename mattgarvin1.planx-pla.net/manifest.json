@@ -214,7 +214,8 @@
         "image": "quay.io/cdis/mariner-engine:feat_k8s",
         "pull_policy": "always",
         "command": [
-          "/bin/sh"
+          "/sh",
+          "/engineDockerrun.sh"
         ],
         "resources": {
           "limits": {
