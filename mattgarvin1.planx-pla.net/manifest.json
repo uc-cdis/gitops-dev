@@ -230,7 +230,7 @@
         "pull_policy": "always",
         "command": [
           "/bin/sh",
-          "./s3sidecarDockerrun.sh"
+          "/s3sidecarDockerrun.sh"
         ],
         "lifecycle": {
           "prestop": [
