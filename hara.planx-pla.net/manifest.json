@@ -7,28 +7,25 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "ambtest": "kennship/http-echo",
     "arborist": "quay.io/cdis/arborist:master",
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "dashboard": "quay.io/cdis/gen3-statics:master",
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "google-sa-validation": "frickjack",
+    "guppy": "quay.io/cdis/guppy:master",
+    "hatchery": "quay.io/cdis/hatchery:master",
     "indexd": "quay.io/cdis/indexd:master",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "manifestservice": "quay.io/cdis/manifestservice:master",
+    "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
     "peregrine": "quay.io/cdis/peregrine:master",
-    "sidecar": "quay.io/cdis/sidecar:1.3.1-sidecar",
-    "statsd-exporter": "prom/statsd-exporter:v0.7.0",
     "pidgin": "quay.io/cdis/pidgin:master",
     "portal": "quay.io/cdis/data-portal:master",
     "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
+    "tube": "quay.io/cdis/tube:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
-    "tube": "quay.io/cdis/tube:master"
+    "dashboard": "quay.io/cdis/gen3-statics:master"
   },
   "arborist": {
     "deployment_version": "2"
