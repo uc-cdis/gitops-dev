@@ -309,6 +309,6 @@
     ],
     "dropdowns": {}
   },  
-  "useArboristUI": false,
-  "showArboristAuthzOnProfile": false
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true
 }
