@@ -144,6 +144,45 @@
         }
       ],
       "restart_policy": "Never"
+    },
+    {
+      "name": "manifest-indexing",
+      "action": "indexing",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/gen3sdk-python:feat_indexd_utils",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "manifest-indexing-creds-volume",
+            "readOnly": true,
+            "mountPath": "/manifest-indexing-creds.json",
+            "subPath": "config.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "1Gi"
+      },
+      "volumes": [
+        {
+          "name": "manifest-indexing-creds-volume",
+          "secret": {
+            "secretName": "manifestindexing-g3auto"
+          }
+        }
+      ],
+      "restart_policy": "Never"
     }
   ],
   "arranger": {
