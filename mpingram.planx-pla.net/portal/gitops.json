@@ -289,7 +289,6 @@
       "accessibleValidationField": "project_id",
       "downloadAccessor": "object_id"
     },
-    "useArboristUI": true,
     "buttons": [
       {
         "enabled": true,
@@ -309,5 +308,7 @@
       }
     ],
     "dropdowns": {}
-  }
+  },  
+  "useArboristUI": false,
+  "showArboristAuthzOnProfile": false
 }
