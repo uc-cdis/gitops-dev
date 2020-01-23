@@ -25,7 +25,7 @@
     "statsd-exporter": "prom/statsd-exporter:v0.7.0",
     "pidgin": "quay.io/cdis/pidgin:master",
     "portal": "quay.io/cdis/data-portal:master",
-    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.0",
+    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
