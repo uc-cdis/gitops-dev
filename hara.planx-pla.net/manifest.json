@@ -7,27 +7,27 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "ambassador-gen3": "quay.io/datawire/ambassador:0.60.3",
-    "arborist": "quay.io/cdis/arborist:master",
+    "ambassador": "quay.io/datawire/ambassador:2020.02",
+    "ambassador-gen3": "quay.io/datawire/ambassador:2020.02",
+    "arborist": "quay.io/cdis/arborist:2020.02",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:master",
+    "fence": "quay.io/cdis/fence:2020.02",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "quay.io/cdis/guppy:master",
-    "hatchery": "quay.io/cdis/hatchery:master",
-    "indexd": "quay.io/cdis/indexd:master",
-    "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
-    "peregrine": "quay.io/cdis/peregrine:master",
-    "pidgin": "quay.io/cdis/pidgin:master",
-    "portal": "quay.io/cdis/data-portal:master",
-    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
-    "sower": "quay.io/cdis/sower:master",
-    "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
-    "wts": "quay.io/cdis/workspace-token-service:master",
-    "dashboard": "quay.io/cdis/gen3-statics:master"
+    "guppy": "quay.io/cdis/guppy:2020.02",
+    "hatchery": "quay.io/cdis/hatchery:2020.02",
+    "indexd": "quay.io/cdis/indexd:2020.02",
+    "manifestservice": "quay.io/cdis/manifestservice:2020.02",
+    "peregrine": "quay.io/cdis/peregrine:2020.02",
+    "pidgin": "quay.io/cdis/pidgin:2020.02",
+    "portal": "quay.io/cdis/data-portal:2020.02",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "sheepdog": "quay.io/cdis/sheepdog:2020.02",
+    "sower": "quay.io/cdis/sower:2020.02",
+    "spark": "quay.io/cdis/gen3-spark:2020.02",
+    "tube": "quay.io/cdis/tube:2020.02",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:2020.02",
+    "wts": "quay.io/cdis/workspace-token-service:2020.02",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.02"
   },
   "arborist": {
     "deployment_version": "2"
@@ -41,7 +41,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:master",
+        "image": "quay.io/cdis/pelican-export:2020.02",
         "pull_policy": "Always",
         "env": [
           {
@@ -105,7 +105,7 @@
       "action": "import",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-import:master",
+        "image": "quay.io/cdis/pelican-import:2020.02",
         "pull_policy": "Always",
         "env": [
           {
@@ -156,7 +156,7 @@
     "sidecar": {
       "cpu-limit": "1.0",
       "memory-limit": "256Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:master",
+      "image": "quay.io/cdis/gen3fuse-sidecar:2020.02",
       "env": {
         "NAMESPACE": "hara",
         "HOSTNAME": "hara.planx-pla.net"
@@ -223,7 +223,7 @@
     "environment": "devplanetv1",
     "hostname": "hara.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/2.0.1/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
@@ -253,7 +253,7 @@
   },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "quay.io/cdis/indexs3client:master"
+      "indexing": "quay.io/cdis/indexs3client:2020.02"
     }
   }
 }
