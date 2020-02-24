@@ -1,5 +1,5 @@
 mappings:
-  - name: hara_etl
+  - name: qa-brain_etl
     doc_type: case
     type: aggregator
     root: case
@@ -24,6 +24,9 @@ mappings:
         path: visits.diagnoses
         src: age_at_onset
         fn: min
+      - name: _samples_count
+        path: visits.samples
+        fn: count
       - name: mds_updrs
         value_mappings:
           - uploaded: MDS-UPDRS
@@ -34,6 +37,10 @@ mappings:
         path: visits.mds_unified_pd_ratings
         src: state
         fn: set
+      - name: mds_updrs_part_iii_summary_score
+        path: visits.mds_unified_pd_ratings
+        src: mds_updrs_part_iii_summary_score
+        fn: max
       - name: unified_parkinsons_disease_ratings
         value_mappings:
           - uploaded: UPDRS
@@ -164,9 +171,6 @@ mappings:
         path: visits.epworth_sleepiness_scales
         src: state
         fn: set
-      - name: _samples_count
-        path: visits.samples
-        fn: count
       - name: _aliquots_count
         path: visits.samples.aliquots
         fn: count
@@ -189,7 +193,7 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: hara_file
+  - name: qa-brain_file
     doc_type: file
     type: collector
     root: None

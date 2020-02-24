@@ -1,19 +1,13 @@
-a {
-  color: #0D99B7;
-  }
-a:hover,
-a:focus {
-  color: #F6921E;
-  }
-.btn-primary {
- background-color: #0D99B7;
+.nav-bar__logo {
+  padding: 15px 0;
 }
-.btn-primary:hover,
-.btn-primary.hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-  background-color: #F6921E;
-  border-color: #F6921E;
+
+.nav-bar__logo-img {
+  height: 50px;
+}
+
+@media screen and (max-width: 1290px) {
+  .index-page__bar-chart {
+    margin-left: -160px;
   }
+}
