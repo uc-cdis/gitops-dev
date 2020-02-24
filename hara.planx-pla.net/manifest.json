@@ -206,16 +206,16 @@
 "guppy": {
     "indices": [
       {
-        "index": "hara-brain_etl",
+        "index": "hara_etl",
         "type": "case"
       },
       {
-        "index": "hara-brain_file",
+        "index": "hara_file",
         "type": "file"
       }
     ],
     "log_level": "DEBUG",
-    "config_index": "hara-brain_array-config",
+    "config_index": "hara_array-config",
     "auth_filter_field": "auth_resource_path"
   }
 }
