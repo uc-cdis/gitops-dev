@@ -1,5 +1,5 @@
 mappings:
-  - name: qa-brain_etl
+  - name: hara_etl
     doc_type: case
     type: aggregator
     root: case
@@ -193,7 +193,7 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: qa-brain_file
+  - name: hara_file
     doc_type: file
     type: collector
     root: None
