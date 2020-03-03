@@ -150,7 +150,7 @@
       "action": "index-object-manifest",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/gen3sdk-python:feat_indexd_utils",
+        "image": "quay.io/cdis/manifest-indexing:master",
         "pull_policy": "Always",
         "env": [
           {
@@ -189,7 +189,7 @@
       "action": "download-indexd-manifest",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/gen3sdk-python:feat_indexd_utils",
+        "image": "quay.io/cdis/download-indexd-manifest:master",
         "pull_policy": "Always",
         "env": [
           {
