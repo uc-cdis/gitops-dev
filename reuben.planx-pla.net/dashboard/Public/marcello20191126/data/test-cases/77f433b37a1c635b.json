@@ -1,0 +1,73 @@
+{
+  "uid" : "77f433b37a1c635b",
+  "name" : "Version Checker error @manual",
+  "fullName" : "Gen3-dataclient:.Version Checker error @manual",
+  "historyId" : "c39ead39d6652037ae3f5c122b9bdbfc",
+  "time" : {
+    "start" : 1573534732725,
+    "stop" : 1573534732984,
+    "duration" : 259
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "LATEST_VERSION is not defined",
+  "statusTrace" : "ReferenceError: LATEST_VERSION is not defined\n                    at Test.<anonymous> (/Users/marcelocostarodrigues/workspace/gen3-qa/suites/gen3-client/gen3clientTest.js:64:114)\n                    at Context.test.fn (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/codeceptjs/lib/scenario.js:56:14)\n                    at callFnAsync (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runnable.js:415:21)\n                    at Test.Runnable.run (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runnable.js:357:7)\n                    at Runner.runTest (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:535:10)\n                    at /Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:653:12\n                    at next (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:447:14)\n                    at /Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:457:7\n                    at next (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:362:14)\n                    at /Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:420:7",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "LATEST_VERSION is not defined",
+    "statusTrace" : "ReferenceError: LATEST_VERSION is not defined\n                    at Test.<anonymous> (/Users/marcelocostarodrigues/workspace/gen3-qa/suites/gen3-client/gen3clientTest.js:64:114)\n                    at Context.test.fn (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/codeceptjs/lib/scenario.js:56:14)\n                    at callFnAsync (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runnable.js:415:21)\n                    at Test.Runnable.run (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runnable.js:357:7)\n                    at Runner.runTest (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:535:10)\n                    at /Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:653:12\n                    at next (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:447:14)\n                    at /Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:457:7\n                    at next (/Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:362:14)\n                    at /Users/marcelocostarodrigues/workspace/gen3-qa/node_modules/mocha/lib/runner.js:420:7",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "90e246ffd7454d31",
+      "name" : "Last Seen Screenshot",
+      "source" : "90e246ffd7454d31.png",
+      "type" : "image/png",
+      "size" : 10592
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@manual"
+  }, {
+    "name" : "suite",
+    "value" : "Gen3-dataclient:"
+  }, {
+    "name" : "testClass",
+    "value" : "Gen3-dataclient:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Version Checker error @manual"
+  }, {
+    "name" : "package",
+    "value" : "Gen3-dataclient:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "@manual" ]
+  },
+  "source" : "77f433b37a1c635b.json",
+  "parameterValues" : [ ]
+}

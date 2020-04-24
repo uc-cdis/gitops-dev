@@ -1,0 +1,47 @@
+{
+  "uid" : "a8d9f99702c4c1b3",
+  "name" : "Initiate the OIDC Client flow with NIH credentials to obtain the OAuth authorization code @manual",
+  "fullName" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:.Initiate the OIDC Client flow with NIH credentials to obtain the OAuth authorization code @manual",
+  "historyId" : "e9b9677b1b8dea062f546e43c407cba5",
+  "time" : {
+    "start" : 1574746953368,
+    "stop" : 1574746979165,
+    "duration" : 25797
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@manual"
+  }, {
+    "name" : "suite",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testClass",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Initiate the OIDC Client flow with NIH credentials to obtain the OAuth authorization code @manual"
+  }, {
+    "name" : "package",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@manual" ]
+  },
+  "source" : "a8d9f99702c4c1b3.json",
+  "parameterValues" : [ ]
+}

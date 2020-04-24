@@ -1,0 +1,772 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "Download the same test file and verify integrity @manual",
+    "uid" : "104057fb5faf5dd3",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1573534736006,
+      "stop" : 1573534737291,
+      "duration" : 1285
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL positive test against DID with Google credentials @manual",
+    "uid" : "43098c798b9f1cd2",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721935830,
+      "stop" : 1574721939485,
+      "duration" : 3655
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Login: login @portal",
+    "uid" : "23b09e319b8ee022",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1571855607000,
+      "stop" : 1571855628451,
+      "duration" : 21451
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Version Checker error @manual",
+    "uid" : "77f433b37a1c635b",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1573534732725,
+      "stop" : 1573534732984,
+      "duration" : 259
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Verify if the \"ID Token\" produced in the previous scenario has the correct nonce value @manual",
+    "uid" : "c5c2e4d1f5ab56fe",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721902176,
+      "stop" : 1574721919407,
+      "duration" : 17231
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL negative test against DID with NIH credentials @manual",
+    "uid" : "724f0ad460adf58c",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721971034,
+      "stop" : 1574721974673,
+      "duration" : 3639
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL negative test against DID with NIH credentials @manual",
+    "uid" : "5812aaadb70dd74a",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574746992276,
+      "stop" : 1574747115479,
+      "duration" : 123203
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Login: login @portal",
+    "uid" : "dc081a2cc04e2c80",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1571791799000,
+      "stop" : 1571791816086,
+      "duration" : 17086
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Verify if the \"ID Token\" produced in the previous scenario has the correct nonce value @manual",
+    "uid" : "3c3025598fc74c95",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574746979224,
+      "stop" : 1574746992216,
+      "duration" : 12992
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test Fence's public keys endpoint @mehmeh",
+    "uid" : "90cbe51cc7590a80",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574795165344,
+      "stop" : 1574795176569,
+      "duration" : 11225
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL positive test against DID with Google credentials @manual",
+    "uid" : "b2939599fbb073de",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721930140,
+      "stop" : 1574721932921,
+      "duration" : 2781
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL positive test against DID with Google credentials @manual",
+    "uid" : "dc2021176d92de5a",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574746945351,
+      "stop" : 1574746947289,
+      "duration" : 1938
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL negative test against DID with Google credentials @manual",
+    "uid" : "9c6e2a00d8f0b63",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574746947351,
+      "stop" : 1574746949253,
+      "duration" : 1902
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual",
+    "uid" : "efa1f6f177c74966",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747284327,
+      "stop" : 1574747754873,
+      "duration" : 470546
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL positive test against DID with Google credentials @manual",
+    "uid" : "8959bef8d7bfb9c0",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574746949314,
+      "stop" : 1574746953305,
+      "duration" : 3991
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Try to get Google Credentials as a client @mehmeh",
+    "uid" : "7059cce24ba9fd85",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574748099595,
+      "stop" : 1574748117303,
+      "duration" : 17708
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual",
+    "uid" : "fed06964e4c6503f",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721900647,
+      "stop" : 1574721902117,
+      "duration" : 1470
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL negative test against DID with Google credentials @manual",
+    "uid" : "52d977b3d1717c33",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721932979,
+      "stop" : 1574721935773,
+      "duration" : 2794
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test Fence's public keys endpoint @mehmeh",
+    "uid" : "97007d34c9c77156",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1574795087543,
+      "stop" : 1574795088320,
+      "duration" : 777
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL positive test against DID with Google credentials @manual",
+    "uid" : "884c7a70eedd7a28",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747786709,
+      "stop" : 1574747788670,
+      "duration" : 1961
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL negative test against DID with NIH credentials @manual",
+    "uid" : "c6f7ff102b3eb0c0",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747813297,
+      "stop" : 1574747850387,
+      "duration" : 37090
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test Fence's public keys endpoint @mehmeh",
+    "uid" : "46955ebee3593103",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1574795110290,
+      "stop" : 1574795110556,
+      "duration" : 266
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Wrong API key correct apiendpoint @manual",
+    "uid" : "28187b8605206ad",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1573534729432,
+      "stop" : 1573534730628,
+      "duration" : 1196
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Try to get Google Credentials as a regular user @manual",
+    "uid" : "18cb9c7dbd2caf79",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747857699,
+      "stop" : 1574747861001,
+      "duration" : 3302
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL negative test against DID with NIH credentials @manual",
+    "uid" : "764229021c2e9b37",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721956876,
+      "stop" : 1574721966976,
+      "duration" : 10100
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Try to get Google Credentials as a regular user @manual",
+    "uid" : "b91920ccc5af15c0",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747130623,
+      "stop" : 1574747136485,
+      "duration" : 5862
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Install gen3-client @manual",
+    "uid" : "eb2af7c7289616e5",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1573534725662,
+      "stop" : 1573534727483,
+      "duration" : 1821
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL negative test against DID with NIH credentials @manual",
+    "uid" : "2dd97a05d3b1e27f",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747121361,
+      "stop" : 1574747125741,
+      "duration" : 4380
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Delete file from the commons system and also from local disk @manual",
+    "uid" : "c5584a4f9fd41b39",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1573534737348,
+      "stop" : 1573534758710,
+      "duration" : 21362
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Configure gen3-client @manual",
+    "uid" : "c8654b1ee00d318b",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1573534727960,
+      "stop" : 1573534728961,
+      "duration" : 1001
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL positive test against DID with NIH credentials @manual",
+    "uid" : "29862ff4bf37a2c4",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747850448,
+      "stop" : 1574747851748,
+      "duration" : 1300
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL positive test against DID with NIH credentials @manual",
+    "uid" : "70b21766d4e40ecc",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747125811,
+      "stop" : 1574747130561,
+      "duration" : 4750
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL positive test against DID with NIH credentials @manual",
+    "uid" : "a28a002d969936bb",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721967034,
+      "stop" : 1574721970979,
+      "duration" : 3945
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Try to get Google Credentials as a client @manual",
+    "uid" : "ab99b7fed476f36",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747861060,
+      "stop" : 1574748028395,
+      "duration" : 167335
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL negative test against DID with Google credentials @manual",
+    "uid" : "36db397dbe1c1087",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747773182,
+      "stop" : 1574747786648,
+      "duration" : 13466
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Run the gen3-client CLI utility and upload the test file to ${profile} @manual",
+    "uid" : "eabadb1bf5318601",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1573534734653,
+      "stop" : 1573534735946,
+      "duration" : 1293
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test the exploration page @mehmeh",
+    "uid" : "8b3e4abd42ac2f32",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574795586122,
+      "stop" : 1574795976931,
+      "duration" : 390809
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Verify if the \"ID Token\" produced in the previous scenario has the correct nonce value @manual",
+    "uid" : "26fdf891fac3739e",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747797303,
+      "stop" : 1574747813239,
+      "duration" : 15936
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL positive test against DID with NIH credentials @manual",
+    "uid" : "be8e7cac87f187e6",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747853307,
+      "stop" : 1574747857638,
+      "duration" : 4331
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL positive test against DID with Google credentials @manual",
+    "uid" : "fe475e70026b58fd",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747791188,
+      "stop" : 1574747795192,
+      "duration" : 4004
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Initiate the OIDC Client flow with NIH credentials to obtain the OAuth authorization code @manual",
+    "uid" : "a8d9f99702c4c1b3",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574746953368,
+      "stop" : 1574746979165,
+      "duration" : 25797
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Login: login @portal",
+    "uid" : "6faea0049d400e8c",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1571791503000,
+      "stop" : 1571791525323,
+      "duration" : 22323
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL negative test against DID with Google credentials @manual",
+    "uid" : "ee5f537b35a50420",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574746933414,
+      "stop" : 1574746945291,
+      "duration" : 11877
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Try to get Google Credentials as a client @manual",
+    "uid" : "bdee33a1ac733cc3",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1574747136545,
+      "stop" : 1574747136909,
+      "duration" : 364
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "correct API key wrong apiendpoint @manual",
+    "uid" : "df15beaf2eb5ae1",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1573534731111,
+      "stop" : 1573534732258,
+      "duration" : 1147
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL negative test against DID with Google credentials @manual",
+    "uid" : "37d1075921d6f268",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721919470,
+      "stop" : 1574721930082,
+      "duration" : 10612
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Verify if the \"ID Token\" produced in the previous scenario has the correct nonce value @manual",
+    "uid" : "4b4fe9b7a33dd838",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721941423,
+      "stop" : 1574721956816,
+      "duration" : 15393
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual",
+    "uid" : "2c6d3de7c2af710c",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574746911663,
+      "stop" : 1574746914822,
+      "duration" : 3159
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL negative test against DID with Google credentials @manual",
+    "uid" : "bbd9bb4059c33241",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747788730,
+      "stop" : 1574747791125,
+      "duration" : 2395
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Login: login @portal",
+    "uid" : "4fe91f3b4e942487",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1571854619000,
+      "stop" : 1571854636137,
+      "duration" : 17137
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Create a folder and generate a test file @manual",
+    "uid" : "5c5745369908c233",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1573534733457,
+      "stop" : 1573534734591,
+      "duration" : 1134
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Verify if the \"ID Token\" produced in the previous scenario has the correct nonce value @manual",
+    "uid" : "e3c56d5e0c633dcf",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574746914882,
+      "stop" : 1574746933351,
+      "duration" : 18469
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL positive test against DID with NIH credentials @manual",
+    "uid" : "efc61d09d16fae43",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721974729,
+      "stop" : 1574721978020,
+      "duration" : 3291
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Initiate the OIDC Client flow with NIH credentials to obtain the OAuth authorization code @manual",
+    "uid" : "da72c509580c40a9",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747795251,
+      "stop" : 1574747797240,
+      "duration" : 1989
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform AWS S3 PreSigned URL negative test against DID with NIH credentials @manual",
+    "uid" : "67ec8c1d75e46d91",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747851809,
+      "stop" : 1574747853248,
+      "duration" : 1439
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Perform Google Storage PreSigned URL positive test against DID with NIH credentials @manual",
+    "uid" : "c0c901278116129d",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747115546,
+      "stop" : 1574747121297,
+      "duration" : 5751
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Verify if the \"ID Token\" produced in the previous scenario has the correct nonce value @manual",
+    "uid" : "5a6bb6deea4559cf",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574747754935,
+      "stop" : 1574747773120,
+      "duration" : 18185
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Initiate the OIDC Client flow with NIH credentials to obtain the OAuth authorization code @manual",
+    "uid" : "202dd177a55f2dd0",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1574721939545,
+      "stop" : 1574721941364,
+      "duration" : 1819
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual",
+    "uid" : "1dc49c2b6def7ea3",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1574740646835,
+      "stop" : 1574740646878,
+      "duration" : 43
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}

@@ -1,0 +1,74 @@
+{
+  "uid" : "efa1f6f177c74966",
+  "name" : "Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual",
+  "fullName" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:.Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual",
+  "historyId" : "c9ebea3ff9759395affc7b0e39be2ccc",
+  "time" : {
+    "start" : 1574747284327,
+    "stop" : 1574747754873,
+    "duration" : 470546
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@manual"
+  }, {
+    "name" : "suite",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testClass",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual"
+  }, {
+    "name" : "package",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "2c6d3de7c2af710c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1574746911663,
+        "stop" : 1574746914822,
+        "duration" : 3159
+      }
+    }, {
+      "uid" : "1dc49c2b6def7ea3",
+      "status" : "failed",
+      "statusDetails" : "Can't connect to WebDriver.\n                Error: connect ECONNREFUSED 127.0.0.1:4444\n                \n                Please make sure Selenium Server (ChromeDriver or PhantomJS) is running and accessible",
+      "time" : {
+        "start" : 1574740646835,
+        "stop" : 1574740646878,
+        "duration" : 43
+      }
+    }, {
+      "uid" : "fed06964e4c6503f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1574721900647,
+        "stop" : 1574721902117,
+        "duration" : 1470
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ "@manual" ]
+  },
+  "source" : "efa1f6f177c74966.json",
+  "parameterValues" : [ ]
+}

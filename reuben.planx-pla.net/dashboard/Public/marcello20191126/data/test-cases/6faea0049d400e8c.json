@@ -1,0 +1,49 @@
+{
+  "uid" : "6faea0049d400e8c",
+  "name" : "Login: login @portal",
+  "historyId" : "Login:login @portal#Login: login @portal",
+  "time" : {
+    "start" : 1571791503000,
+    "stop" : 1571791525323,
+    "duration" : 22323
+  },
+  "status" : "failed",
+  "statusMessage" : "expected cookie access_token to be set",
+  "statusTrace" : "expected cookie access_token to be set\n\nScenario Steps:\n\n- I.seeCookie(\"access_token\") at Object.haveAccessToken (services/portal/home/homeQuestions.js:11:7)\n- I.click({\"xpath\":\"//button[contains(text(), 'Login from Google')]\"}) at Object.clickProp (utils/portal.js:39:9)\n- I.setCookie({\"name\":\"dev_login\",\"value\":\"cdis.autotest@gmail.com\"}) at Object.login (services/portal/home/homeTasks.js:22:7)\n- I.waitForElement(\".nav-bar\", 60) at Object.seeProp (utils/portal.js:56:9)\n- I.amOnPage(\"/login\") at Object.goToHomepage (services/portal/home/homeTasks.js:11:7)\n- I.waitForElement(\".nav-bar\", 60) at Object.seeProp (utils/portal.js:56:9)\n- I.amOnPage(\"/login\") at Object.goToHomepage (services/portal/home/homeTasks.js:11:7)\n\n\n\nServices Health Check:",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "resultFormat",
+    "value" : "junit"
+  }, {
+    "name" : "suite",
+    "value" : "Login"
+  }, {
+    "name" : "testClass",
+    "value" : "login @portal"
+  }, {
+    "name" : "package",
+    "value" : "login @portal"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6faea0049d400e8c.json",
+  "parameterValues" : [ ]
+}

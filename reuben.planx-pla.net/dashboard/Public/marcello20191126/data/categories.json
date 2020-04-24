@@ -1,0 +1,82 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "be is not defined",
+      "children" : [ {
+        "name" : "Install gen3-client @manual",
+        "uid" : "eb2af7c7289616e5",
+        "parentUid" : "5107d943e0d96ea12e5bbd4f0c7541ef",
+        "status" : "failed",
+        "time" : {
+          "start" : 1573534725662,
+          "stop" : 1573534727483,
+          "duration" : 1821
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Configure gen3-client @manual",
+        "uid" : "c8654b1ee00d318b",
+        "parentUid" : "5107d943e0d96ea12e5bbd4f0c7541ef",
+        "status" : "failed",
+        "time" : {
+          "start" : 1573534727960,
+          "stop" : 1573534728961,
+          "duration" : 1001
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Wrong API key correct apiendpoint @manual",
+        "uid" : "28187b8605206ad",
+        "parentUid" : "5107d943e0d96ea12e5bbd4f0c7541ef",
+        "status" : "failed",
+        "time" : {
+          "start" : 1573534729432,
+          "stop" : 1573534730628,
+          "duration" : 1196
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "correct API key wrong apiendpoint @manual",
+        "uid" : "df15beaf2eb5ae1",
+        "parentUid" : "5107d943e0d96ea12e5bbd4f0c7541ef",
+        "status" : "failed",
+        "time" : {
+          "start" : 1573534731111,
+          "stop" : 1573534732258,
+          "duration" : 1147
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5107d943e0d96ea12e5bbd4f0c7541ef"
+    }, {
+      "name" : "LATEST_VERSION is not defined",
+      "children" : [ {
+        "name" : "Version Checker error @manual",
+        "uid" : "77f433b37a1c635b",
+        "parentUid" : "93256ea609b141d1e0ac295f93b0efd4",
+        "status" : "failed",
+        "time" : {
+          "start" : 1573534732725,
+          "stop" : 1573534732984,
+          "duration" : 259
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "93256ea609b141d1e0ac295f93b0efd4"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

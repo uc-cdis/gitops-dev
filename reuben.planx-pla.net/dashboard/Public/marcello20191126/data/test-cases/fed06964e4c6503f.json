@@ -1,0 +1,47 @@
+{
+  "uid" : "fed06964e4c6503f",
+  "name" : "Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual",
+  "fullName" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:.Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual",
+  "historyId" : "c9ebea3ff9759395affc7b0e39be2ccc",
+  "time" : {
+    "start" : 1574721900647,
+    "stop" : 1574721902117,
+    "duration" : 1470
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@manual"
+  }, {
+    "name" : "suite",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testClass",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Initiate the OIDC Client flow with Google credentials to obtain the OAuth authorization code @manual"
+  }, {
+    "name" : "package",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@manual" ]
+  },
+  "source" : "fed06964e4c6503f.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,120 @@
+{
+  "uid" : "36db397dbe1c1087",
+  "name" : "Perform Google Storage PreSigned URL negative test against DID with Google credentials @manual",
+  "fullName" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:.Perform Google Storage PreSigned URL negative test against DID with Google credentials @manual",
+  "historyId" : "39c545252c757dd5c234f9969e7eb662",
+  "time" : {
+    "start" : 1574747773182,
+    "stop" : 1574747786648,
+    "duration" : 13466
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "I send get request \"https://gen3.datastage.io/user/user\", {\"Authorization\":\"bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImZlbmNlX2tleV8yMDE5LTAxLTI5VDIyOjA1OjM4WiJ9.eyJwdXIiOiJhY2Nlc3MiLCJhdWQiOlsib3BlbmlkIiwidXNlciIsImRhdGEiLCJnb29nbGVfY3JlZGVudGlhbHMiLCJqa3d6V1ZVczZueHZGa0FhWUZvQ2UwS01vUVRUTXFTRTI3U2xRS21aIl0sInN1YiI6IjExODQiLCJpc3MiOiJodHRwczovL2dlbjMuZGF0YXN0YWdlLmlvL3VzZXIiLCJpYXQiOjE1NzQ3NDc3MTYsImV4cCI6MTU3NDc1OTcxNiwianRpIjoiMTU5NmExNDctNWM0ZS00ZWViLWE0YzAtOTNkZTE4ZjY5MTEyIiwiY29udGV4dCI6eyJ1c2VyIjp7Im5hbWUiOiJNQVJDRUxPQyIsImlzX2FkbWluIjpmYWxzZSwiZ29vZ2xlIjp7InByb3h5X2dyb3VwIjoiMDJqeHN4cWgzZGRuajhnIn0sInByb2plY3RzIjp7InBoczAwMDAwNy5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDAwNy5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDIwOS5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDIwOS5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4MC5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4MC5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4Ny5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4Ny5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4Ny5jMyI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4Ny5jNCI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4NS5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4NS5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDk2NC5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDk2NC5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDk2NC5jMyI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl19fX0sImF6cCI6Imprd3pXVlVzNm54dkZrQWFZRm9DZTBLTW9RVFRNcVNFMjdTbFFLbVoifQ.r-84sQVmcLsfskWXskmp2GAf5AOukEXN_nLDcqGDjmal9RVwQgSUBjFsuH74dMbkV8KYUZceXxeMid9tRwbYk1RrTp9kuDaCeOa5hiLynyXLAePvlmnwYR_XDXAOKtSaD9eKxsc_rGwpHA9BvGsdpZwW75kdqC5exPB2e6NpIRu7_zBupwBWr6uxSv-EkKiSh5oeMyQGgfhY8vYwODPmuNGPCaIKEnw1RjuqPW3JA0Q-ctQTIxaw9wXKK6VrmBke3Llc41mJ9qHl6Luw4IZk94kkBh0wealoXgZd-kplNFHXSkM7GjMWC9DrIj-KPjGqkYLGBc3rXIpLJHMWR6_BRg\"}",
+      "time" : {
+        "start" : 1574747782924,
+        "stop" : 1574747783302,
+        "duration" : 378
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Object: createSignedUrl ",
+      "time" : {
+        "start" : 1574747783304,
+        "stop" : 1574747786648,
+        "duration" : 3344
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I send get request \"/user/data/download/dg.4503/00000027-a1c4-4587-a6c9-d35f5818a724\", {\"Accept\":\"application/json\",\"Authorization\":\"bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImZlbmNlX2tleV8yMDE5LTAxLTI5VDIyOjA1OjM4WiJ9.eyJwdXIiOiJhY2Nlc3MiLCJhdWQiOlsib3BlbmlkIiwidXNlciIsImRhdGEiLCJnb29nbGVfY3JlZGVudGlhbHMiLCJqa3d6V1ZVczZueHZGa0FhWUZvQ2UwS01vUVRUTXFTRTI3U2xRS21aIl0sInN1YiI6IjExODQiLCJpc3MiOiJodHRwczovL2dlbjMuZGF0YXN0YWdlLmlvL3VzZXIiLCJpYXQiOjE1NzQ3NDc3MTYsImV4cCI6MTU3NDc1OTcxNiwianRpIjoiMTU5NmExNDctNWM0ZS00ZWViLWE0YzAtOTNkZTE4ZjY5MTEyIiwiY29udGV4dCI6eyJ1c2VyIjp7Im5hbWUiOiJNQVJDRUxPQyIsImlzX2FkbWluIjpmYWxzZSwiZ29vZ2xlIjp7InByb3h5X2dyb3VwIjoiMDJqeHN4cWgzZGRuajhnIn0sInByb2plY3RzIjp7InBoczAwMDAwNy5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDAwNy5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDIwOS5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDIwOS5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4MC5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4MC5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4Ny5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4Ny5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4Ny5jMyI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4Ny5jNCI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4NS5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDI4NS5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDk2NC5jMSI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDk2NC5jMiI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl0sInBoczAwMDk2NC5jMyI6WyJyZWFkLXN0b3JhZ2UiLCJyZWFkIl19fX0sImF6cCI6Imprd3pXVlVzNm54dkZrQWFZRm9DZTBLTW9RVFRNcVNFMjdTbFFLbVoifQ.r-84sQVmcLsfskWXskmp2GAf5AOukEXN_nLDcqGDjmal9RVwQgSUBjFsuH74dMbkV8KYUZceXxeMid9tRwbYk1RrTp9kuDaCeOa5hiLynyXLAePvlmnwYR_XDXAOKtSaD9eKxsc_rGwpHA9BvGsdpZwW75kdqC5exPB2e6NpIRu7_zBupwBWr6uxSv-EkKiSh5oeMyQGgfhY8vYwODPmuNGPCaIKEnw1RjuqPW3JA0Q-ctQTIxaw9wXKK6VrmBke3Llc41mJ9qHl6Luw4IZk94kkBh0wealoXgZd-kplNFHXSkM7GjMWC9DrIj-KPjGqkYLGBc3rXIpLJHMWR6_BRg\",\"Content-Type\":\"application/json\"}",
+        "time" : {
+          "start" : 1574747783304,
+          "stop" : 1574747783571,
+          "duration" : 267
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@manual"
+  }, {
+    "name" : "suite",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testClass",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Perform Google Storage PreSigned URL negative test against DID with Google credentials @manual"
+  }, {
+    "name" : "package",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "ee5f537b35a50420",
+      "status" : "passed",
+      "time" : {
+        "start" : 1574746933414,
+        "stop" : 1574746945291,
+        "duration" : 11877
+      }
+    }, {
+      "uid" : "37d1075921d6f268",
+      "status" : "passed",
+      "time" : {
+        "start" : 1574721919470,
+        "stop" : 1574721930082,
+        "duration" : 10612
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ "@manual" ]
+  },
+  "source" : "36db397dbe1c1087.json",
+  "parameterValues" : [ ]
+}

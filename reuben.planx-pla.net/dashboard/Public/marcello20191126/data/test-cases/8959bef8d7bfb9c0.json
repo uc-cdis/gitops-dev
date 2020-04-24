@@ -1,0 +1,87 @@
+{
+  "uid" : "8959bef8d7bfb9c0",
+  "name" : "Perform AWS S3 PreSigned URL positive test against DID with Google credentials @manual",
+  "fullName" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:.Perform AWS S3 PreSigned URL positive test against DID with Google credentials @manual",
+  "historyId" : "f7770596546e6826c97777259c731bd1",
+  "time" : {
+    "start" : 1574746949314,
+    "stop" : 1574746953305,
+    "duration" : 3991
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Object: createSignedUrl ",
+      "time" : {
+        "start" : 1574746949510,
+        "stop" : 1574746953305,
+        "duration" : 3795
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I send get request \"/user/data/download/undefined\", {\"Accept\":\"application/json\",\"Authorization\":\"bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImZlbmNlX2tleV8yMDE5LTAxLTI5VDIyOjA1OjM4WiJ9.eyJwdXIiOiJhY2Nlc3MiLCJhdWQiOlsib3BlbmlkIiwidXNlciIsImRhdGEiLCJnb29nbGVfY3JlZGVudGlhbHMiLCJqa3d6V1ZVczZueHZGa0FhWUZvQ2UwS01vUVRUTXFTRTI3U2xRS21aIl0sInN1YiI6Ijg1MSIsImlzcyI6Imh0dHBzOi8vZ2VuMy5kYXRhc3RhZ2UuaW8vdXNlciIsImlhdCI6MTU3NDc0Njc5MCwiZXhwIjoxNTc0NzU4NzkwLCJqdGkiOiIxZjBkMmQ4ZC1iMTc4LTQ3NWUtYjA5OC1mZDUxMjIwNDFhNjciLCJjb250ZXh0Ijp7InVzZXIiOnsibmFtZSI6Im1hcmNlbG9jQHVjaGljYWdvLmVkdSIsImlzX2FkbWluIjpmYWxzZSwiZ29vZ2xlIjp7InByb3h5X2dyb3VwIjoiMDE5YzZ5MTgydzhsN2ttIn0sInByb2plY3RzIjp7fX19LCJhenAiOiJqa3d6V1ZVczZueHZGa0FhWUZvQ2UwS01vUVRUTXFTRTI3U2xRS21aIn0.GmH2neyyeKJJT1klWvefmBWDDzoMHJCFwSwxmQjxIYxWAXMcIs6-P8quuiY7SXGA3w7F4rcLgtlX0Tumpo09tn2J6_3yMPNcG-nfDItrLd8bl97Ny-dOGfAOjSgHNxfSkCpH1s85T88hBQg8l70WR08ei80fQAx_PipUFyYtAnnbVW2hXH1wmJhORrMHIWj-9KOJsR5uvb9lR0HvPcZ57Ic8I7sm5Ay_QbGIK71adhH0hyNbbyB3WJmNX3lBUetJM8V10pgx-KDezYxP3MJTiubSKOb994_h5IKtQBLrX7zrnuuIRnS7HnXrj9T2aZE_MYcn57PwcjmArrQJ2e7kZQ\",\"Content-Type\":\"application/json\"}",
+        "time" : {
+          "start" : 1574746949510,
+          "stop" : 1574746949698,
+          "duration" : 188
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@manual"
+  }, {
+    "name" : "suite",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testClass",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Perform AWS S3 PreSigned URL positive test against DID with Google credentials @manual"
+  }, {
+    "name" : "package",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@manual" ]
+  },
+  "source" : "8959bef8d7bfb9c0.json",
+  "parameterValues" : [ ]
+}

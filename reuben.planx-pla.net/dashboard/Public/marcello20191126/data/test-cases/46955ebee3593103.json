@@ -1,0 +1,83 @@
+{
+  "uid" : "46955ebee3593103",
+  "name" : "Test Fence's public keys endpoint @mehmeh",
+  "fullName" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:.Test Fence's public keys endpoint @mehmeh",
+  "historyId" : "5d7d90598839acaa56cbf86d3cb716a5",
+  "time" : {
+    "start" : 1574795110290,
+    "stop" : 1574795110556,
+    "duration" : 266
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "getaddrinfo ENOTFOUND gen3.datastage.ioundefined",
+  "statusTrace" : "Error: getaddrinfo ENOTFOUND gen3.datastage.ioundefined\n                    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "getaddrinfo ENOTFOUND gen3.datastage.ioundefined",
+    "statusTrace" : "Error: getaddrinfo ENOTFOUND gen3.datastage.ioundefined\n                    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)",
+    "steps" : [ {
+      "name" : "I send get request \"https://gen3.datastage.ioundefined\"",
+      "time" : {
+        "start" : 1574795110541,
+        "stop" : 1574795110554,
+        "duration" : 13
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: getaddrinfo ENOTFOUND gen3.datastage.ioundefined\n                    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "9647804a3f42ba6f",
+      "name" : "Last Seen Screenshot",
+      "source" : "9647804a3f42ba6f.png",
+      "type" : "image/png",
+      "size" : 10592
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@mehmeh"
+  }, {
+    "name" : "suite",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testClass",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test Fence's public keys endpoint @mehmeh"
+  }, {
+    "name" : "package",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@mehmeh" ]
+  },
+  "source" : "46955ebee3593103.json",
+  "parameterValues" : [ ]
+}

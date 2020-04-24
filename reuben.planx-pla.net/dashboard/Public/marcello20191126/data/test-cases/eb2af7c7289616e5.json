@@ -1,0 +1,73 @@
+{
+  "uid" : "eb2af7c7289616e5",
+  "name" : "Install gen3-client @manual",
+  "fullName" : "Gen3-dataclient:.Install gen3-client @manual",
+  "historyId" : "8836bb408d6d0c408f8a083ac9892876",
+  "time" : {
+    "start" : 1573534725662,
+    "stop" : 1573534727483,
+    "duration" : 1821
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "be is not defined",
+  "statusTrace" : "ReferenceError: be is not defined\n                    at Test.<anonymous> (/Users/marcelocostarodrigues/workspace/gen3-qa/suites/gen3-client/gen3clientTest.js:18:47)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "be is not defined",
+    "statusTrace" : "ReferenceError: be is not defined\n                    at Test.<anonymous> (/Users/marcelocostarodrigues/workspace/gen3-qa/suites/gen3-client/gen3clientTest.js:18:47)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "92bd1976cb212cbb",
+      "name" : "Last Seen Screenshot",
+      "source" : "92bd1976cb212cbb.png",
+      "type" : "image/png",
+      "size" : 10592
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@manual"
+  }, {
+    "name" : "suite",
+    "value" : "Gen3-dataclient:"
+  }, {
+    "name" : "testClass",
+    "value" : "Gen3-dataclient:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Install gen3-client @manual"
+  }, {
+    "name" : "package",
+    "value" : "Gen3-dataclient:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "@manual" ]
+  },
+  "source" : "eb2af7c7289616e5.json",
+  "parameterValues" : [ ]
+}

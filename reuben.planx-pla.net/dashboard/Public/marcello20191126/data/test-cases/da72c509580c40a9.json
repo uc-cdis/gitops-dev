@@ -1,0 +1,65 @@
+{
+  "uid" : "da72c509580c40a9",
+  "name" : "Initiate the OIDC Client flow with NIH credentials to obtain the OAuth authorization code @manual",
+  "fullName" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:.Initiate the OIDC Client flow with NIH credentials to obtain the OAuth authorization code @manual",
+  "historyId" : "e9b9677b1b8dea062f546e43c407cba5",
+  "time" : {
+    "start" : 1574747795251,
+    "stop" : 1574747797240,
+    "duration" : 1989
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@manual"
+  }, {
+    "name" : "suite",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testClass",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Initiate the OIDC Client flow with NIH credentials to obtain the OAuth authorization code @manual"
+  }, {
+    "name" : "package",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "a8d9f99702c4c1b3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1574746953368,
+        "stop" : 1574746979165,
+        "duration" : 25797
+      }
+    }, {
+      "uid" : "202dd177a55f2dd0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1574721939545,
+        "stop" : 1574721941364,
+        "duration" : 1819
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ "@manual" ]
+  },
+  "source" : "da72c509580c40a9.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,98 @@
+{
+  "uid" : "bdee33a1ac733cc3",
+  "name" : "Try to get Google Credentials as a client @manual",
+  "fullName" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:.Try to get Google Credentials as a client @manual",
+  "historyId" : "f0121fb5d9c5321266e60f8ccb21ef",
+  "time" : {
+    "start" : 1574747136545,
+    "stop" : 1574747136909,
+    "duration" : 364
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "fenceProps is not defined",
+  "statusTrace" : "ReferenceError: fenceProps is not defined\n                    at Test.<anonymous> (/Users/marcelocostarodrigues/workspace/gen3-qa/suites/apis/dataStageOIDCFlowTest.js:285:68)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "fenceProps is not defined",
+    "statusTrace" : "ReferenceError: fenceProps is not defined\n                    at Test.<anonymous> (/Users/marcelocostarodrigues/workspace/gen3-qa/suites/apis/dataStageOIDCFlowTest.js:285:68)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "Object: createTempGoogleCreds ",
+      "time" : {
+        "start" : 1574747136734,
+        "stop" : 1574747136909,
+        "duration" : 175
+      },
+      "status" : "failed",
+      "statusMessage" : "ReferenceError: fenceProps is not defined\n                    at Test.<anonymous> (/Users/marcelocostarodrigues/workspace/gen3-qa/suites/apis/dataStageOIDCFlowTest.js:285:68)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ {
+        "name" : "I send post request \"/user/credentials/google/\", {}, {\"accessTokenHeader\":{\"Accept\":\"application/json\",\"Authorization\":\"bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImZlbmNlX2tleV8yMDE5LTAxLTI5VDIyOjA1OjM4WiJ9.eyJwdXIiOiJhY2Nlc3MiLCJhdWQiOlsib3BlbmlkIiwidXNlciIsImRhdGEiLCJnb29nbGVfY3JlZGVudGlhbHMiLCJqa3d6V1ZVczZueHZGa0FhWUZvQ2UwS01vUVRUTXFTRTI3U2xRS21aIl0sInN1YiI6Ijg1MSIsImlzcyI6Imh0dHBzOi8vZ2VuMy5kYXRhc3RhZ2UuaW8vdXNlciIsImlhdCI6MTU3NDc0NzEwMSwiZXhwIjoxNTc0NzU5MTAxLCJqdGkiOiJmN2U2NDA2Yi1mOTcxLTQ2OWMtYmQ0MS05YmQ4ZmU4YzMwODAiLCJjb250ZXh0Ijp7InVzZXIiOnsibmFtZSI6Im1hcmNlbG9jQHVjaGljYWdvLmVkdSIsImlzX2FkbWluIjpmYWxzZSwiZ29vZ2xlIjp7InByb3h5X2dyb3VwIjoiMDE5YzZ5MTgydzhsN2ttIn0sInByb2plY3RzIjp7fX19LCJhenAiOiJqa3d6V1ZVczZueHZGa0FhWUZvQ2UwS01vUVRUTXFTRTI3U2xRS21aIn0.mX1ZqYfUbeXn_h4y0GX44ubn2LVbBfEThy96z6aZWzp1JLWzjxiE9gWgjnne1DwN8Ojp9PyZyFXD1BgeqLIfI66cANc1bdtkR2NkGvKDM3fiUcqLkDluELddDV5RWf7q92G4V2ePQvhwJYW8wQKa6VvnIrEo1EdegD2VX8Wtjx1UB_neKpHdGRgGA1yYs6GFI3O0LfZSeQ7pSd9fdQtbzLgmkuetdy69jQK_uXB6DybaZUTPS4DjxmpVHy_8R_lDlTvGWSh0RX9z5ZAMEww2cjGy7OV0K_pjAPepkXy6auWNpYGx6eWobStTfJBGIlNSZ36nLZHOnYzsjoYI41dJGg\"}}",
+        "time" : {
+          "start" : 1574747136734,
+          "stop" : 1574747136881,
+          "duration" : 147
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "308fb73fe8c86916",
+      "name" : "Last Seen Screenshot",
+      "source" : "308fb73fe8c86916.png",
+      "type" : "image/png",
+      "size" : 10592
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@manual"
+  }, {
+    "name" : "suite",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testClass",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Try to get Google Credentials as a client @manual"
+  }, {
+    "name" : "package",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@manual" ]
+  },
+  "source" : "bdee33a1ac733cc3.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,92 @@
+{
+  "uid" : "90cbe51cc7590a80",
+  "name" : "Test Fence's public keys endpoint @mehmeh",
+  "fullName" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:.Test Fence's public keys endpoint @mehmeh",
+  "historyId" : "5d7d90598839acaa56cbf86d3cb716a5",
+  "time" : {
+    "start" : 1574795165344,
+    "stop" : 1574795176569,
+    "duration" : 11225
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "I send get request \"https://gen3.datastage.io/user/jwt/keys\"",
+      "time" : {
+        "start" : 1574795165587,
+        "stop" : 1574795170237,
+        "duration" : 4650
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@mehmeh"
+  }, {
+    "name" : "suite",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testClass",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test Fence's public keys endpoint @mehmeh"
+  }, {
+    "name" : "package",
+    "value" : "Testing OIDC flow and pre-signed URL to check tokens - https://ctds-planx.atlassian.net/browse/PXP-4649:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "46955ebee3593103",
+      "status" : "failed",
+      "statusDetails" : "getaddrinfo ENOTFOUND gen3.datastage.ioundefined",
+      "time" : {
+        "start" : 1574795110290,
+        "stop" : 1574795110556,
+        "duration" : 266
+      }
+    }, {
+      "uid" : "97007d34c9c77156",
+      "status" : "failed",
+      "statusDetails" : "publicKeysEndpoint is not defined",
+      "time" : {
+        "start" : 1574795087543,
+        "stop" : 1574795088320,
+        "duration" : 777
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ "@mehmeh" ]
+  },
+  "source" : "90cbe51cc7590a80.json",
+  "parameterValues" : [ ]
+}
