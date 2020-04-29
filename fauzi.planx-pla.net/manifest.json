@@ -26,8 +26,8 @@
     "dashboard": "quay.io/cdis/gen3-statics:master",
     "datasim": "quay.io/cdis/data-simulator:0.1.1"
   },
-  "arborist": {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-    "deployment_version": "2"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+  "arborist": {
+    "deployment_version": "2"
   },
   "jupyterhub": {
     "enabled": "no"

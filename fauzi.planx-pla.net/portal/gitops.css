@@ -1,0 +1,24 @@
+:root {
+  --primary-color: #c02f42;
+  --secondary-color: #6d6e70;
+}
+
+.nav-bar__logo {
+  padding: 15px 0;
+}
+
+.nav-bar__logo-img {
+  height: 50px;
+}
+
+@media screen and (max-width: 1290px) {
+  .index-page__bar-chart {
+    margin-left: -160px;
+  }
+}
+
+.input-range__track--active,
+.rc-slider-track,
+.g3-single-select-filter__count .g3-icon--under {
+  background-color: var(--primary-color);
+}
