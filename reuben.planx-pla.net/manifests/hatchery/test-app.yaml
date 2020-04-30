@@ -3,19 +3,18 @@ services:
    webapp:
       image: "python:3.8-buster"
       volumes:
-         - data-volume/data:/usr/local/renci/data
+         - ./data-volume/:/data/
       entrypoint: [ /bin/bash ]
       command:
         - "-c"
         - "cd /tmp && mkdir -p lw-workspace/proxy; echo '<html><body>Hello!</body></html>' > lw-workspace/proxy/index.html; /usr/bin/python3 -m http.server 8000"
       ports: 
-         - 8000:80
+         - "9880:8000"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8000/lw-workspace/proxy/index.html"]
         interval: 1m30s
         timeout: 10s
         retries: 3
-        start_period: 40s
 
    worker:
       image: "ubuntu:18.04"
@@ -35,4 +34,3 @@ services:
           reservations:
             cpus: '0.25'
             memory: 20M
-

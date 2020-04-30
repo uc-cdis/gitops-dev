@@ -3,7 +3,7 @@ services:
    webapp:
       image: "quay.io/occ_data/jupyternotebook:1.7.4"
       volumes:
-         - data-volume/data:/data
+         - ./data-volume/:/data/
       entrypoint:
         - "start-notebook.sh"
       command:
@@ -11,13 +11,12 @@ services:
         - "--NotebookApp.password=''"
         - "--NotebookApp.token=''"
       ports: 
-         - 8888:80
+         - "9880:8888"
       healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:8888/lw-workspace/proxy/"]
         interval: 1m30s
         timeout: 10s
         retries: 3
-        start_period: 40s
       deploy:
         resources:
           limits:

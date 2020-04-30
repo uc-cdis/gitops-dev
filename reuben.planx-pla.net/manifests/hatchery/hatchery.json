@@ -401,6 +401,11 @@
       "type": "dockstore-compose:1.0.0",
       "path": "/hatchery-more-configs/notebook-app.yaml",
       "name": "DockstoreNotebook"
+    },
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/dicom-compose.yaml",
+      "name": "DockstoreDicom"
     }
   ]
 }
