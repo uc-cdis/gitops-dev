@@ -1,7 +1,7 @@
 version: '3'
 services:
    webapp:
-      image: "quay.io/occ_data/jupyternotebook:1.7.4"
+      image: "quay.io/cdis/jupyter-notebook:master"
       volumes:
          - ${DATA_VOLUME}:/data
       entrypoint:
