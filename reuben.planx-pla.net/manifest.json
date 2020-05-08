@@ -8,7 +8,6 @@
     "ambassador-gen3": "quay.io/datawire/ambassador:0.82.0",
     "ambtest": "kennship/http-echo",
     "arborist": "quay.io/cdis/arborist:master",
-    "arranger": "quay.io/cdis/arranger:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "covid19-etl": "quay.io/cdis/covid19-etl:1.0.7",
     "covid19-idph-etl": "quay.io/cdis/covid19-etl:1.0.7",
