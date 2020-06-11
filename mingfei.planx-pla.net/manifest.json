@@ -24,7 +24,7 @@
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
     "manifestservice": "quay.io/cdis/manifestservice:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
-    "guppy": "quay.io/cdis/guppy:feat_new-ep",
+    "guppy": "quay.io/cdis/guppy:master",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "hatchery": "quay.io/cdis/hatchery:master",
     "datasim": "quay.io/cdis/data-simulator:0.1.1"
@@ -222,13 +222,5 @@
     "log_level": "DEBUG",
     "config_index": "mingfei-brain_array-config",
     "auth_filter_field": "auth_resource_path"
-  },
-"scaling": {
-    "portal": {
-      "strategy": "auto",
-      "min": 1,
-      "max": 2,
-      "targetCpu": 40
-    }
- }
+  }
 }

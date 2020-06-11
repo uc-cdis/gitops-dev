@@ -151,6 +151,7 @@
   "requiredCerts": [],
   "featureFlags": {
     "explorer": true,
+    "explorerPublic": true,
     "noIndex": true
   },
   "explorerConfig":[
@@ -321,9 +322,7 @@
             "title": "Subject",
             "fields": [
               "project_id",
-              "subject_id",
-              "visits.visit_label",
-              "visits.days_to_visit"
+              "subject_id"
             ]
           }
         ]
@@ -331,6 +330,10 @@
       "table": {
         "enabled": true,
         "fields": [
+          "project_id",
+          "subject_id",
+          "visits.days_to_visit",
+          "visits.follow_ups.follow_up_label"
         ]
       },
       "guppyConfig": {
@@ -362,16 +365,6 @@
       "resource": "/workspace",
       "method": "access",
       "service": "jupyterhub"
-    },
-    "Query": {
-      "resource": "/query_page",
-      "method": "access",
-      "service": "query_page"
-    },
-    "Query Data": {
-      "resource": "/query_page",
-      "method": "access",
-      "service": "query_page"
     }
   }
 }
