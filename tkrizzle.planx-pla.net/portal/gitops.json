@@ -1,5 +1,7 @@
 {
   "gaTrackingId": "UA-119127212-1",
+  "useArboristUI": true,
+  "showArboristAuthzOnProfile": true,
   "dataExplorerConfig": {
     "charts": {
       "project_id": {
