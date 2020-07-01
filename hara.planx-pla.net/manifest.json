@@ -25,9 +25,8 @@
     "manifestservice": "quay.io/cdis/manifestservice:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
     "guppy": "quay.io/cdis/guppy:fix_tiered-access",
-    "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "hatchery": "quay.io/cdis/hatchery:master",
-    "datasim": "quay.io/cdis/data-simulator:0.1.1"
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "hatchery": "quay.io/cdis/hatchery:master"
   },
   "arborist": {
     "deployment_version": "2"
