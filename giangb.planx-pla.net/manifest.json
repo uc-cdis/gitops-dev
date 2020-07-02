@@ -25,6 +25,8 @@
     "spark": "quay.io/cdis/gen3-spark:master",
     "tube": "quay.io/cdis/tube:master",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
+    "aws-bucket-manifest": "quay.io/cdis/bucket-manifest:master",
+    "gcp-bucket-manifest": "quay.io/cdis/google-bucket-manifest:master", 
     "dashboard": "quay.io/cdis/gen3-statics:master"
   },
   "arborist": {
