@@ -5,10 +5,10 @@
     "sidecar": {
       "cpu-limit": "1.0",
       "memory-limit": "256Mi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:2020.06",
+      "image": "quay.io/cdis/gen3fuse-sidecar:feat_PFB-cohort-guid",
       "env": {
         "NAMESPACE": "default",
-        "HOSTNAME": "gen3.biodatacatalyst.nhlbi.nih.gov"
+        "HOSTNAME": "zakir.planx-pla.net"
       },
       "args": [],
       "command": [
