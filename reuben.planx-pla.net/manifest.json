@@ -4,15 +4,16 @@
     "That's all I have to say"
   ],
   "versions": {
-    "ambassador": "quay.io/datawire/ambassador:0.82.0",
-    "ambassador-gen3": "quay.io/datawire/ambassador:0.82.0",
+	  "frickjack": "4",
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "ambassador-gen3": "quay.io/datawire/ambassador:1.4.2",
     "ambtest": "kennship/http-echo",
     "arborist": "quay.io/cdis/arborist:master",
-    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.9",
     "covid19-etl": "quay.io/cdis/covid19-etl:1.0.7",
     "covid19-idph-etl": "quay.io/cdis/covid19-etl:1.0.7",
     "covid19-jhu-etl": "quay.io/cdis/covid19-etl:1.0.7",
-    "dashboard": "quay.io/cdis/gen3-statics:master",
+    "dashboard": "quay.io/cdis/gen3-statics:2020.08",
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "google-sa-validation": "frickjack",
@@ -31,7 +32,8 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "wts": "quay.io/cdis/workspace-token-service:integration202002",
+    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
+    "wts": "quay.io/cdis/workspace-token-service:master",
     "tube": "quay.io/cdis/tube:master"
   },
   "arborist": {
@@ -40,20 +42,11 @@
   "indexd": {
     "arborist": "true"
   },
-  "arranger": {
-    "project_id": "dev",
-    "auth_filter_field": "gen3_resource_path",
-    "auth_filter_node_types": [
-      "subject"
-    ]
-  },
-  "jupyterhub": {
-    "enabled": "no"
-  },
   "google": {
     "enabled": "no"
   },
   "global": {
+    "dispatcher_job_num": 10,
     "environment": "devplanetv1",
     "hostname": "reuben.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
@@ -65,6 +58,9 @@
     "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
     "netpolicy": "on",
     "lb_type": "public"
+  },
+  "portal": {
+    "GEN3_BUNDLE": "commons"
   },
   "scaling": {
     "arborist": {
@@ -105,6 +101,11 @@
     ],
     "config_index": "jenkins_configs_alias",
     "auth_filter_field": "auth_resource_path"
+  },
+  "ssjdispatcher": {
+    "job_images": {
+      "indexing": "quay.io/cdis/indexs3client:master"
+    }
   },
   "canary": {
     "default": 0
