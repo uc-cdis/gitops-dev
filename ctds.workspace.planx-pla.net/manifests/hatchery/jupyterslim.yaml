@@ -4,12 +4,16 @@ services:
       image: "quay.io/cdis/jupyter-notebook:master"
       volumes:
          - ${DATA_VOLUME}:/data
+         - ${USER_VOLUME}:/home/jovyan/pd
       entrypoint:
         - "start-notebook.sh"
       command:
         - "--NotebookApp.base_url=/lw-workspace/proxy"
         - "--NotebookApp.password=''"
         - "--NotebookApp.token=''"
+      environment:
+        - NAMESPACE=ctds-workspace
+        - HOSTNAME=ctds.workspace.planx-pla.net
       ports: 
          - "${SERVICE_PORT}:8888"
       healthcheck:
