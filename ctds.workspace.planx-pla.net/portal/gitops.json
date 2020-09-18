@@ -34,6 +34,14 @@
         }
       ]
     },
+    "topBar": {
+      "items": [
+        {
+          "link": "https://gen3.org/resources/user/",
+          "name": "Documentation"
+        }
+      ]
+    },
     "login": {
       "title": "Gen3 Workspace",
       "subTitle": "Explore, Analyze, and Share Data",
