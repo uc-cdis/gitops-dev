@@ -7,24 +7,24 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "arborist": "quay.io/cdis/arborist:master",
-    "arranger": "quay.io/cdis/arranger:master",
-    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2020.09",
+    "arranger": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arranger:2020.09",
+    "arranger-adminapi": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arranger-adminapi:2020.09",
+    "arranger-dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arranger-gen3-statics:2020.09",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:master",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2020.09",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "indexd": "quay.io/cdis/indexd:master",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2020.09",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "peregrine": "quay.io/cdis/peregrine:master",
-    "pidgin": "quay.io/cdis/pidgin:master",
-    "portal": "quay.io/cdis/data-portal:master",
-    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
-    "sower": "quay.io/cdis/sower:master",
-    "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master",
-    "dashboard": "quay.io/cdis/gen3-statics:master"
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2020.09",
+    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2020.09",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2020.09",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2020.09",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2020.09",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2020.09",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2020.09",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2020.09",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2020.09"
   },
   "arborist": {
     "deployment_version": "2"
@@ -38,7 +38,7 @@
       "action": "export",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-export:master",
+        "image": "quay.io/cdis/pelican-export:2020.09",
         "pull_policy": "Always",
         "env": [
           {
@@ -102,7 +102,7 @@
       "action": "import",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/pelican-import:master",
+        "image": "quay.io/cdis/pelican-import:2020.09",
         "pull_policy": "Always",
         "env": [
           {
