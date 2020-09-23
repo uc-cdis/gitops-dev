@@ -10,9 +10,8 @@ services:
       #   This seems to break things worse ...
       - "USER_NAME=gen3"
       - "VNC_PW=gen3"
-    #ports: 
-    #  - ${SERVICE_PORT}:8080
-    network_mode: service:nginx
+    ports: 
+      - 8080:8080
     deploy:
       resources:
         limits:
@@ -21,15 +20,3 @@ services:
         reservations:
           cpus: '0.3'
           memory: 200M
-  nginx:
-    # testing against a local build of the Dockerfile
-    image: "quay.io/cdis/ws-nginx-proxy:2020.09"
-    ports: 
-      - "${SERVICE_PORT}:7780"
-    environment:
-      - "APP_PORT=8080"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:7780/_proxy_status"]
-      interval: 1m30s
-      timeout: 10s
-      retries: 3

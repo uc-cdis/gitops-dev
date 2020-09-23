@@ -1,0 +1,23 @@
+---
+version: '3.5'
+services:
+  wetty-sshd:
+    image: quay.io/cdis/ws-sshd:2020.09.1
+    network_mode: service:wetty
+    container_name: 'wetty-sshd'
+    volumes:
+      - ${DATA_VOLUME}:/data
+      - ${USER_VOLUME}:/home/gen3/pd
+  wetty:
+    image: quay.io/cdis/wetty:2020.09.1
+    container_name: wetty
+    tty: true
+    #network_mode: service:nginx
+    ports:
+      - '${SERVICE_PORT}:3000'
+    environment:
+      SSHHOST: 'localhost'
+      SSHPASS: gen3
+      SSHUSER: gen3
+      SSHPORT: '22'
+      BASE: /lw-workspace/proxy/
