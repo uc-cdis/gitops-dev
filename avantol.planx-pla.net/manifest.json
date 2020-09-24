@@ -81,7 +81,7 @@
       "serviceAccountName": "jobs-avantol-planx-pla-net",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/gen3/get-dbgap-metadata:feat_gen3-update",
+        "image": "quay.io/cdis/get-dbgap-metadata:feat_gen3-update",
         "pull_policy": "Always",
         "env": [],
         "volumeMounts": [
@@ -112,7 +112,7 @@
       "serviceAccountName": "jobs-avantol-planx-pla-net",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/gen3/manifest-indexing:feat_gen3-update",
+        "image": "quay.io/cdis/manifest-indexing:feat_gen3-update",
         "pull_policy": "Always",
         "env": [
           {
@@ -153,7 +153,7 @@
       "serviceAccountName": "jobs-avantol-planx-pla-net",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/gen3/cdis/manifest-merging:feat_gen3-update",
+        "image": "quay.io/cdis/cdis/manifest-merging:feat_gen3-update",
         "pull_policy": "Always",
         "env": [
           {
@@ -194,7 +194,7 @@
       "serviceAccountName": "jobs-avantol-planx-pla-net",
       "container": {
         "name": "job-task",
-        "image": "quay.io/cdis/gen3/download-indexd-manifest:feat_gen3-update",
+        "image": "quay.io/cdis/download-indexd-manifest:feat_gen3-update",
         "pull_policy": "Always",
         "env": [
           {
