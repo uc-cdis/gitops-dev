@@ -399,8 +399,8 @@
     },
     {
       "type": "dockstore-compose:1.0.0",
-      "path": "/hatchery-more-configs/notebook-app.yaml",
-      "name": "DockstoreNotebook"
+      "path": "/hatchery-more-configs/jupyterslim.yaml",
+      "name": "Jupyter slim"
     },
     {
       "type": "dockstore-compose:1.0.0",
@@ -411,6 +411,21 @@
       "type": "dockstore-compose:1.0.0",
       "path": "/hatchery-more-configs/dicom2.yaml",
       "name": "Dicom2"
+    },
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/rstudio3_6.yml",
+      "name": "RStudio3.6"
+    },
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/rstudio4.yml",
+      "name": "RStudio4"
+    },
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/wetty.yml",
+      "name": "web-tty"
     }
   ]
 }

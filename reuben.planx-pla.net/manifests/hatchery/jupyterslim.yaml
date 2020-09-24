@@ -4,6 +4,9 @@ services:
       image: "quay.io/cdis/jupyter-slim:master"
       volumes:
          - ${DATA_VOLUME}:/data
+      environment:
+        - NAMESPACE=reuben
+        - HOSTNAME=reuben.planx-pla.net
       entrypoint:
         - "start-notebook.sh"
       command:

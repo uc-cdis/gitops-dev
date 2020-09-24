@@ -1,4 +1,3 @@
-ENABLE_DB_MIGRATION: true
 S3_BUCKETS:
   'cdis-presigned-url-test':
     role-arn: 'arn:aws:iam::707767160287:role/bucket_reader_writer_to_cdistest-presigned-url_role'
