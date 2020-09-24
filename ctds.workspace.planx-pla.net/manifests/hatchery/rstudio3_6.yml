@@ -1,0 +1,38 @@
+version: '3'
+services:
+    webapp:
+      image: "quay.io/cdis/rstudio3.6:2020.09"
+      volumes:
+         - ${DATA_VOLUME}:/data
+         - ${USER_VOLUME}:/home/rstudio/pd
+      #ports:
+      #   - "${SERVICE_PORT}:8787"
+      environment:
+         - DISABLE_AUTH=true
+         - NAMESPACE=ctds-workspace
+         - HOSTNAME=ctds.workspace.planx-pla.net
+      network_mode: service:nginx
+      healthcheck:
+        test: ["CMD", "wget", "-O", "-", "http://localhost:8787/"]
+        interval: 1m30s
+        timeout: 10s
+        retries: 3
+      deploy:
+        resources:
+          limits:
+            cpus: '0.90'
+            memory: 1024M
+          reservations:
+            cpus: '0.5'
+            memory: 512M
+    nginx:
+      image: "quay.io/cdis/ws-nginx-proxy:2020.09"
+      ports: 
+        - "${SERVICE_PORT}:7780"
+      environment:
+        - "APP_PORT=8787"
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:7780/_proxy_status"]
+        interval: 1m30s
+        timeout: 10s
+        retries: 3

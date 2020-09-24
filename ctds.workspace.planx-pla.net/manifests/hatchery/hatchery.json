@@ -18,6 +18,21 @@
       "type": "dockstore-compose:1.0.0",
       "path": "/hatchery-more-configs/jupyterslim.yaml",
       "name": "Jupyter Notebook"
+    },
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/rstudio3_6.yml",
+      "name": "RStudio3.6"
+    },
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/rstudio4.yml",
+      "name": "RStudio4"
+    },
+    {
+      "type": "dockstore-compose:1.0.0",
+      "path": "/hatchery-more-configs/wetty.yml",
+      "name": "web-tty"
     }
   ]
 }
