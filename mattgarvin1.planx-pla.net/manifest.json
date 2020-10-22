@@ -214,8 +214,9 @@
         "image": "quay.io/cdis/mariner-engine:feat_no-fuse",
         "pull_policy": "always",
         "command": [
-          "/bin/sh",
-          "/engineDockerrun.sh"
+          "/mariner",
+          "run", 
+          "$RUN_ID"
         ],
         "resources": {
           "limits": {
