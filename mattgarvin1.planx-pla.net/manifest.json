@@ -216,7 +216,7 @@
         "command": [
           "/mariner",
           "run", 
-          "$RUN_ID"
+          "$(RUN_ID)"
         ],
         "resources": {
           "limits": {
@@ -254,7 +254,7 @@
           "prestop": [
             "/bin/bash",
             "-c",
-            "fusermount -u -z /$COMMONS_DATA"
+            "fusermount -u -z /$(COMMONS_DATA)"
           ]
         },
         "resources": {
