@@ -39,9 +39,6 @@
   "jupyterhub": {
     "enabled": "yes"
   },
-  "tube": {
-    "es_index_name": "michael"
-  },
   "sower": [
     {
       "name": "pelican-export",
