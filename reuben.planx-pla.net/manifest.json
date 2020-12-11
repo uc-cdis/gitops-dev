@@ -22,7 +22,7 @@
     "indexd": "quay.io/cdis/indexd:master",
     "manifestservice": "quay.io/cdis/manifestservice:master",
     "mariner": "quay.io/cdis/mariner-server:1.0.0",
-    "metadata": "quay.io/cdis/metadata-service:status-endpoint",
+    "metadata": "quay.io/cdis/metadata-service:master",
     "peregrine": "quay.io/cdis/peregrine:master",
     "peregrine-canary": "quay.io/cdis/peregrine:master",
     "sidecar": "quay.io/cdis/sidecar:1.3.1-sidecar",
