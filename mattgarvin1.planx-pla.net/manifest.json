@@ -16,7 +16,7 @@
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "indexd": "quay.io/cdis/indexd:master",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "mariner": "quay.io/cdis/mariner-server:feat_no-fuse",
+    "mariner": "quay.io/cdis/mariner-server:1.1.1",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
     "peregrine": "quay.io/cdis/peregrine:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
@@ -211,7 +211,7 @@
     "containers": {
       "engine": {
         "name": "mariner-engine",
-        "image": "quay.io/cdis/mariner-engine:feat_no-fuse",
+        "image": "quay.io/cdis/mariner-engine:1.1.1",
         "pull_policy": "always",
         "command": [
           "/mariner",
@@ -227,7 +227,7 @@
       },
       "s3sidecar": {
         "name": "mariner-s3sidecar",
-        "image": "quay.io/cdis/mariner-s3sidecar:feat_no-fuse",
+        "image": "quay.io/cdis/mariner-s3sidecar:1.1.1",
         "pull_policy": "always",
         "command": [
           "/sidecar"
