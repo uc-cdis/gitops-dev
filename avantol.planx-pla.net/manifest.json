@@ -66,11 +66,12 @@
     "containers": {
       "engine": {
         "name": "mariner-engine",
-        "image": "quay.io/cdis/mariner-engine:1.0.0",
+        "image": "quay.io/cdis/mariner-engine:1.1.1",
         "pull_policy": "always",
         "command": [
-          "/bin/sh",
-          "/engineDockerrun.sh"
+          "/mariner",
+          "run", 
+          "$(RUN_ID)"
         ],
         "resources": {
           "limits": {
@@ -81,19 +82,11 @@
       },
       "s3sidecar": {
         "name": "mariner-s3sidecar",
-        "image": "quay.io/cdis/mariner-s3sidecar:1.0.0",
+        "image": "quay.io/cdis/mariner-s3sidecar:1.1.1",
         "pull_policy": "always",
         "command": [
-          "/bin/sh",
-          "/s3sidecarDockerrun.sh"
+          "/sidecar"
         ],
-        "lifecycle": {
-          "prestop": [
-            "/bin/sh",
-            "-c",
-            "fusermount -u -z /$ENGINE_WORKSPACE"
-          ]
-        },
         "resources": {
           "limits": {
             "memory": "256Mi",
