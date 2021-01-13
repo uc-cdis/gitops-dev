@@ -38,7 +38,7 @@
     "mariner": {
     "storage": {
       "s3": {
-        "name": "workflow-engine-garvin",
+        "name": "devplanetv1--avantol--mariner-707767160287",
         "region": "us-east-1"
       }
     },
