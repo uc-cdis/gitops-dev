@@ -2,22 +2,30 @@
 version: '3.5'
 services:
   wetty-sshd:
-    #image: sshd:reuben
-    image: quay.io/cdis/ws-sshd:2020.09.1
+    image: quay.io/cdis/awshelper:master
+    #image: quay.io/cdis/ws-sshd:2020.09.1
     network_mode: service:nginx
     container_name: 'wetty-sshd'
     environment:
-        - NAMESPACE=reuben
         - HOSTNAME=reuben.planx-pla.net
-        - https_proxy=http://cloud-proxy.internal.io:3128
-        - http_proxy=http://cloud-proxy.internal.io:3128
-        - no_proxy=localhost,127.0.0.1,127.0.0.11,169.254.169.254,.internal.io,s3.us-east-1.amazonaws.com,.local
+        - NAMESPACE=reuben
     volumes:
       - ${DATA_VOLUME}:/data
-      - ${USER_VOLUME}:/home/gen3/pd
+      - ${USER_VOLUME}:/home/ubuntu/pd
+    entrypoint: [ "/bin/bash" ]
+    command:
+      - "-c"
+        # move cloud-automation out of the way for hatchery apps
+      - "(cd /home/ubuntu && mv cloud-automation .cloud-automation && echo \"export NAMESPACE=$NAMESPACE\" >> .bashrc); exec /bin/bash /opt/usersshd/sshdStart.sh"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "nc -q 1 localhost 2222 < /dev/null"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+
   wetty:
     #image: wetty:reuben
-    image: quay.io/cdis/ws-wetty:2020.09.1
+    image: quay.io/cdis/ws-wetty:2021.01
     network_mode: service:nginx
     container_name: wetty
     tty: true
@@ -27,18 +35,19 @@ services:
     environment:
       - SSHHOST=localhost
       - SSHPASS=gen3
-      - SSHUSER=gen3
-      - SSHPORT=22
+      - SSHUSER=ubuntu
+      - SSHPORT=2222
       - BASE=/lw-workspace/proxy/wetty/
+      - TITLE=Gen3Terminal
   nginx:
     # testing against a local build of the Dockerfile
-    image: "quay.io/cdis/ws-nginx-proxy:2020.09.1"
+    image: "quay.io/cdis/ws-nginx-proxy:2021.01"
     ports: 
       - "${SERVICE_PORT}:7780"
     environment:
       - "APP_PORT=3000"
-      - "APP_PREFIX=/lw-workspace/proxy/wetty"
-      - "IN_PREFIX=/lw-workspace/proxy/wetty"
+      - "APP_PREFIX=lw-workspace/proxy/wetty"
+      - "IN_PREFIX=lw-workspace/proxy/wetty"
       - "REDIRECT_PREFIX=https://reuben.planx-pla.net"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:7780/_proxy_status"]
