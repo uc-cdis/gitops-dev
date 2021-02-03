@@ -40,6 +40,8 @@ The `ttyadmin` arborist policy grants access to the admin console.
 kubectl get configmap fence -o json | jq -r '.data["user.yaml"]' | tee user.yaml
 # edit user.yaml as necessary
 gen3 update_config fence ./user.yaml
+gen3 job run useryaml
+gen3 job logs useryaml -f
 ```
 
 ### Changing hatchery config
