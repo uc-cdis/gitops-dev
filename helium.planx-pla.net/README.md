@@ -25,7 +25,7 @@ with the helium github repo.
 
 ```
 if [[ ! -d cdis-manifest ]]; then
-  git clone https://github.com/your-repo.git
+  git clone https://github.com/your-repo.git cdis-manifest
 fi
 (cd cdis-manifest && git pull --prune)
 ```
