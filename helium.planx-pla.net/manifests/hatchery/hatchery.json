@@ -8,7 +8,7 @@
     "image": "quay.io/cdis/gen3fuse-sidecar:2021.01",
     "env": {"NAMESPACE":"helium", "HOSTNAME": "helium.planx-pla.net"},
     "args": [],
-    "command": ["/bin/bash", "/sidecarDockerrun.sh"],
+    "command": ["/bin/bash", "-c", "count=0; while ! /sidecarDockerrun.sh && [[ $count -lt 10 ]]; do echo 'failed launch - sleep and retry'; sleep 5; done;"],
     "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
   },
   "containers": [
