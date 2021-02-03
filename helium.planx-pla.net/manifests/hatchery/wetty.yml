@@ -11,7 +11,7 @@ services:
         - NAMESPACE=helium
     volumes:
       - ${DATA_VOLUME}:/data
-      - ${USER_VOLUME}:/home/ubuntu/pd
+      #- ${USER_VOLUME}:/home/ubuntu/pd
     entrypoint: [ "/bin/bash" ]
     command:
       - "-c"
