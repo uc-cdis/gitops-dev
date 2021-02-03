@@ -68,6 +68,7 @@ kubectl logs -n jupyter-pods-helium the-pod-name
 * the environment gets spun down every night along with the rest of our dev environments, so they'll have to ping devops to bring it up when they want to work: 
 ```
 gen3 roll all --fast
+gen3 roll tty
 gen3 ec2 asg-set-capacity jupyter +3
 ```
 
