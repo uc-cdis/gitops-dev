@@ -24,7 +24,6 @@ services:
       retries: 3
 
   wetty:
-    #image: wetty:reuben
     image: quay.io/cdis/ws-wetty:2021.01
     network_mode: service:nginx
     container_name: wetty
@@ -48,7 +47,7 @@ services:
       - "APP_PORT=3000"
       - "APP_PREFIX=lw-workspace/proxy/wetty"
       - "IN_PREFIX=lw-workspace/proxy/wetty"
-      - "REDIRECT_PREFIX=https://reuben.planx-pla.net"
+      - "REDIRECT_PREFIX=https://helium.planx-pla.net"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:7780/_proxy_status"]
       interval: 1m30s
