@@ -11,7 +11,7 @@
     "arborist": "quay.io/cdis/arborist:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.9",
     "fence": "quay.io/cdis/fence:master",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.10.2-debian-cloudwatch-1.0",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "guppy": "quay.io/cdis/guppy:master",
     "hatchery": "quay.io/cdis/hatchery:master",
     "indexd": "quay.io/cdis/indexd:master",
