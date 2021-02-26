@@ -31,18 +31,18 @@
     "projectDetails": "boardCounts"
   },
   "components": {
-    "appName": "The Michael Commons Portal",
+    "appName": "Will's Commons Portal",
     "index": {
       "introduction": {
-        "heading": "Michael Commons",
-        "text": "The Michael Commons supports the management, analysis and sharing of Michael for the research community and aims to accelerate discovery and development of Michael",
+        "heading": "Will Commons",
+        "text": "The Will Commons supports the management, analysis and sharing of Will for the research community and aims to accelerate discovery and development of Will",
         "link": "/submission"
       },
       "buttons": [
         {
           "name": "Define Data Field",
           "icon": "data-field-define",
-          "body": "The Michael Commons defines its data in a cool way.",
+          "body": "The Will Commons defines its data in a cool way.",
           "link": "/DD",
           "label": "Learn less"
         },
@@ -56,7 +56,7 @@
         {
           "name": "Access Data",
           "icon": "data-access",
-          "body": "Bla bla bla Michael.",
+          "body": "Bla bla bla Will.",
           "link": "/query",
           "label": "Query data"
         },
@@ -70,7 +70,7 @@
       ]
     },
     "navigation": {
-      "title": "Michael Commons",
+      "title": "Will Commons",
       "items": [
         {
           "icon": "dictionary",
@@ -111,7 +111,7 @@
       ]
     },
     "login": {
-      "title": "Michaels Commons",
+      "title": "Will's Commons",
       "subTitle": "search, compare, and ignore data",
       "text": "A centralized, cloud-based discovery portal that is super buzzword compliant impacting the brain.",
       "contact": "If you have any questions about access or the registration process, please contact ",
@@ -308,7 +308,7 @@
       }
     ],
     "dropdowns": {}
-  },  
+  },
   "useArboristUI": true,
   "showArboristAuthzOnProfile": true
 }

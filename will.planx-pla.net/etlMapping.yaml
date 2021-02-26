@@ -1,5 +1,5 @@
 mappings:
-  - name: mpingram_etl
+  - name: will_etl
     doc_type: case
     type: aggregator
     root: case
@@ -45,7 +45,7 @@ mappings:
           - name: data_type
             src: data_type
             fn: set
-  - name: mpingram_file
+  - name: will_file
     doc_type: file
     type: collector
     root: None
