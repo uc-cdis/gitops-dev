@@ -199,7 +199,7 @@
         "env": {},
         "args": [
           "--NotebookApp.base_url=/lw-workspace/proxy/",
-          "--NotebookApp.password=''", // pragma: allowlist secret
+          "--NotebookApp.password=''",
           "--NotebookApp.token=''"
         ],
         "command": [
