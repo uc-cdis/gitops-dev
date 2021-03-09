@@ -1,0 +1,64 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "arborist": "quay.io/cdis/arborist:master",
+    "augur": "quay.io/cdis/gen3-augur:fix_docker2",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.9",
+    "fence": "quay.io/cdis/fence:master",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.10.2-debian-cloudwatch-1.0",
+    "guppy": "quay.io/cdis/guppy:master",
+    "hatchery": "quay.io/cdis/hatchery:master",
+    "indexd": "quay.io/cdis/indexd:master",
+    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
+    "peregrine": "quay.io/cdis/peregrine:master",
+    "pidgin": "quay.io/cdis/pidgin:master",
+    "portal": "quay.io/cdis/data-portal:master",
+    "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
+    "sheepdog": "quay.io/cdis/sheepdog:master",
+    "spark": "quay.io/cdis/gen3-spark:master",
+    "tube": "quay.io/cdis/tube:master",
+    "dashboard": "quay.io/cdis/gen3-statics:master"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "global": {
+    "environment": "devplanetv1",
+    "hostname": "dev.planx-pla.net",
+    "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
+    "portal_app": "dev",
+    "sync_from_dbgap": "False",
+    "kube_bucket": "kube_bucket.devplanetv1.gen3",
+    "logs_bucket": "logs-devplanetv1-gen3",
+    "netpolicy": "on",
+    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml"
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "dev_case",
+        "type": "case"
+      },
+      {
+        "index": "dev_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "dev_case-array-config",
+    "auth_filter_field": "auth_resource_path"
+  },
+  "canary": {
+    "default": 0
+  }
+}
