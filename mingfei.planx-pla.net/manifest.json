@@ -19,15 +19,12 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:0.3.24",
-    "dashboard": "quay.io/cdis/gen3-statics:master",
-    "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
+    "tube": "quay.io/cdis/tube:master",
     "manifestservice": "quay.io/cdis/manifestservice:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
     "guppy": "quay.io/cdis/guppy:master",
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
-    "hatchery": "quay.io/cdis/hatchery:master",
-    "datasim": "quay.io/cdis/data-simulator:0.1.1"
+    "hatchery": "quay.io/cdis/hatchery:master"
   },
   "arborist": {
     "deployment_version": "2"
@@ -35,16 +32,14 @@
   "indexd": {
     "arborist": "true"
   },
-  "sower": [
-    {
+  "sower": [{
       "name": "pelican-export",
       "action": "export",
       "container": {
         "name": "job-task",
         "image": "quay.io/cdis/pelican-export:master",
         "pull_policy": "Always",
-        "env": [
-          {
+        "env": [{
             "name": "DICTIONARY_URL",
             "valueFrom": {
               "configMapKeyRef": {
@@ -67,8 +62,7 @@
             "value": "case"
           }
         ],
-        "volumeMounts": [
-          {
+        "volumeMounts": [{
             "name": "pelican-creds-volume",
             "readOnly": true,
             "mountPath": "/pelican-creds.json",
@@ -84,8 +78,7 @@
         "cpu-limit": "1",
         "memory-limit": "4Gi"
       },
-      "volumes": [
-        {
+      "volumes": [{
           "name": "pelican-creds-volume",
           "secret": {
             "secretName": "pelicanservice-g3auto"
@@ -107,8 +100,7 @@
         "name": "job-task",
         "image": "quay.io/cdis/pelican-import:master",
         "pull_policy": "Always",
-        "env": [
-          {
+        "env": [{
             "name": "DICTIONARY_URL",
             "valueFrom": {
               "configMapKeyRef": {
@@ -127,25 +119,21 @@
             }
           }
         ],
-        "volumeMounts": [
-          {
-            "name": "sheepdog-creds-volume",
-            "readOnly": true,
-            "mountPath": "/sheepdog-creds.json",
-            "subPath": "creds.json"
-          }
-        ],
+        "volumeMounts": [{
+          "name": "sheepdog-creds-volume",
+          "readOnly": true,
+          "mountPath": "/sheepdog-creds.json",
+          "subPath": "creds.json"
+        }],
         "cpu-limit": "1",
         "memory-limit": "4Gi"
       },
-      "volumes": [
-        {
-          "name": "sheepdog-creds-volume",
-          "secret": {
-            "secretName": "sheepdog-creds"
-          }
+      "volumes": [{
+        "name": "sheepdog-creds-volume",
+        "secret": {
+          "secretName": "sheepdog-creds"
         }
-      ],
+      }],
       "restart_policy": "Never"
     }
   ],
@@ -155,30 +143,118 @@
     "user-volume-size": "10Gi",
     "sidecar": {
       "cpu-limit": "1.0",
-      "memory-limit": "256Mi",
+      "memory-limit": "1Gi",
       "image": "quay.io/cdis/gen3fuse-sidecar:master",
-      "env": {"NAMESPACE":"mingfei", "HOSTNAME": "mingfei.planx-pla.net"},
+      "env": {
+        "NAMESPACE": "mingfei",
+        "HOSTNAME": "mingfei.planx-pla.net"
+      },
       "args": [],
       "command": ["/bin/bash", "/sidecarDockerrun.sh"],
       "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
     },
-    "containers": [{
+    "containers": [
+      {
       "target-port": 8888,
       "cpu-limit": "1.0",
       "memory-limit": "512Mi",
       "name": "Jupyter Notebook Bio Python",
       "image": "quay.io/occ_data/jupyternotebook:1.7.2",
       "env": {},
-      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/","--NotebookApp.password=''","--NotebookApp.token=''"],
+      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''"],
       "command": ["start-notebook.sh"],
       "path-rewrite": "/lw-workspace/proxy/",
       "use-tls": "false",
       "ready-probe": "/lw-workspace/proxy/",
-      "lifecycle-post-start": ["/bin/sh","-c","export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
+      "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
       "user-uid": 1000,
       "fs-gid": 100,
       "user-volume-location": "/home/jovyan/pd"
-    }]
+    },
+    {
+      "target-port": 5800,
+      "cpu-limit": "1.0",
+      "memory-limit": "1024Mi",
+      "name": "R Studio thru VNC",
+      "image": "heliumdatastage/rstudio-server:1",
+      "env": {
+        "DISABLE_AUTH": "true"
+      },
+      "args": [],
+      "path-rewrite": "/",
+      "use-tls": "false",
+      "ready-probe": "/",
+      "use-shared-memory": "true",
+      "friends": [
+        {
+          "name": "firefox",
+          "image": "quay.io/cdis/docker-firefox:master",
+          "securityContext": {
+            "privileged": true
+          },
+          "env": [
+            {
+              "name": "LANDING_URL",
+              "value": "http://localhost:8787/"
+            }
+          ],
+          "resources": {
+            "limits": {
+              "cpu": "1.0",
+              "memory": "5Gi"
+            }
+          },
+          "ports": [
+            {
+              "containerPort": 5800
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target-port": 5800,
+      "cpu-limit": "1.0",
+      "memory-limit": "512Mi",
+      "name": "Jupyter Notebook thru VNC",
+      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+      "env": {},
+      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''"],
+      "command": ["start-notebook.sh"],
+      "path-rewrite": "/",
+      "use-tls": "false",
+      "ready-probe": "/",
+      "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
+      "user-volume-location": "/home/jovyan/pd",
+      "use-shared-memory": "true",
+      "friends": [
+        {
+          "name": "firefox",
+          "image": "quay.io/cdis/docker-firefox:master",
+          "securityContext": {
+            "privileged": true
+          },
+          "env": [
+            {
+              "name": "LANDING_URL",
+              "value": "http://localhost:8888/lw-workspace/proxy/"
+            }
+          ],
+          "resources": {
+            "limits": {
+              "cpu": "1.0",
+              "memory": "5Gi"
+            }
+          },
+          "ports": [
+            {
+              "containerPort": 5800
+            }
+          ]
+        }
+      ]
+    }
+  ]
   },
   "global": {
     "environment": "devplanetv1",
@@ -191,8 +267,7 @@
     "logs_bucket": "logs-devplanetv1-gen3",
     "dispatcher_job_num": "5",
     "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
-    "tier_access_level": "regular",
-    "tier_access_limit": 25,
+    "tier_access_level": "libre",
     "public_datasets": false,
     "netpolicy": "on"
   },
@@ -203,8 +278,8 @@
   },
   "canary": {
     "default": 0
- },  
-"guppy": {
+  },
+  "guppy": {
     "indices": [
       {
         "index": "mingfei-brain_etl",
@@ -213,14 +288,52 @@
       {
         "index": "mingfei-brain_file",
         "type": "file"
-      },
-      {
-        "index": "mingfei-dev_nested",
-        "type": "subject"
       }
     ],
-    "log_level": "DEBUG",
     "config_index": "mingfei-brain_array-config",
+    "log_level": "DEBUG",
     "auth_filter_field": "auth_resource_path"
+  },
+  "scaling": {
+    "arborist": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "fence": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "indexd": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "revproxy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "sheepdog": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "peregrine": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "portal": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    },
+    "guppy": {
+      "strategy": "auto",
+      "min": 1,
+      "max": 1
+    }
   }
 }
