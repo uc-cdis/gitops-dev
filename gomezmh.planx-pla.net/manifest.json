@@ -13,9 +13,9 @@
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "guppy": "quay.io/cdis/guppy:master",
     "hatchery": "quay.io/cdis/hatchery:master",
     "indexd": "quay.io/cdis/indexd:master",
+    "metadata": "quay.io/cdis/metadata-service:master",
     "manifestservice": "quay.io/cdis/manifestservice:0.1.1",
     "peregrine": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:master",
@@ -227,27 +227,15 @@
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
+    "dispatcher_job_num": "10",
     "logs_bucket": "logs-devplanetv1-gen3",
     "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
     "tier_access_level": "regular",
     "tier_access_limit": 50,
+    "netpolicy": "on",
     "public_datasets": true
   },
   "canary": {
     "default": 0
-  },
-  "guppy": {
-    "indices": [
-      {
-        "index": "gomezmh_etl",
-        "type": "case"
-      },
-      {
-        "index": "gomezmh_file",
-        "type": "file"
-      }
-    ],
-    "config_index": "gomezmh_array-config",
-    "auth_filter_field": "auth_resource_path"
   }
 }
