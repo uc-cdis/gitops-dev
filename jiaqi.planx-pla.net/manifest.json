@@ -10,7 +10,7 @@
     "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "ambtest": "kennship/http-echo",
     "arborist": "quay.io/cdis/arborist:master",
-    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "dashboard": "quay.io/cdis/gen3-statics:master",
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
