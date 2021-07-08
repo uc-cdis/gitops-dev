@@ -10,7 +10,7 @@
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "arborist": "quay.io/cdis/arborist:master",
     "augur": "quay.io/cdis/gen3-augur:fix_docker2",
-    "aws-es-proxy": "abutaha/aws-es-proxy:0.9",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.9",
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.10.2-debian-cloudwatch-1.0",
     "guppy": "quay.io/cdis/guppy:master",
