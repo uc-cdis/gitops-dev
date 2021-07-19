@@ -7,11 +7,13 @@
     "autodeploy": "yes"
   },
   "versions": {
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "arborist": "quay.io/cdis/arborist:master",
     "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "indexd": "quay.io/cdis/indexd:master",
+    "guppy": "quay.io/cdis/guppy:master",
     "peregrine": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:master",
     "portal": "quay.io/cdis/data-portal:master",
@@ -22,8 +24,6 @@
     "tube": "quay.io/cdis/tube:master",
     "manifestservice": "quay.io/cdis/manifestservice:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
-    "guppy": "quay.io/cdis/guppy:master",
-    "ambassador": "quay.io/datawire/ambassador:0.60.3",
     "hatchery": "quay.io/cdis/hatchery:master"
   },
   "arborist": {
@@ -137,130 +137,11 @@
       "restart_policy": "Never"
     }
   ],
-  "hatchery": {
-    "user-namespace": "jupyter-pods-mingfei",
-    "sub-dir": "/lw-workspace",
-    "user-volume-size": "10Gi",
-    "sidecar": {
-      "cpu-limit": "1.0",
-      "memory-limit": "1Gi",
-      "image": "quay.io/cdis/gen3fuse-sidecar:master",
-      "env": {
-        "NAMESPACE": "mingfei",
-        "HOSTNAME": "mingfei.planx-pla.net"
-      },
-      "args": [],
-      "command": ["/bin/bash", "/sidecarDockerrun.sh"],
-      "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
-    },
-    "containers": [
-      {
-      "target-port": 8888,
-      "cpu-limit": "1.0",
-      "memory-limit": "512Mi",
-      "name": "Jupyter Notebook Bio Python",
-      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
-      "env": {},
-      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''"],
-      "command": ["start-notebook.sh"],
-      "path-rewrite": "/lw-workspace/proxy/",
-      "use-tls": "false",
-      "ready-probe": "/lw-workspace/proxy/",
-      "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
-      "user-uid": 1000,
-      "fs-gid": 100,
-      "user-volume-location": "/home/jovyan/pd"
-    },
-    {
-      "target-port": 5800,
-      "cpu-limit": "1.0",
-      "memory-limit": "1024Mi",
-      "name": "R Studio thru VNC",
-      "image": "heliumdatastage/rstudio-server:1",
-      "env": {
-        "DISABLE_AUTH": "true"
-      },
-      "args": [],
-      "path-rewrite": "/",
-      "use-tls": "false",
-      "ready-probe": "/",
-      "use-shared-memory": "true",
-      "friends": [
-        {
-          "name": "firefox",
-          "image": "quay.io/cdis/docker-firefox:master",
-          "securityContext": {
-            "privileged": true
-          },
-          "env": [
-            {
-              "name": "LANDING_URL",
-              "value": "http://localhost:8787/"
-            }
-          ],
-          "resources": {
-            "limits": {
-              "cpu": "1.0",
-              "memory": "5Gi"
-            }
-          },
-          "ports": [
-            {
-              "containerPort": 5800
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "target-port": 5800,
-      "cpu-limit": "1.0",
-      "memory-limit": "512Mi",
-      "name": "Jupyter Notebook thru VNC",
-      "image": "quay.io/occ_data/jupyternotebook:1.7.2",
-      "env": {},
-      "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''"],
-      "command": ["start-notebook.sh"],
-      "path-rewrite": "/",
-      "use-tls": "false",
-      "ready-probe": "/",
-      "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
-      "user-volume-location": "/home/jovyan/pd",
-      "use-shared-memory": "true",
-      "friends": [
-        {
-          "name": "firefox",
-          "image": "quay.io/cdis/docker-firefox:master",
-          "securityContext": {
-            "privileged": true
-          },
-          "env": [
-            {
-              "name": "LANDING_URL",
-              "value": "http://localhost:8888/lw-workspace/proxy/"
-            }
-          ],
-          "resources": {
-            "limits": {
-              "cpu": "1.0",
-              "memory": "5Gi"
-            }
-          },
-          "ports": [
-            {
-              "containerPort": 5800
-            }
-          ]
-        }
-      ]
-    }
-  ]
-  },
   "global": {
     "environment": "devplanetv1",
     "hostname": "mingfei.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/bhcdictionary/1.0.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
     "portal_app": "gitops",
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
@@ -282,16 +163,15 @@
   "guppy": {
     "indices": [
       {
-        "index": "mingfei-brain_etl",
+        "index": "mingfei_etl",
         "type": "case"
       },
       {
-        "index": "mingfei-brain_file",
+        "index": "mingfei_file",
         "type": "file"
       }
     ],
-    "config_index": "mingfei-brain_array-config",
-    "log_level": "DEBUG",
+    "config_index": "mingfei_array-config",
     "auth_filter_field": "auth_resource_path"
   },
   "scaling": {

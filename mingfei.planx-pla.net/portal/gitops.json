@@ -124,7 +124,7 @@
           "chartType": "count",
           "title": "Projects"
         },
-        "node_id": {
+        "_case_id": {
           "chartType": "count",
           "title": "Cases"
         },
@@ -136,29 +136,16 @@
           "chartType": "bar",
           "title": "Race"
         },
-        "ethnicity": {
-          "chartType": "bar",
-          "title": "Ethnicity"
-        }
+        "fileCounts": false
       },
       "filters": {
         "tabs": [
           {
-            "title": "Study Selection",
+            "title": "Case",
             "fields": [
-              "project_id"
-            ]
-          },
-          {
-            "title": "Demographics",
-            "fields": [
-              "gender",
               "race",
               "ethnicity",
-              "veteran_status",
-              "age_at_enrollment",
-              "age_at_onset",
-              "education_years"
+              "gender"
             ]
           }
         ]
@@ -167,50 +154,35 @@
         "enabled": true,
         "fields": [
           "project_id",
-          "submitter_id",
-          "gender",
           "race",
           "ethnicity",
-          "age_at_enrollment",
-          "age_at_onset",
-          "education_years"
+          "gender"
         ]
       },
-      "guppyConfig": {
-        "dataType": "case",
-        "nodeCountTitle": "Cases",
-        "fieldMapping": [
-          {"field": "_aliquots_count", "name": "Aliquots Count"},
-          {"field": "_read_group_count", "name": "Read Groups Count"},
-          {"field": "_samples_count", "name": "Samples Count"},
-          {"field": "_submitted_expression_arrays_count", "name": "Submitted Expression Arrays Count"},
-          {"field": "_submitted_unaligned_reads_count", "name": "Submitted Unaligned Reads Count"}
-        ],
-        "manifestMapping": {
-          "resourceIndexType": "file",
-          "resourceIdField": "object_id",
-          "referenceIdFieldInResourceIndex": "case_id",
-          "referenceIdFieldInDataIndex": "case_id"
-        },
-        "accessibleFieldCheckList": ["project_id"],
-        "accessibleValidationField": "project_id"
+      "dropdowns": {
+        "download": {
+          "title": "Download"
+        }
       },
       "buttons": [
         {
           "enabled": true,
           "type": "data",
-          "title": "Download Data",
+          "title": "Download All Clinical",
           "leftIcon": "user",
           "rightIcon": "download",
-          "fileName": "data.json"
+          "fileName": "clinical.json",
+          "dropdownId": "download",
+          "tooltipText": "You have not selected any cases to download. Please use the checkboxes on the left to select specific cases you would like to download."
         },
         {
-          "enabled": true,
+          "enabled": false,
           "type": "manifest",
           "title": "Download Manifest",
           "leftIcon": "datafile",
           "rightIcon": "download",
-          "fileName": "manifest.json"
+          "fileName": "manifest.json",
+          "dropdownId": "download"
         },
         {
           "enabled": true,
@@ -220,74 +192,18 @@
           "rightIcon": "download"
         }
       ],
-      "hideGetAccessButton": false
-    },
-    "fileExplorerConfig": {
-      "charts": {
-        "data_type": {
-          "chartType": "stackedBar",
-          "title": "File Type"
-        },
-        "data_format": {
-          "chartType": "stackedBar",
-          "title": "File Format"
-        }
-      },
-      "filters": {
-        "tabs": [
-          {
-            "title": "File",
-            "fields": [
-              "project_id",
-              "data_type",
-              "data_format"
-            ]
-          }
-        ]
-      },
-      "table": {
-        "enabled": true,
-        "fields": [
-          "project_id",
-          "file_name",
-          "file_size",
-          "object_id"
-        ]
-      },
       "guppyConfig": {
-        "dataType": "file",
-        "fieldMapping": [
-          { "field": "object_id", "name": "GUID" }
-        ],
-        "nodeCountTitle": "Files",
+        "dataType": "case",
+        "nodeCountTitle": "Cases",
         "manifestMapping": {
-          "resourceIndexType": "case",
-          "resourceIdField": "case_id",
-          "referenceIdFieldInResourceIndex": "object_id",
-          "referenceIdFieldInDataIndex": "object_id"
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "_case_id",
+          "referenceIdFieldInDataIndex": "_case_id"
         },
         "accessibleFieldCheckList": ["project_id"],
-        "accessibleValidationField": "project_id",
-        "downloadAccessor": "object_id"
-      },
-      "buttons": [
-        {
-          "enabled": true,
-          "type": "file-manifest",
-          "title": "Download Manifest",
-          "leftIcon": "datafile",
-          "rightIcon": "download",
-          "fileName": "file-manifest.json"
-        },
-        {
-          "enabled": true,
-          "type": "export-files-to-workspace",
-          "title": "Export to Workspace",
-          "leftIcon": "datafile",
-          "rightIcon": "download"
-        }
-      ],
-      "dropdowns": {}
+        "accessibleValidationField": "project_id"
+      }
     },
     "useArboristUI": true,
     "showArboristAuthzOnProfile": true,
