@@ -9,10 +9,8 @@
   "versions": {
     "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "arborist": "quay.io/cdis/arborist:master",
-   # "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.9",
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-   # "guppy": "quay.io/cdis/guppy:master",
     "hatchery": "quay.io/cdis/hatchery:master",
     "indexd": "quay.io/cdis/indexd:master",
     "metadata": "quay.io/cdis/metadata-service:master",
@@ -23,7 +21,6 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "spark": "quay.io/cdis/gen3-spark:master",
     "tube": "quay.io/cdis/tube:master"
-    #"dashboard": "quay.io/cdis/gen3-statics:master"
   },
   "arborist": {
     "deployment_version": "2"
