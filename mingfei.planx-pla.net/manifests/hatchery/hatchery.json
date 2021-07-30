@@ -25,7 +25,7 @@
             "HOSTNAME": "mingfei.planx-pla.net",
             "FRAME_ANCESTORS": "https://mingfei.planx-pla.net"
         },
-        "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''"],
+        "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''", "--NotebookApp.shutdown_no_activity_timeout=3600"],
         "command": ["start-notebook.sh"],
         "path-rewrite": "/lw-workspace/proxy/",
         "use-tls": "false",
@@ -44,7 +44,7 @@
             "HOSTNAME": "mingfei.planx-pla.net",
             "FRAME_ANCESTORS": "https://mingfei.planx-pla.net"
         },
-        "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''"],
+        "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''", "--NotebookApp.shutdown_no_activity_timeout=3600"],
         "command": ["start-notebook.sh"],
         "path-rewrite": "/lw-workspace/proxy/",
         "use-tls": "false",
