@@ -11,9 +11,7 @@
     "ambassador-gen3": "quay.io/datawire/ambassador:0.60.3",
     "arborist": "quay.io/cdis/arborist:master",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
-    "dashboard": "quay.io/cdis/gen3-statics:master",
-    "datareplicate": "quay.io/cdis/dcf-dataservice:chore_optimize_validation",
-    "fence": "quay.io/cdis/fence:feat_custom-data-access",
+    "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
     "guppy": "quay.io/cdis/guppy:master",
     "hatchery": "quay.io/cdis/hatchery:master",
@@ -36,16 +34,6 @@
   },
   "indexd": {
     "arborist": "true"
-  },
-  "scaling": {
-	"fence": {
-		"strategy": "pin",
-		"num": 1
-	},
-	"presigned-url-fence": {
-		"strategy": "pin",
-		"num": 1
-	}
   },
   "sower": [
     {
