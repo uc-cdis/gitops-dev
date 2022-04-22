@@ -154,7 +154,7 @@
     "tier_access_level": "libre",
     "public_datasets": false,
     "netpolicy": "on",
-    "dd_enabled": true
+    "dd_enabled": false
   },
   "ssjdispatcher": {
     "job_images": {
