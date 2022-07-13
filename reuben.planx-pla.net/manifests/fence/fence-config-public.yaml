@@ -1,8 +1,0 @@
-S3_BUCKETS:
-  'cdis-presigned-url-test':
-    role-arn: 'arn:aws:iam::707767160287:role/bucket_reader_writer_to_cdistest-presigned-url_role'
-    cred: 'cdistest'
-  # for data upload:
-  'qaplanetv1-data-bucket':
-    role-arn: 'arn:aws:iam::707767160287:role/bucket_reader_writer_to_qaplanetv1-data-bucket_role'
-    cred: 'cdistest'
