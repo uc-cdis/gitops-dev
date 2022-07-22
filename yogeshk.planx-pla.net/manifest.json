@@ -160,12 +160,16 @@
   "guppy": {
     "indices": [
       {
-        "index": "yogeshk_etl",
-        "type": "case"
+        "index": "yogeshk.planx-pla.net_clinical_trials",
+        "type": "clinical_trials"
       },
       {
-        "index": "yogeshk_file",
-        "type": "file"
+        "index": "yogeshk.planx-pla.net_ctfile",
+        "type": "ctfile"
+      },
+      {
+        "index": "yogeshk.planx-pla.net_oafile",
+        "type": "oafile"
       }
     ],
     "config_index": "yogeshk_array-config",
