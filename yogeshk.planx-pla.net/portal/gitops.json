@@ -597,5 +597,5 @@
     "showFenceAuthzOnProfile": false,
     "showExternalLoginsOnProfile": true,
     "componentToResourceMapping":
-    {},
+    {}
 }
