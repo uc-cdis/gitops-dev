@@ -24,7 +24,7 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:feat/es-8",
+    "tube": "quay.io/cdis/tube:feat_es-8",
     "dashboard": "quay.io/cdis/gen3-statics:master"
   },
   "arborist": {
