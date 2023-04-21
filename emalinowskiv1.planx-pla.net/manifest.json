@@ -24,7 +24,7 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master",
+    "tube": "quay.io/cdis/tube:feat/es-8",
     "dashboard": "quay.io/cdis/gen3-statics:master"
   },
   "arborist": {
@@ -156,6 +156,18 @@
   },
   "jupyterhub": {
     "enabled": "yes"
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "dev_case",
+        "type": "case"
+      },
+      {
+        "index": "dev_file",
+        "type": "file"
+      }
+    ]
   },
   "global": {
     "environment": "devplanetv1",
