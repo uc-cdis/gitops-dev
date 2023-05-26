@@ -101,6 +101,7 @@
       "advSearchFilters": {
         "enabled": true,
         "field": "advSearchFilters",
+        "displayName": "Filters",
         "filters": [
           {
             "key": "Study Type"
