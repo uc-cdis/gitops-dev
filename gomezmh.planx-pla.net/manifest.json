@@ -24,7 +24,7 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master",
+    "tube": "quay.io/cdis/tube:feat_new-es-7",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
     "dashboard": "quay.io/cdis/gen3-statics:master"

@@ -22,8 +22,7 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "portal": "quay.io/cdis/data-portal:master",
-    "tube": "quay.io/cdis/tube:master"
+    "tube": "quay.io/cdis/tube:feat_new-es-7"
   },
   "arborist": {
     "deployment_version": "2"
