@@ -38,7 +38,8 @@
     "netpolicy": "on",
     "public_datasets": true,
     "useryaml_s3path": "s3://cdis-gen3-users/occ-covid19/user.yaml",
-    "lb_type": "internal"
+    "lb_type": "internal",
+    "es7": true
   },
   "hatchery": {
     "user-namespace": "jupyter-pods-brian",

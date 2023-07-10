@@ -27,7 +27,8 @@
     "tube": "quay.io/cdis/tube:feat_new-es-7",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
-    "dashboard": "quay.io/cdis/gen3-statics:master"
+    "dashboard": "quay.io/cdis/gen3-statics:master",
+    "es7": true
   },
   "arborist": {
     "deployment_version": "2"

@@ -58,7 +58,8 @@
     "dispatcher_job_num": "10",
     "netpolicy": "on",
     "lb_type": "internal",
-    "dd_enabled": null
+    "dd_enabled": null,
+    "es7": true
   },
   "canary": {
     "default": 0

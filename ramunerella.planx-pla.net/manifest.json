@@ -168,7 +168,8 @@
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "netpolicy": "on",
-    "public_datasets": true
+    "public_datasets": true,
+    "es7": true
   },
   "arranger": {
     "project_id": "dev",

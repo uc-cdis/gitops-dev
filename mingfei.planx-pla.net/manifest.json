@@ -158,7 +158,8 @@
     "public_datasets": false,
     "netpolicy": "on",
     "dd_enabled": false,
-    "frontend_root": "gen3ff"
+    "frontend_root": "gen3ff",
+    "es7": true
   },
   "ssjdispatcher": {
     "job_images": {
