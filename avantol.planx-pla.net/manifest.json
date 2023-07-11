@@ -22,8 +22,8 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "portal": "quay.io/cdis/data-portal:master",
-    "tube": "quay.io/cdis/tube:master"
+    "tube": "quay.io/cdis/tube:feat_new-es-7",
+    "guppy": "quay.io/cdis/guppy:feat_es7"
   },
   "arborist": {
     "deployment_version": "2"
@@ -359,7 +359,8 @@
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
+    "es7": true
   },
   "canary": {
     "default": 0

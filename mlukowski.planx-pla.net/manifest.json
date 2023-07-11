@@ -23,9 +23,9 @@
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master",
+    "tube": "quay.io/cdis/tube:feat_new-es-7",
     "wts": "quay.io/cdis/workspace-token-service:master",
-    "guppy": "quay.io/cdis/guppy:master",
+    "guppy": "quay.io/cdis/guppy:feat_es7",
     "sower": "quay.io/cdis/sower:master",
     "dashboard": "quay.io/cdis/gen3-statics:master"
   },
@@ -162,7 +162,8 @@
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
+    "es7": true
   },
   "canary": {
     "default": 0

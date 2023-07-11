@@ -20,7 +20,8 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "spark": "quay.io/cdis/gen3-spark:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
-    "tube": "quay.io/cdis/tube:master"
+    "tube": "quay.io/cdis/tube:feat_new-es-7",
+    "guppy": "quay.io/cdis/guppy:feat_es7"
   },
   "arborist": {
     "deployment_version": "2"
@@ -38,7 +39,8 @@
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
     "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
-    "netpolicy": "on"
+    "netpolicy": "on",
+    "es7": true
   },
   "hatchery": {
     "user-namespace": "jupyter-pods-galaxy",
