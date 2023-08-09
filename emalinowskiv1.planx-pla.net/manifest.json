@@ -15,7 +15,7 @@
     "fence": "quay.io/cdis/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "guppy": "quay.io/cdis/guppy:feat_es7",
-    "indexd": "quay.io/cdis/indexd:master",
+    "indexd": "quay.io/cdis/indexd:feat_GPE-788",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "peregrine": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:master",
