@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: my-workflow-1
+spec:
+  #  serviceAccountName: argo-argo-workflows-workflow-controller
+  entrypoint: main
+  workflowTemplateRef:
+    name: default-example-workflow-template
