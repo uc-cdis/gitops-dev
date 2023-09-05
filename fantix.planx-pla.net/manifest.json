@@ -1,0 +1,348 @@
+{
+  "notes": [
+    "This is the dev environment manifest",
+    "That's all I have to say"
+  ],
+  "jenkins": {
+    "autodeploy": "yes"
+  },
+  "versions": {
+    "arranger": "quay.io/cdis/arranger:master",
+    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
+    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
+    "aws-es-proxy": "abutaha/aws-es-proxy:0.8",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "peregrine": "quay.io/cdis/peregrine:master",
+    "pidgin": "quay.io/cdis/pidgin:master",
+    "portal": "quay.io/cdis/data-portal:master",
+    "revproxy": "quay.io/cdis/nginx:1.15.5-ctds",
+    "sheepdog": "quay.io/cdis/sheepdog:master",
+    "sower": "quay.io/cdis/sower:0.3.0",
+    "spark": "quay.io/cdis/gen3-spark:master",
+    "indexd": "quay.io/cdis/indexd:master",
+    "fence": "quay.io/cdis/fence:assume-role-cache",
+    "guppy": "quay.io/cdis/guppy:master",
+    "ambassador": "quay.io/datawire/ambassador:0.60.3",
+    "ambassador-gen3": "quay.io/datawire/ambassador:0.60.3",
+    "arborist": "quay.io/cdis/arborist:master",
+    "hatchery": "quay.io/cdis/hatchery:chore_multi-container",
+    "wts": "quay.io/cdis/workspace-token-service:master",
+    "manifestservice": "quay.io/cdis/manifestservice:master",
+    "metadata": "quay.io/cdis/metadata-service:v1.2.0",
+    "tube": "quay.io/cdis/tube:master"
+  },
+  "arborist": {
+    "deployment_version": "2"
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "arranger": {
+    "project_id": "dev",
+    "auth_filter_field": "gen3_resource_path",
+    "auth_filter_node_types": [
+      "subject"
+    ]
+  },
+  "global": {
+    "environment": "devplanetv1",
+    "hostname": "fantix.planx-pla.net",
+    "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
+    "portal_app": "gitops",
+    "sync_from_dbgap": "False",
+    "tier_access_level": "libre",
+    "kube_bucket": "kube_bucket.devplanetv1.gen3",
+    "logs_bucket": "logs-devplanetv1-gen3",
+    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml"
+  },
+  "hatchery": {
+    "user-namespace": "jupyter-pods-fantix",
+    "sub-dir": "/lw-workspace",
+    "user-volume-size": "50Gi",
+    "sidecar": {
+      "cpu-limit": "1.0",
+      "memory-limit": "256Mi",
+      "image": "quay.io/cdis/gen3fuse-sidecar:0.1.4",
+      "env": {
+        "NAMESPACE": "default",
+        "HOSTNAME": "fantix.planx-pla.net"
+      },
+      "args": [],
+      "command": [
+        "/bin/bash",
+        "/sidecarDockerrun.sh"
+      ],
+      "lifecycle-pre-stop": [
+        "su",
+        "-c",
+        "echo test",
+        "-s",
+        "/bin/sh",
+        "root"
+      ]
+    },
+    "containers": [
+      {
+        "target-port": 8787,
+        "cpu-limit": "1.0",
+        "memory-limit": "512Mi",
+        "name": "R Studio",
+        "image": "heliumdatastage/rstudio-server:1",
+        "env": {
+          "DISABLE_AUTH": "true"
+        },
+        "args": [],
+        "path-rewrite": "/",
+        "use-tls": "false",
+        "ready-probe": "/"
+      },
+      {
+        "target-port": 8888,
+        "cpu-limit": "1.0",
+        "memory-limit": "512Mi",
+        "name": "Jupyter Notebook Bio Python",
+        "image": "quay.io/occ_data/jupyternotebook:1.9.0",
+        "env": {},
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100
+      },
+      {
+        "target-port": 8888,
+        "cpu-limit": "4.0",
+        "memory-limit": "15512Mi",
+        "name": "Jupyter Notebook Power Python",
+        "image": "quay.io/occ_data/jupyternotebook:1.7.2",
+        "env": {},
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100
+      },
+      {
+        "target-port": 8888,
+        "cpu-limit": "1.0",
+        "memory-limit": "8096Mi",
+        "name": "Helium Autoencoder Demo",
+        "image": "quay.io/cdis/auntoencoder-copd-demo:latest",
+        "env": {},
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100
+      },
+      {
+        "target-port": 8888,
+        "cpu-limit": "1.0",
+        "memory-limit": "8096Mi",
+        "name": "Helium Tensorflow-Pytorch",
+        "image": "heliumdatastage/tensorflow-pytorch-ext:1",
+        "env": {},
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100
+      },
+      {
+        "target-port": 8888,
+        "cpu-limit": "1.0",
+        "memory-limit": "8096Mi",
+        "name": "Helium CIP Demo",
+        "image": "heliumdatastage/jup-cip:v1",
+        "env": {},
+        "args": [
+          "--NotebookApp.base_url=/lw-workspace/proxy/",
+          "--NotebookApp.password=''",
+          "--NotebookApp.token=''"
+        ],
+        "command": [
+          "start-notebook.sh"
+        ],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "lifecycle-post-start": [
+          "/bin/sh",
+          "-c",
+          "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"
+        ],
+        "user-uid": 1000,
+        "fs-gid": 100
+      },
+      {
+        "target-port": 80,
+        "name": "DICOM Viewer",
+        "cpu-limit": "0.5",
+        "memory-limit": "512Mi",
+        "image": "quay.io/cdis/ohif-viewer:master",
+        "env": {
+          "ORTHANC_HOST": "localhost"
+        },
+        "args": [],
+        "path-rewrite": "/lw-workspace/proxy/",
+        "use-tls": "false",
+        "ready-probe": "/lw-workspace/proxy/",
+        "friends": [
+          {
+            "name": "orthanc",
+            "image": "quay.io/cdis/orthanc-plugins:master",
+            "imagePullPolicy": "Always",
+            "livenessProbe": {
+              "httpGet": {
+                "path": "/",
+                "port": 80
+              },
+              "initialDelaySeconds": 30,
+              "periodSeconds": 60,
+              "timeoutSeconds": 30
+            },
+            "readinessProbe": {
+              "httpGet": {
+                "path": "/",
+                "port": 80
+              }
+            },
+            "ports": [
+              {
+                "containerPort": 80
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "0.5",
+                "memory": "512Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/data",
+                "readOnly": true,
+                "name": "shared-data"
+              }
+            ]
+          },
+          {
+            "name": "postgres",
+            "image": "postgres",
+            "env": [
+              {
+                "name": "POSTGRES_DB",
+                "value": "orthanc"
+              }, {
+                "name": "POSTGRES_USER",
+                "value": "postgres"
+              }, {
+                "name": "POSTGRES_PASSWORD",
+                "value": "postgres"
+              }
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "0.5",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "jupyterhub": {
+    "enabled": "yes",
+    "containers": [
+      {
+        "name": "Bioinfo - Python/R",
+        "cpu": 0.5,
+        "memory": "256M",
+        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
+      },
+      {
+        "name": "Bioinfo - Python/R",
+        "cpu": 1,
+        "memory": "1024M",
+        "image": "quay.io/occ_data/jupyternotebook:1.9.0"
+      },
+      {
+        "name": "Helium COPD Demo",
+        "cpu": 1,
+        "memory": "1024M",
+        "image": "ananyak8srenci/autoencoder-copd-demo:1d33030cef16"
+      }
+    ]
+  },
+  "canary": {
+    "default": 0
+  },
+  "guppy": {
+    "indices": [
+      {
+        "index": "gen3-dev-subject",
+        "type": "subject"
+      },
+      {
+        "index": "gen3-dev-file",
+        "type": "file"
+      }
+    ],
+    "config_index": "gen3-dev-config",
+    "auth_filter_field": "gen3_resource_path"
+  }
+}

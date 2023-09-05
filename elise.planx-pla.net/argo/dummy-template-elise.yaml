@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: elise-example-workflow-template
+spec:
+  serviceAccountName: argo
+  entrypoint: main
+  templates:
+    - name: main
+      steps:
+        - - name: step-1
+            template: step-1-template
+        - - name: step-2
+            template: step-2-template
+
+    - name: step-1-template
+      container:
+        image: alpine:latest
+        command: ["/bin/sh", "-c"]
+        args: ["echo 'Running Step 1'"]
+
+    - name: step-2-template
+      container:
+        image: alpine:latest
+        command: ["/bin/sh", "-c"]
+        args: ["echo 'Running Step 2' >> test.txt"]
+      outputs:
+        artifacts:
+          - name: test-artifact
+            path: "test.txt"
+            archive:
+              none: {}
+            s3:
+              endpoint: s3.amazonaws.com
+              bucket: argo-artifact-storage-creationtest 
+              key: "{{workflow.name}}/test.txt"
+              #region: us-east-1
+              #accessKeySecret:
+              # name: argo-s3-creds
+              #  key: AccessKeyId
+              #secretKeySecret:
+              #  name: argo-s3-creds
+              #  key: SecretAccessKey
