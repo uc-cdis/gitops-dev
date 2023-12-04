@@ -2,20 +2,6 @@
     "user-namespace": "jupyter-pods-mingfei",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "10Gi",
-    "pay-models": [{
-            "user": "quressshi@uchicago.edu",
-            "aws_account_id": "354484406138",
-            "name": "brhworkspaces",
-            "region": "us-east-1"
-        },
-	{
-            "user": "mshao1@uchicago.edu",
-            "aws_account_id": "354484406138",
-            "name": "brhworkspaces",
-            "region": "us-east-1",
-	    "ecs": "true"
-        }
-    ],
    "sidecar": {
     "cpu-limit": "1.0",
     "memory-limit": "256Mi",
