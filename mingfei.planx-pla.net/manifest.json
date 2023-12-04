@@ -36,7 +36,8 @@
   },
   "metadata": {
     "USE_AGG_MDS": true,
-    "AGG_MDS_NAMESPACE": "mingfei"
+    "AGG_MDS_NAMESPACE": "mingfei",
+    "DEBUG": true
   },
   "sower": [{
       "name": "pelican-export",
