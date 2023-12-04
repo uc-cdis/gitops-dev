@@ -85,13 +85,151 @@
   },
   "requiredCerts": [],
   "featureFlags": {
-    "explorer": false,
+    "explorer": true,
+    "explorerPublic": true,
     "analysis": false,
     "discovery": true,
     "discoveryUseAggMDS": true,
     "studyRegistration": true,
     "workspaceRegistration": true
   },
+  "explorerConfig": [
+    {
+      "tabTitle": "Cases",
+      "charts": {
+        "project_id": {
+          "chartType": "count",
+          "title": "Projects"
+        },
+        "gender": {
+          "chartType": "pie",
+          "title": "Gender"
+        },
+        "race": {
+          "chartType": "bar",
+          "title": "Race"
+        },
+        "ethnicity": {
+          "chartType": "bar",
+          "title": "Ethnicity"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "Cases",
+            "fields": [
+              "project_id",
+              "gender",
+              "race",
+              "ethnicity"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "gender",
+          "year_of_birth",
+          "race",
+          "ethnicity",
+          "_samples_count",
+          "_aliquots_count"
+        ]
+      },
+      "guppyConfig": {
+        "dataType": "case",
+        "nodeCountTitle": "Cases",
+        "fieldMapping": [],
+        "manifestMapping": {
+          "resourceIndexType": "file",
+          "resourceIdField": "object_id",
+          "referenceIdFieldInResourceIndex": "_case_id",
+          "referenceIdFieldInDataIndex": "_case_id"
+        },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id"
+      }
+    },
+    {
+      "tabTitle": "Files",
+      "charts": {
+        "data_type": {
+          "chartType": "stackedBar",
+          "title": "File Type"
+        },
+        "data_format": {
+          "chartType": "stackedBar",
+          "title": "File Format"
+        }
+      },
+      "filters": {
+        "tabs": [
+          {
+            "title": "File",
+            "fields": [
+              "project_id",
+              "data_type",
+              "data_format"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "enabled": true,
+        "fields": [
+          "project_id",
+          "file_name",
+          "file_size",
+          "object_id"
+        ]
+      },
+      "guppyConfig": {
+        "dataType": "file",
+        "fieldMapping": [
+          {
+            "field": "object_id",
+            "name": "GUID"
+          }
+        ],
+        "nodeCountTitle": "Files",
+        "manifestMapping": {
+          "resourceIndexType": "case",
+          "resourceIdField": "_case_id",
+          "referenceIdFieldInResourceIndex": "object_id",
+          "referenceIdFieldInDataIndex": "object_id"
+        },
+        "accessibleFieldCheckList": [
+          "project_id"
+        ],
+        "accessibleValidationField": "project_id",
+        "downloadAccessor": "object_id"
+      },
+      "buttons": [
+        {
+          "enabled": true,
+          "type": "file-manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "file-manifest.json",
+          "dropdownId": "download"
+        },
+        {
+          "enabled": true,
+          "type": "export-files-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
+        }
+      ],
+      "dropdowns": {}
+    }
+  ],
   "discoveryConfig": {
     "features": {
       "advSearchFilters": {
@@ -685,15 +823,55 @@
         "studyRegistrationValidationField": "is_registered",
         "studyRegistrationAccessCheckField": "registration_authz",
         "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards",
-        "clinicalTrialFields": ["NCTId", "OfficialTitle", "BriefTitle", "Acronym", "StudyType", "OverallStatus", "StartDate", "StartDateType", "CompletionDate", "CompletionDateType", "IsFDARegulatedDrug", "IsFDARegulatedDevice", "IsPPSD", "BriefSummary", "DetailedDescription", "Condition", "DesignAllocation", "DesignPrimaryPurpose", "Phase", "DesignInterventionModel", "EnrollmentCount", "EnrollmentType", "DesignObservationalModel", "InterventionType", "PrimaryOutcomeMeasure", "SecondaryOutcomeMeasure", "OtherOutcomeMeasure", "Gender", "GenderBased", "MaximumAge", "MinimumAge", "IPDSharing", "IPDSharingTimeFrame", "IPDSharingAccessCriteria", "IPDSharingURL", "SeeAlsoLinkURL", "AvailIPDURL", "AvailIPDId", "AvailIPDComment"],
+        "clinicalTrialFields": [
+          "NCTId",
+          "OfficialTitle",
+          "BriefTitle",
+          "Acronym",
+          "StudyType",
+          "OverallStatus",
+          "StartDate",
+          "StartDateType",
+          "CompletionDate",
+          "CompletionDateType",
+          "IsFDARegulatedDrug",
+          "IsFDARegulatedDevice",
+          "IsPPSD",
+          "BriefSummary",
+          "DetailedDescription",
+          "Condition",
+          "DesignAllocation",
+          "DesignPrimaryPurpose",
+          "Phase",
+          "DesignInterventionModel",
+          "EnrollmentCount",
+          "EnrollmentType",
+          "DesignObservationalModel",
+          "InterventionType",
+          "PrimaryOutcomeMeasure",
+          "SecondaryOutcomeMeasure",
+          "OtherOutcomeMeasure",
+          "Gender",
+          "GenderBased",
+          "MaximumAge",
+          "MinimumAge",
+          "IPDSharing",
+          "IPDSharingTimeFrame",
+          "IPDSharingAccessCriteria",
+          "IPDSharingURL",
+          "SeeAlsoLinkURL",
+          "AvailIPDURL",
+          "AvailIPDId",
+          "AvailIPDComment"
+        ],
         "dataDictionarySubmissionBucket": "",
         "dataDictionarySubmissionDisclaimerField": "All submitted data dictionaries will be available to public.",
         "dataDictionaryField": "data_dictionaries"
       },
-      "workspaceRegistrationConfig" : {
+      "workspaceRegistrationConfig": {
         "workspacePolicyId": "workspace_strides_integrated",
         "workspaceInfoMessage": "The HEAL workspace provides a standardized computational environment for accessing and analyzing data from HEAL studies. Please fill out this form to request access to the workspace and start computing!",
-        "successRedirect" : {
+        "successRedirect": {
           "link": "/discovery",
           "text": "Go to Discovery Page"
         }
