@@ -22,7 +22,7 @@
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
     "tube": "quay.io/cdis/tube:master",
-    "guppy": "quay.io/cdis/guppy:feat_es7",
+    "guppy": "quay.io/cdis/guppy:master",
     "dashboard": "quay.io/cdis/gen3-statics:master"
   },
   "arborist": {
