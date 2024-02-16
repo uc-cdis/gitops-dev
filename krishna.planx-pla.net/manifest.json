@@ -8,7 +8,6 @@
   },
   "versions": {
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:master",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "argo-wrapper": "quay.io/cdis/argo-wrapper:master",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:master",
