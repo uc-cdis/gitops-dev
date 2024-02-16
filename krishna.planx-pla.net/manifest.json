@@ -8,7 +8,6 @@
   },
   "versions": {
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:master",
-    "ambassador": "quay.io/datawire/ambassador:1.4.2",
     "arranger": "quay.io/cdis/arranger:feat_indices",
     "arranger-adminapi": "quay.io/cdis/arranger-server:master",
     "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
