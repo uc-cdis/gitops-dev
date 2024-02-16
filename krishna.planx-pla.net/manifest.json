@@ -8,22 +8,21 @@
   },
   "versions": {
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:master",
-    "argo-wrapper": "quay.io/cdis/argo-wrapper:master",
-    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
-    "fence": "quay.io/cdis/fence:master",
+    "argo-wrapper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/argo-wrapper:master",
+    "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:0.8",
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "hatchery": "quay.io/cdis/hatchery:master",
-    "indexd": "quay.io/cdis/indexd:master",
-    "jupyterhub": "quay.io/occ_data/jupyterhub:master",
-    "peregrine": "quay.io/cdis/peregrine:master",
-    "portal": "quay.io/cdis/data-portal:2023.02",
-    "revproxy": "quay.io/cdis/nginx:master",
-    "sheepdog": "quay.io/cdis/sheepdog:master",
-    "sower": "quay.io/cdis/sower:master",
-    "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master",
-    "guppy": "quay.io/cdis/guppy:master",
-    "dashboard": "quay.io/cdis/gen3-statics:master"
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:master",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:master",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:master",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2023.02",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:master",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:master",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:master",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:master",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:master",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:master",
+    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:master"
   },
   "arborist": {
     "deployment_version": "2"
@@ -145,13 +144,6 @@
       "restart_policy": "Never"
     }
   ],
-  "arranger": {
-    "project_id": "dev",
-    "auth_filter_field": "gen3_resource_path",
-    "auth_filter_node_types": [
-      "subject"
-    ]
-  },
   "guppy": {
     "indices": [
       {
@@ -165,9 +157,6 @@
     ],
     "config_index": "dev_case-array-config",
     "auth_filter_field": "auth_resource_path"
-  },
-  "jupyterhub": {
-    "enabled": "yes"
   },
   "global": {
     "environment": "devplanetv1",
