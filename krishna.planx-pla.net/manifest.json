@@ -8,6 +8,7 @@
   },
   "versions": {
     "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:master",
+    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:master",
     "argo-wrapper": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/argo-wrapper:master",
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:0.8",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:master",
