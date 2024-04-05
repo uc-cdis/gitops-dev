@@ -38,6 +38,7 @@
       "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2023.12"
     }
   },
+  "sower": [],
   "global": {
     "environment": "devplanetv2",
     "hostname": "hara.planx-pla.net",
@@ -54,11 +55,14 @@
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "lb_type": "internal",
-    "dd_enabled": null,
     "es7": true
   },
   "indexd": {
     "arborist": "true"
+  },
+  "metadata": {
+    "USE_AGG_MDS": true,
+    "AGG_MDS_NAMESPACE": "hara"
   },
   "canary": {
     "default": 0
