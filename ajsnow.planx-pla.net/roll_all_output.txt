@@ -1,0 +1,861 @@
+
+up to date, audited 188 packages in 2s
+
+24 packages are looking for funding
+  run `npm fund` for details
+
+7 moderate severity vulnerabilities
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+serviceaccount/default patched (no change)
+pod/ambassador-deployment-59d9bb559f-87nb5 labeled
+configmap "config-helper" deleted
+pod/arborist-deployment-cd6f8b47d-2qv6r labeled
+configmap/config-helper created
+pod/dashboard-86ddcc9849-d456x labeled
+pod/distribute-licenses-28507470-lb8wz labeled
+pod/distribute-licenses-28507471-6xvzw labeled
+pod/fence-cleanup-expired-ga4gh-info-28507470-57c96 labeled
+configmap "manifest-all" deleted
+configmap "manifest-arborist" deleted
+configmap "manifest-canary" deleted
+configmap "manifest-global" deleted
+configmap "manifest-hatchery" deleted
+configmap "manifest-indexd" deleted
+configmap "manifest-jenkins" deleted
+configmap "manifest-karpenter" deleted
+configmap "manifest-metadata" deleted
+configmap "manifest-modsec" deleted
+configmap "manifest-portal" deleted
+configmap "manifest-revproxy" deleted
+pod/hatchery-reaper-28507470-dw58v labeled
+configmap "manifest-scaling" deleted
+configmap "manifest-versions" deleted
+pod/node-not-ready-cron-28507470-6d46w labeled
+configmap/manifest-all created
+replicaset.apps/ambassador-deployment-59d9bb559f labeled
+configmap/manifest-arborist created
+replicaset.apps/arborist-deployment-cd6f8b47d labeled
+configmap/manifest-canary created
+replicaset.apps/dashboard-86ddcc9849 labeled
+configmap/manifest-global created
+configmap/manifest-hatchery created
+configmap/manifest-indexd created
+configmap/manifest-jenkins created
+clusterrolebinding.rbac.authorization.k8s.io/devops-binding configured
+configmap/manifest-karpenter created
+networkpolicy.networking.k8s.io/netpolicy-nolimit-inout configured
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2024.02
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2024.02
+configmap/manifest-metadata created
+configmap/manifest-modsec created
+secret/indexd-secret created
+configmap/manifest-portal created
+configmap/manifest-revproxy created
+configmap/manifest-scaling created
+configmap/manifest-versions created
+configmap "privacy-policy" deleted
+deployment.apps/arborist-deployment configured
+deployment.apps/indexd-deployment configured
+configmap/privacy-policy created
+secret "metadata-config" deleted
+secret/metadata-config created
+Branch 'master' set up to track remote branch 'master' from 'secrets_backup'.
+networkpolicy.networking.k8s.io/netpolicy-ingress-to-indexd unchanged
+service/arborist-service configured
+networkpolicy.networking.k8s.io/netpolicy-egress-to-indexd unchanged
+secret/es-creds created
+service/indexd-service configured
+secret/fence-creds created
+secret/indexd-creds created
+secret/mailgun-creds created
+secret/peregrine-creds created
+service/indexd-canary-service unchanged
+The indexd service has been deployed onto the kubernetes cluster.
+secret/sheepdog-creds created
+null
+null
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2024.02
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2024.02
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2024.02
+null
+null
+null
+null
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2024.02
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2024.02
+quay.io/datawire/ambassador:1.4.2
+configmap "fence-yaml-merge" deleted
+service/portal-service configured
+service/workspace-token-service unchanged
+configmap/fence-yaml-merge created
+secret/dashboard-g3auto created
+secret/dbfarm-g3auto created
+secret/manifestservice-g3auto created
+secret/pelicanservice-g3auto created
+service/ambassador-admin configured
+clusterrole.rbac.authorization.k8s.io/ambassador unchanged
+serviceaccount/ambassador unchanged
+clusterrolebinding.rbac.authorization.k8s.io/ambassador-binding-default unchanged
+secret/fence-config created
+deployment.apps/peregrine-deployment configured
+service/dashboard unchanged
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing the backend...[0m
+
+[0m[1mInitializing provider plugins...[0m
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+deployment.apps/ambassador-deployment configured
+Branch 'master' set up to track remote branch 'master' from 'secrets_backup'.
+Running terraform plan   --var-file ./config.tfvars -out plan.terraform /home/ajsnow/cloud-automation/tf_files/aws/data_bucket/
+[32mINFO: 20:33:27 -[39m Entering module manifest checks
+[32mINFO: 20:33:27 -[39m Module loaded /home/ajsnow/cloud-automation/tf_files/aws/data_bucket/manifest.json
+[32mINFO: 20:33:27 -[39m Moving on with terraform 0.12
+gen3_aws_run terraform12 plan --var-file ./config.tfvars -out plan.terraform /home/ajsnow/cloud-automation/tf_files/aws/data_bucket/
+[0m[1mRefreshing Terraform state in-memory prior to plan...[0m
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+[0m
+[0m[1mmodule.s3_bucket.data.aws_cloudwatch_log_group.logs_destination: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.aws_iam_role.mybucket_writer: Refreshing state... [id=bucket_writer_manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.aws_iam_role.mybucket_reader: Refreshing state... [id=bucket_reader_manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.aws_s3_bucket.log_bucket: Refreshing state... [id=s3logs-manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.aws_iam_instance_profile.mybucket_reader: Refreshing state... [id=bucket_reader_manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.aws_iam_instance_profile.mybucket_writer: Refreshing state... [id=bucket_writer_manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.trail_policy: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.data.aws_iam_policy_document.log_bucket_writer: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.aws_s3_bucket_policy.log_bucket_writer_by_ct: Refreshing state... [id=s3logs-manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.aws_s3_bucket_public_access_block.s3-log_bucket_privacy: Refreshing state... [id=s3logs-manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.aws_iam_policy.log_bucket_writer: Refreshing state... [id=arn:aws:iam::707767160287:policy/bucket_writer_s3logs-manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.aws_s3_bucket.mybucket: Refreshing state... [id=manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.mybucket_reader: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.aws_iam_policy.mybucket_reader: Refreshing state... [id=arn:aws:iam::707767160287:policy/bucket_reader_manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.mybucket_writer: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.aws_iam_policy.mybucket_writer: Refreshing state... [id=arn:aws:iam::707767160287:policy/bucket_writer_manifest-ajsnow-planx-pla-net][0m
+[0m[1mmodule.s3_bucket.aws_iam_role_policy_attachment.mybucket_reader: Refreshing state... [id=bucket_reader_manifest-ajsnow-planx-pla-net-20240314165655316400000003][0m
+[0m[1mmodule.s3_bucket.aws_iam_role_policy_attachment.mybucket_writer: Refreshing state... [id=bucket_writer_manifest-ajsnow-planx-pla-net-20240314165655286200000002][0m
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place
+ [36m<=[0m read (data resources)
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.s3_bucket.data.aws_iam_policy_document.mybucket_reader[0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "mybucket_reader"  {
+      [32m+[0m [0m[1m[0mid[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mjson[0m[0m = (known after apply)
+
+      [32m+[0m [0mstatement {
+          [32m+[0m [0m[1m[0mactions[0m[0m   = [
+              [32m+[0m [0m"s3:Get*",
+              [32m+[0m [0m"s3:List*",
+            ]
+          [32m+[0m [0m[1m[0meffect[0m[0m    = "Allow"
+          [32m+[0m [0m[1m[0mresources[0m[0m = [
+              [32m+[0m [0m"arn:aws:s3:::manifest-ajsnow-planx-pla-net",
+              [32m+[0m [0m"arn:aws:s3:::manifest-ajsnow-planx-pla-net/*",
+            ]
+        }
+    }
+
+[1m  # module.s3_bucket.data.aws_iam_policy_document.mybucket_writer[0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "mybucket_writer"  {
+      [32m+[0m [0m[1m[0mid[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mjson[0m[0m = (known after apply)
+
+      [32m+[0m [0mstatement {
+          [32m+[0m [0m[1m[0mactions[0m[0m   = [
+              [32m+[0m [0m"s3:Get*",
+              [32m+[0m [0m"s3:List*",
+            ]
+          [32m+[0m [0m[1m[0meffect[0m[0m    = "Allow"
+          [32m+[0m [0m[1m[0mresources[0m[0m = [
+              [32m+[0m [0m"arn:aws:s3:::manifest-ajsnow-planx-pla-net",
+              [32m+[0m [0m"arn:aws:s3:::manifest-ajsnow-planx-pla-net/*",
+            ]
+        }
+      [32m+[0m [0mstatement {
+          [32m+[0m [0m[1m[0mactions[0m[0m   = [
+              [32m+[0m [0m"s3:DeleteObject",
+              [32m+[0m [0m"s3:GetObject",
+              [32m+[0m [0m"s3:PutObject",
+            ]
+          [32m+[0m [0m[1m[0meffect[0m[0m    = "Allow"
+          [32m+[0m [0m[1m[0mresources[0m[0m = [
+              [32m+[0m [0m"arn:aws:s3:::manifest-ajsnow-planx-pla-net/*",
+            ]
+        }
+    }
+
+[1m  # module.s3_bucket.aws_iam_policy.mybucket_reader[0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_iam_policy" "mybucket_reader" {
+        [1m[0marn[0m[0m         = "arn:aws:iam::707767160287:policy/bucket_reader_manifest-ajsnow-planx-pla-net"
+        [1m[0mdescription[0m[0m = "Read manifest-ajsnow-planx-pla-net"
+        [1m[0mid[0m[0m          = "arn:aws:iam::707767160287:policy/bucket_reader_manifest-ajsnow-planx-pla-net"
+        [1m[0mname[0m[0m        = "bucket_reader_manifest-ajsnow-planx-pla-net"
+        [1m[0mpath[0m[0m        = "/"
+      [33m~[0m [0m[1m[0mpolicy[0m[0m      = jsonencode(
+            {
+              [31m-[0m [0mStatement = [
+                  [31m-[0m [0m{
+                      [31m-[0m [0mAction   = [
+                          [31m-[0m [0m"s3:List*",
+                          [31m-[0m [0m"s3:Get*",
+                        ]
+                      [31m-[0m [0mEffect   = "Allow"
+                      [31m-[0m [0mResource = [
+                          [31m-[0m [0m"arn:aws:s3:::manifest-ajsnow-planx-pla-net/*",
+                          [31m-[0m [0m"arn:aws:s3:::manifest-ajsnow-planx-pla-net",
+                        ]
+                      [31m-[0m [0mSid      = ""
+                    },
+                ]
+              [31m-[0m [0mVersion   = "2012-10-17"
+            }
+        ) [33m->[0m [0m(known after apply)
+    }
+
+[1m  # module.s3_bucket.aws_iam_policy.mybucket_writer[0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_iam_policy" "mybucket_writer" {
+        [1m[0marn[0m[0m         = "arn:aws:iam::707767160287:policy/bucket_writer_manifest-ajsnow-planx-pla-net"
+        [1m[0mdescription[0m[0m = "Read or write manifest-ajsnow-planx-pla-net"
+        [1m[0mid[0m[0m          = "arn:aws:iam::707767160287:policy/bucket_writer_manifest-ajsnow-planx-pla-net"
+        [1m[0mname[0m[0m        = "bucket_writer_manifest-ajsnow-planx-pla-net"
+        [1m[0mpath[0m[0m        = "/"
+      [33m~[0m [0m[1m[0mpolicy[0m[0m      = jsonencode(
+            {
+              [31m-[0m [0mStatement = [
+                  [31m-[0m [0m{
+                      [31m-[0m [0mAction   = [
+                          [31m-[0m [0m"s3:List*",
+                          [31m-[0m [0m"s3:Get*",
+                        ]
+                      [31m-[0m [0mEffect   = "Allow"
+                      [31m-[0m [0mResource = [
+                          [31m-[0m [0m"arn:aws:s3:::manifest-ajsnow-planx-pla-net/*",
+                          [31m-[0m [0m"arn:aws:s3:::manifest-ajsnow-planx-pla-net",
+                        ]
+                      [31m-[0m [0mSid      = ""
+                    },
+                  [31m-[0m [0m{
+                      [31m-[0m [0mAction   = [
+                          [31m-[0m [0m"s3:PutObject",
+                          [31m-[0m [0m"s3:GetObject",
+                          [31m-[0m [0m"s3:DeleteObject",
+                        ]
+                      [31m-[0m [0mEffect   = "Allow"
+                      [31m-[0m [0mResource = "arn:aws:s3:::manifest-ajsnow-planx-pla-net/*"
+                      [31m-[0m [0mSid      = ""
+                    },
+                ]
+              [31m-[0m [0mVersion   = "2012-10-17"
+            }
+        ) [33m->[0m [0m(known after apply)
+    }
+
+[1m  # module.s3_bucket.aws_s3_bucket.mybucket[0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_s3_bucket" "mybucket" {
+        [1m[0macl[0m[0m                         = "private"
+        [1m[0marn[0m[0m                         = "arn:aws:s3:::manifest-ajsnow-planx-pla-net"
+        [1m[0mbucket[0m[0m                      = "manifest-ajsnow-planx-pla-net"
+        [1m[0mbucket_domain_name[0m[0m          = "manifest-ajsnow-planx-pla-net.s3.amazonaws.com"
+        [1m[0mbucket_regional_domain_name[0m[0m = "manifest-ajsnow-planx-pla-net.s3.amazonaws.com"
+        [1m[0mforce_destroy[0m[0m               = false
+        [1m[0mhosted_zone_id[0m[0m              = "Z3AQBSTGFYJSTF"
+        [1m[0mid[0m[0m                          = "manifest-ajsnow-planx-pla-net"
+        [1m[0mregion[0m[0m                      = "us-east-1"
+        [1m[0mrequest_payer[0m[0m               = "BucketOwner"
+        [1m[0mtags[0m[0m                        = {
+            "Environment" = "devplanetv2"
+            "Name"        = "manifest-ajsnow-planx-pla-net"
+            "Purpose"     = "data bucket"
+        }
+
+      [33m~[0m [0mlifecycle_rule {
+            [1m[0mabort_incomplete_multipart_upload_days[0m[0m = 7
+            [1m[0menabled[0m[0m                                = true
+            [1m[0mid[0m[0m                                     = "tf-s3-lifecycle-20240314165654107600000001"
+            [1m[0mtags[0m[0m                                   = {}
+
+          [31m-[0m [0mexpiration {
+              [31m-[0m [0m[1m[0mdays[0m[0m                         = 0 [90m->[0m [0m[90mnull[0m[0m
+              [31m-[0m [0m[1m[0mexpired_object_delete_marker[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+            }
+        }
+
+        logging {
+            [1m[0mtarget_bucket[0m[0m = "s3logs-manifest-ajsnow-planx-pla-net"
+            [1m[0mtarget_prefix[0m[0m = "log/manifest-ajsnow-planx-pla-net/"
+        }
+
+        server_side_encryption_configuration {
+            rule {
+                apply_server_side_encryption_by_default {
+                    [1m[0msse_algorithm[0m[0m = "AES256"
+                }
+            }
+        }
+
+        versioning {
+            [1m[0menabled[0m[0m    = false
+            [1m[0mmfa_delete[0m[0m = false
+        }
+    }
+
+[0m[1mPlan:[0m 0 to add, 3 to change, 0 to destroy.[0m
+[33m
+[1m[33mWarning: [0m[0m[1mInterpolation-only expressions are deprecated[0m
+
+[0m  on ../../../../../cloud-automation/tf_files/aws/modules/s3-bucket/cloud.tf line 18, in resource "aws_s3_bucket" "mybucket":
+  18:   bucket = [4m"${local.clean_bucket_name}"[0m
+[0m
+Terraform 0.11 and earlier required all non-constant expressions to be
+provided via interpolation syntax, but this pattern is now deprecated. To
+silence this warning, remove the "${ sequence from the start and the }"
+sequence from the end of this expression, leaving just the inner expression.
+
+Template interpolation syntax is still used to construct strings from
+expressions when the template includes multiple interpolation sequences or a
+mixture of literal strings and interpolations. This deprecation applies only
+to templates that consist entirely of a single interpolation sequence.
+
+(and 23 more similar warnings elsewhere)
+[0m[0m
+
+------------------------------------------------------------------------
+
+This plan was saved to: plan.terraform
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "plan.terraform"
+
+
+WARNING: applying this plan will change your infrastructure.
+    Do not apply a plan that 'destroys' resources unless you know what you are doing.
+
+Use 'gen3 tfapply' to apply this plan, and backup the configuration variables
+[32mINFO: 20:33:38 -[39m Running: terraform apply plan.terraform
+[32mINFO: 20:33:38 -[39m Entering module manifest checks
+[32mINFO: 20:33:38 -[39m Module loaded /home/ajsnow/cloud-automation/tf_files/aws/data_bucket/manifest.json
+[32mINFO: 20:33:38 -[39m Moving on with terraform 0.12
+gen3_aws_run terraform12 apply plan.terraform
+GRANT
+deployment.apps/dashboard configured
+[0m[1mmodule.s3_bucket.aws_s3_bucket.mybucket: Modifying... [id=manifest-ajsnow-planx-pla-net][0m[0m
+[0m[1mmodule.s3_bucket.aws_s3_bucket.mybucket: Modifications complete after 1s [id=manifest-ajsnow-planx-pla-net][0m[0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.mybucket_writer: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.mybucket_reader: Refreshing state...[0m
+[33m
+[1m[33mWarning: [0m[0m[1mInterpolation-only expressions are deprecated[0m
+
+[0m  on ../../../../../cloud-automation/tf_files/aws/modules/s3-bucket/cloud.tf line 18, in resource "aws_s3_bucket" "mybucket":
+  18:   bucket = [4m"${local.clean_bucket_name}"[0m
+[0m
+Terraform 0.11 and earlier required all non-constant expressions to be
+provided via interpolation syntax, but this pattern is now deprecated. To
+silence this warning, remove the "${ sequence from the start and the }"
+sequence from the end of this expression, leaving just the inner expression.
+
+Template interpolation syntax is still used to construct strings from
+expressions when the template includes multiple interpolation sequences or a
+mixture of literal strings and interpolations. This deprecation applies only
+to templates that consist entirely of a single interpolation sequence.
+
+(and 23 more similar warnings elsewhere)
+[0m[0m
+[0m[1m[32m
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.[0m
+[0m[1m[32m
+Outputs:
+
+bucket_name = manifest-ajsnow-planx-pla-net
+log_bucket_name = s3logs-manifest-ajsnow-planx-pla-net
+ro_role_id = bucket_reader_manifest-ajsnow-planx-pla-net
+rw_role_id = bucket_writer_manifest-ajsnow-planx-pla-net[0m
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'ajsnow@cdistestdevadmin.(none)')
+[32mINFO: 20:33:43 -[39m Backing up files to s3
+[32mINFO: 20:33:43 -[39m Backing up config.tfvars to s3://cdis-state-ac707767160287-gen3/manifest-ajsnow-planx-pla-net_databucket/config.tfvars
+networkpolicy.networking.k8s.io/netpolicy-ingress-to-peregrine unchanged
+Unable to create policy devplanetv1--default--audit-sqs-sender. Assuming it already exists and continuing
+Completed 92 Bytes/92 Bytes (917 Bytes/s) with 1 file(s) remainingupload: ./config.tfvars to s3://cdis-state-ac707767160287-gen3/manifest-ajsnow-planx-pla-net_databucket/config.tfvars
+[32mINFO: 20:33:47 -[39m Backing up backend.tfvars to s3://cdis-state-ac707767160287-gen3/manifest-ajsnow-planx-pla-net_databucket/backend.tfvars
+networkpolicy.networking.k8s.io/netpolicy-egress-to-peregrine unchanged
+Completed 147 Bytes/147 Bytes (1.4 KiB/s) with 1 file(s) remainingupload: ./backend.tfvars to s3://cdis-state-ac707767160287-gen3/manifest-ajsnow-planx-pla-net_databucket/backend.tfvars
+[32mINFO: 20:33:50 -[39m Backing up README.md to s3://cdis-state-ac707767160287-gen3/manifest-ajsnow-planx-pla-net_databucket/README.md
+ALTER DEFAULT PRIVILEGES
+service/peregrine-service unchanged
+Completed 108 Bytes/108 Bytes (1.2 KiB/s) with 1 file(s) remainingupload: ./README.md to s3://cdis-state-ac707767160287-gen3/manifest-ajsnow-planx-pla-net_databucket/README.md
+service/ambassador-service unchanged
+null
+service/peregrine-canary-service unchanged
+The peregrine service has been deployed onto the k8s cluster.
+application.argoproj.io/prometheus-application unchanged
+networkpolicy.networking.k8s.io/netpolicy-ingress-to-dashboard unchanged
+deployment.apps/sheepdog-deployment configured
+networkpolicy.networking.k8s.io/netpolicy-egress-to-dashboard unchanged
+deployment.apps/fence-deployment configured
+Completed 256.0 KiB/~75.1 MiB (1.2 MiB/s) with ~38 file(s) remaining (calculating...)Completed 512.0 KiB/~75.7 MiB (2.3 MiB/s) with ~40 file(s) remaining (calculating...)[0m[1mInitializing modules...[0m
+Completed 768.0 KiB/77.0 MiB (3.4 MiB/s) with 43 file(s) remaining                   Completed 1.0 MiB/77.0 MiB (4.5 MiB/s) with 43 file(s) remaining                     Completed 1.2 MiB/77.0 MiB (5.6 MiB/s) with 43 file(s) remaining                     Completed 1.5 MiB/77.0 MiB (6.7 MiB/s) with 43 file(s) remaining                     Completed 1.8 MiB/77.0 MiB (7.7 MiB/s) with 43 file(s) remaining                     Completed 2.0 MiB/77.0 MiB (8.8 MiB/s) with 43 file(s) remaining                     Completed 2.2 MiB/77.0 MiB (9.8 MiB/s) with 43 file(s) remaining                     Completed 2.5 MiB/77.0 MiB (9.8 MiB/s) with 43 file(s) remaining                     Completed 2.8 MiB/77.0 MiB (10.0 MiB/s) with 43 file(s) remaining                    Completed 3.0 MiB/77.0 MiB (10.8 MiB/s) with 43 file(s) remaining                    Completed 3.2 MiB/77.0 MiB (11.7 MiB/s) with 43 file(s) remaining                    Completed 3.5 MiB/77.0 MiB (12.6 MiB/s) with 43 file(s) remaining                    Completed 3.8 MiB/77.0 MiB (13.4 MiB/s) with 43 file(s) remaining                    Completed 3.8 MiB/77.0 MiB (13.6 MiB/s) with 43 file(s) remaining                    upload: dashboard/Public/notebooks/AnVIL_1k_Genome_data_analysis.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/AnVIL_1k_Genome_data_analysis.png
+Completed 3.8 MiB/77.0 MiB (13.6 MiB/s) with 42 file(s) remainingCompleted 4.1 MiB/77.0 MiB (14.4 MiB/s) with 42 file(s) remaining
+[0m[1mInitializing the backend...[0m
+Completed 4.3 MiB/77.0 MiB (15.2 MiB/s) with 42 file(s) remainingCompleted 4.6 MiB/77.0 MiB (16.0 MiB/s) with 42 file(s) remainingCompleted 4.8 MiB/77.0 MiB (16.5 MiB/s) with 42 file(s) remainingCompleted 5.1 MiB/77.0 MiB (16.6 MiB/s) with 42 file(s) remainingCompleted 5.3 MiB/77.0 MiB (17.4 MiB/s) with 42 file(s) remainingCompleted 5.6 MiB/77.0 MiB (18.1 MiB/s) with 42 file(s) remainingCompleted 5.8 MiB/77.0 MiB (18.9 MiB/s) with 42 file(s) remainingCompleted 6.1 MiB/77.0 MiB (19.6 MiB/s) with 42 file(s) remainingCompleted 6.3 MiB/77.0 MiB (20.3 MiB/s) with 42 file(s) remainingCompleted 6.6 MiB/77.0 MiB (21.0 MiB/s) with 42 file(s) remainingCompleted 6.8 MiB/77.0 MiB (21.7 MiB/s) with 42 file(s) remainingCompleted 7.1 MiB/77.0 MiB (22.4 MiB/s) with 42 file(s) remainingCompleted 7.3 MiB/77.0 MiB (22.9 MiB/s) with 42 file(s) remainingCompleted 7.6 MiB/77.0 MiB (23.6 MiB/s) with 42 file(s) remainingCompleted 7.8 MiB/77.0 MiB (24.3 MiB/s) with 42 file(s) remainingCompleted 8.1 MiB/77.0 MiB (24.9 MiB/s) with 42 file(s) remainingCompleted 8.3 MiB/77.0 MiB (25.6 MiB/s) with 42 file(s) remainingCompleted 8.6 MiB/77.0 MiB (26.3 MiB/s) with 42 file(s) remainingCompleted 8.8 MiB/77.0 MiB (26.9 MiB/s) with 42 file(s) remainingCompleted 9.1 MiB/77.0 MiB (27.7 MiB/s) with 42 file(s) remainingCompleted 9.3 MiB/77.0 MiB (28.2 MiB/s) with 42 file(s) remainingCompleted 9.6 MiB/77.0 MiB (28.9 MiB/s) with 42 file(s) remainingCompleted 9.8 MiB/77.0 MiB (29.5 MiB/s) with 42 file(s) remainingCompleted 10.1 MiB/77.0 MiB (30.2 MiB/s) with 42 file(s) remainingCompleted 10.3 MiB/77.0 MiB (30.8 MiB/s) with 42 file(s) remainingCompleted 10.6 MiB/77.0 MiB (31.4 MiB/s) with 42 file(s) remainingCompleted 10.8 MiB/77.0 MiB (32.1 MiB/s) with 42 file(s) remainingCompleted 11.1 MiB/77.0 MiB (32.7 MiB/s) with 42 file(s) remainingCompleted 11.1 MiB/77.0 MiB (32.6 MiB/s) with 42 file(s) remainingupload: dashboard/Public/notebooks/BDCat_CAMP_study_exploration_notebook.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/BDCat_CAMP_study_exploration_notebook.png
+Completed 11.1 MiB/77.0 MiB (32.6 MiB/s) with 41 file(s) remainingCompleted 11.2 MiB/77.0 MiB (32.5 MiB/s) with 41 file(s) remainingupload: dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.png
+Completed 11.2 MiB/77.0 MiB (32.5 MiB/s) with 40 file(s) remainingCompleted 11.4 MiB/77.0 MiB (32.6 MiB/s) with 40 file(s) remainingCompleted 11.7 MiB/77.0 MiB (33.2 MiB/s) with 40 file(s) remainingCompleted 11.9 MiB/77.0 MiB (33.8 MiB/s) with 40 file(s) remainingCompleted 12.2 MiB/77.0 MiB (34.2 MiB/s) with 40 file(s) remainingCompleted 12.3 MiB/77.0 MiB (34.3 MiB/s) with 40 file(s) remainingupload: dashboard/Public/notebooks/ACTT1_accessclinical_notebook.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/ACTT1_accessclinical_notebook.png
+Completed 12.3 MiB/77.0 MiB (34.3 MiB/s) with 39 file(s) remainingCompleted 12.6 MiB/77.0 MiB (33.8 MiB/s) with 39 file(s) remainingCompleted 12.8 MiB/77.0 MiB (34.4 MiB/s) with 39 file(s) remainingCompleted 13.1 MiB/77.0 MiB (35.0 MiB/s) with 39 file(s) remainingCompleted 13.3 MiB/77.0 MiB (35.3 MiB/s) with 39 file(s) remainingCompleted 13.4 MiB/77.0 MiB (35.2 MiB/s) with 39 file(s) remainingupload: dashboard/Public/notebooks/BDCat_Framingham_study_exploration_R.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/BDCat_Framingham_study_exploration_R.png
+Completed 13.4 MiB/77.0 MiB (35.2 MiB/s) with 38 file(s) remainingCompleted 13.7 MiB/77.0 MiB (35.4 MiB/s) with 38 file(s) remainingCompleted 13.9 MiB/77.0 MiB (35.9 MiB/s) with 38 file(s) remainingCompleted 14.2 MiB/77.0 MiB (36.5 MiB/s) with 38 file(s) remainingCompleted 14.4 MiB/77.0 MiB (35.1 MiB/s) with 38 file(s) remainingCompleted 14.5 MiB/77.0 MiB (34.9 MiB/s) with 38 file(s) remainingupload: dashboard/Public/notebooks/ACTT1_accessclinical_notebook.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/ACTT1_accessclinical_notebook.html
+Completed 14.5 MiB/77.0 MiB (34.9 MiB/s) with 37 file(s) remainingCompleted 14.8 MiB/77.0 MiB (35.1 MiB/s) with 37 file(s) remainingCompleted 15.0 MiB/77.0 MiB (35.6 MiB/s) with 37 file(s) remainingCompleted 15.3 MiB/77.0 MiB (36.1 MiB/s) with 37 file(s) remainingCompleted 15.5 MiB/77.0 MiB (36.6 MiB/s) with 37 file(s) remainingCompleted 15.6 MiB/77.0 MiB (36.5 MiB/s) with 37 file(s) remainingupload: dashboard/Public/notebooks/BDCat_Framingham_study_exploration_R.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/BDCat_Framingham_study_exploration_R.html
+Completed 15.6 MiB/77.0 MiB (36.5 MiB/s) with 36 file(s) remainingCompleted 15.8 MiB/77.0 MiB (37.0 MiB/s) with 36 file(s) remainingCompleted 16.1 MiB/77.0 MiB (37.5 MiB/s) with 36 file(s) remainingCompleted 16.3 MiB/77.0 MiB (38.0 MiB/s) with 36 file(s) remainingCompleted 16.6 MiB/77.0 MiB (38.4 MiB/s) with 36 file(s) remainingCompleted 16.8 MiB/77.0 MiB (38.9 MiB/s) with 36 file(s) remainingCompleted 17.1 MiB/77.0 MiB (39.2 MiB/s) with 36 file(s) remainingCompleted 17.3 MiB/77.0 MiB (39.6 MiB/s) with 36 file(s) remainingCompleted 17.6 MiB/77.0 MiB (39.7 MiB/s) with 36 file(s) remainingCompleted 17.8 MiB/77.0 MiB (40.1 MiB/s) with 36 file(s) remainingCompleted 18.1 MiB/77.0 MiB (40.6 MiB/s) with 36 file(s) remainingCompleted 18.3 MiB/77.0 MiB (41.1 MiB/s) with 36 file(s) remainingCompleted 18.6 MiB/77.0 MiB (41.6 MiB/s) with 36 file(s) remainingCompleted 18.8 MiB/77.0 MiB (41.2 MiB/s) with 36 file(s) remainingCompleted 19.1 MiB/77.0 MiB (41.7 MiB/s) with 36 file(s) remainingCompleted 19.3 MiB/77.0 MiB (42.1 MiB/s) with 36 file(s) remainingCompleted 19.6 MiB/77.0 MiB (42.6 MiB/s) with 36 file(s) remainingCompleted 19.8 MiB/77.0 MiB (43.0 MiB/s) with 36 file(s) remainingCompleted 20.1 MiB/77.0 MiB (43.4 MiB/s) with 36 file(s) remainingCompleted 20.3 MiB/77.0 MiB (43.9 MiB/s) with 36 file(s) remainingCompleted 20.5 MiB/77.0 MiB (44.1 MiB/s) with 36 file(s) remainingupload: dashboard/Public/notebooks/BDCat_CAMP_study_exploration_notebook.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/BDCat_CAMP_study_exploration_notebook.html
+Completed 20.5 MiB/77.0 MiB (44.1 MiB/s) with 35 file(s) remainingCompleted 20.6 MiB/77.0 MiB (41.3 MiB/s) with 35 file(s) remainingupload: dashboard/Public/notebooks/How_to_access_data.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/How_to_access_data.html
+Completed 20.6 MiB/77.0 MiB (41.3 MiB/s) with 34 file(s) remainingCompleted 20.9 MiB/77.0 MiB (41.3 MiB/s) with 34 file(s) remainingCompleted 21.1 MiB/77.0 MiB (41.7 MiB/s) with 34 file(s) remainingCompleted 21.2 MiB/77.0 MiB (40.9 MiB/s) with 34 file(s) remainingupload: dashboard/Public/notebooks/How_to_access_data.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/How_to_access_data.png
+Completed 21.2 MiB/77.0 MiB (40.9 MiB/s) with 33 file(s) remainingCompleted 21.3 MiB/77.0 MiB (40.6 MiB/s) with 33 file(s) remainingupload: dashboard/Public/notebooks/AnVIL_1k_Genome_data_analysis.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/AnVIL_1k_Genome_data_analysis.html
+Completed 21.3 MiB/77.0 MiB (40.6 MiB/s) with 32 file(s) remainingCompleted 21.5 MiB/77.0 MiB (40.6 MiB/s) with 32 file(s) remainingCompleted 21.8 MiB/77.0 MiB (41.0 MiB/s) with 32 file(s) remainingCompleted 22.0 MiB/77.0 MiB (41.4 MiB/s) with 32 file(s) remainingCompleted 22.2 MiB/77.0 MiB (40.7 MiB/s) with 32 file(s) remainingupload: dashboard/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/BDCat_Biolincc_Framingham_study_exploration.html
+Completed 22.2 MiB/77.0 MiB (40.7 MiB/s) with 31 file(s) remainingCompleted 22.2 MiB/77.0 MiB (40.6 MiB/s) with 31 file(s) remainingCompleted 22.4 MiB/77.0 MiB (40.9 MiB/s) with 31 file(s) remainingupload: dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.png
+Completed 22.4 MiB/77.0 MiB (40.9 MiB/s) with 30 file(s) remainingupload: dashboard/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes.png
+Completed 22.4 MiB/77.0 MiB (40.9 MiB/s) with 29 file(s) remaining
+[0m[1mInitializing provider plugins...[0m
+Completed 22.6 MiB/77.0 MiB (40.7 MiB/s) with 29 file(s) remainingCompleted 22.9 MiB/77.0 MiB (41.0 MiB/s) with 29 file(s) remainingCompleted 23.1 MiB/77.0 MiB (41.4 MiB/s) with 29 file(s) remainingCompleted 23.2 MiB/77.0 MiB (41.0 MiB/s) with 29 file(s) remainingupload: dashboard/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes.html
+Completed 23.2 MiB/77.0 MiB (41.0 MiB/s) with 28 file(s) remainingCompleted 23.5 MiB/77.0 MiB (41.1 MiB/s) with 28 file(s) remainingCompleted 23.7 MiB/77.0 MiB (41.0 MiB/s) with 28 file(s) remainingCompleted 24.0 MiB/77.0 MiB (41.4 MiB/s) with 28 file(s) remainingCompleted 24.2 MiB/77.0 MiB (41.0 MiB/s) with 28 file(s) remainingupload: dashboard/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/GDC_TCGA-CHOL_RNA_analysis_BRH_040722.html
+Completed 24.2 MiB/77.0 MiB (41.0 MiB/s) with 27 file(s) remainingCompleted 24.2 MiB/77.0 MiB (38.7 MiB/s) with 27 file(s) remainingupload: dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html
+Completed 24.2 MiB/77.0 MiB (38.7 MiB/s) with 26 file(s) remainingCompleted 24.2 MiB/77.0 MiB (37.1 MiB/s) with 26 file(s) remainingupload: dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.png
+Completed 24.2 MiB/77.0 MiB (37.1 MiB/s) with 25 file(s) remainingCompleted 24.3 MiB/77.0 MiB (37.1 MiB/s) with 25 file(s) remainingCompleted 24.3 MiB/77.0 MiB (37.1 MiB/s) with 25 file(s) remainingupload: dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png
+Completed 24.3 MiB/77.0 MiB (37.1 MiB/s) with 24 file(s) remainingupload: dashboard/Public/notebooks/MIDRC_CT_Scan_Demo.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/MIDRC_CT_Scan_Demo.png
+Completed 24.3 MiB/77.0 MiB (37.1 MiB/s) with 23 file(s) remainingCompleted 24.5 MiB/77.0 MiB (37.0 MiB/s) with 23 file(s) remainingupload: dashboard/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes_v2.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/JCOIN_PDAPS_Public_Policy_Changes_v2.html
+Completed 24.5 MiB/77.0 MiB (37.0 MiB/s) with 22 file(s) remainingCompleted 24.7 MiB/77.0 MiB (35.7 MiB/s) with 22 file(s) remainingCompleted 25.0 MiB/77.0 MiB (35.3 MiB/s) with 22 file(s) remainingCompleted 25.2 MiB/77.0 MiB (35.7 MiB/s) with 22 file(s) remainingCompleted 25.5 MiB/77.0 MiB (36.0 MiB/s) with 22 file(s) remainingCompleted 25.7 MiB/77.0 MiB (36.3 MiB/s) with 22 file(s) remainingCompleted 26.0 MiB/77.0 MiB (36.5 MiB/s) with 22 file(s) remainingCompleted 26.2 MiB/77.0 MiB (36.8 MiB/s) with 22 file(s) remainingCompleted 26.5 MiB/77.0 MiB (37.2 MiB/s) with 22 file(s) remainingCompleted 26.6 MiB/77.0 MiB (37.2 MiB/s) with 22 file(s) remainingupload: dashboard/Public/notebooks/MIDRC_CT_Scan_Demo.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/MIDRC_CT_Scan_Demo.html
+Completed 26.6 MiB/77.0 MiB (37.2 MiB/s) with 21 file(s) remainingCompleted 26.8 MiB/77.0 MiB (37.4 MiB/s) with 21 file(s) remainingCompleted 27.1 MiB/77.0 MiB (37.7 MiB/s) with 21 file(s) remainingCompleted 27.3 MiB/77.0 MiB (38.0 MiB/s) with 21 file(s) remainingCompleted 27.6 MiB/77.0 MiB (38.3 MiB/s) with 21 file(s) remainingCompleted 27.8 MiB/77.0 MiB (38.4 MiB/s) with 21 file(s) remainingCompleted 28.1 MiB/77.0 MiB (38.7 MiB/s) with 21 file(s) remainingCompleted 28.3 MiB/77.0 MiB (39.0 MiB/s) with 21 file(s) remainingCompleted 28.6 MiB/77.0 MiB (39.2 MiB/s) with 21 file(s) remainingCompleted 28.8 MiB/77.0 MiB (39.4 MiB/s) with 21 file(s) remainingCompleted 29.1 MiB/77.0 MiB (39.7 MiB/s) with 21 file(s) remainingCompleted 29.3 MiB/77.0 MiB (40.0 MiB/s) with 21 file(s) remainingCompleted 29.6 MiB/77.0 MiB (40.3 MiB/s) with 21 file(s) remainingCompleted 29.8 MiB/77.0 MiB (40.5 MiB/s) with 21 file(s) remainingCompleted 30.1 MiB/77.0 MiB (40.8 MiB/s) with 21 file(s) remainingCompleted 30.3 MiB/77.0 MiB (41.1 MiB/s) with 21 file(s) remainingCompleted 30.6 MiB/77.0 MiB (41.4 MiB/s) with 21 file(s) remainingCompleted 30.8 MiB/77.0 MiB (41.6 MiB/s) with 21 file(s) remainingCompleted 31.1 MiB/77.0 MiB (41.9 MiB/s) with 21 file(s) remainingCompleted 31.3 MiB/77.0 MiB (42.1 MiB/s) with 21 file(s) remainingCompleted 31.6 MiB/77.0 MiB (42.4 MiB/s) with 21 file(s) remainingCompleted 31.8 MiB/77.0 MiB (42.7 MiB/s) with 21 file(s) remainingCompleted 32.1 MiB/77.0 MiB (42.9 MiB/s) with 21 file(s) remainingCompleted 32.3 MiB/77.0 MiB (42.9 MiB/s) with 21 file(s) remainingCompleted 32.6 MiB/77.0 MiB (43.3 MiB/s) with 21 file(s) remainingCompleted 32.8 MiB/77.0 MiB (43.5 MiB/s) with 21 file(s) remainingCompleted 33.1 MiB/77.0 MiB (43.8 MiB/s) with 21 file(s) remainingCompleted 33.3 MiB/77.0 MiB (44.1 MiB/s) with 21 file(s) remainingCompleted 33.6 MiB/77.0 MiB (44.3 MiB/s) with 21 file(s) remainingCompleted 33.8 MiB/77.0 MiB (44.6 MiB/s) with 21 file(s) remainingCompleted 34.1 MiB/77.0 MiB (44.9 MiB/s) with 21 file(s) remainingCompleted 34.3 MiB/77.0 MiB (45.1 MiB/s) with 21 file(s) remainingCompleted 34.6 MiB/77.0 MiB (45.4 MiB/s) with 21 file(s) remainingCompleted 34.8 MiB/77.0 MiB (45.7 MiB/s) with 21 file(s) remainingCompleted 35.1 MiB/77.0 MiB (46.0 MiB/s) with 21 file(s) remainingCompleted 35.3 MiB/77.0 MiB (46.3 MiB/s) with 21 file(s) remainingCompleted 35.5 MiB/77.0 MiB (46.5 MiB/s) with 21 file(s) remainingCompleted 35.8 MiB/77.0 MiB (46.8 MiB/s) with 21 file(s) remainingCompleted 36.0 MiB/77.0 MiB (47.0 MiB/s) with 21 file(s) remainingCompleted 36.3 MiB/77.0 MiB (47.3 MiB/s) with 21 file(s) remainingCompleted 36.5 MiB/77.0 MiB (47.6 MiB/s) with 21 file(s) remainingCompleted 36.8 MiB/77.0 MiB (47.9 MiB/s) with 21 file(s) remainingupload: dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/MIDRC_Clinical_Data_Demo.html
+Completed 36.8 MiB/77.0 MiB (47.9 MiB/s) with 20 file(s) remainingCompleted 37.0 MiB/77.0 MiB (48.0 MiB/s) with 20 file(s) remainingCompleted 37.3 MiB/77.0 MiB (48.1 MiB/s) with 20 file(s) remainingCompleted 37.5 MiB/77.0 MiB (48.4 MiB/s) with 20 file(s) remainingCompleted 37.8 MiB/77.0 MiB (48.7 MiB/s) with 20 file(s) remainingCompleted 38.0 MiB/77.0 MiB (48.9 MiB/s) with 20 file(s) remainingCompleted 38.3 MiB/77.0 MiB (49.2 MiB/s) with 20 file(s) remainingCompleted 38.5 MiB/77.0 MiB (49.5 MiB/s) with 20 file(s) remainingCompleted 38.8 MiB/77.0 MiB (49.8 MiB/s) with 20 file(s) remainingCompleted 39.0 MiB/77.0 MiB (50.1 MiB/s) with 20 file(s) remainingCompleted 39.0 MiB/77.0 MiB (50.0 MiB/s) with 20 file(s) remainingupload: dashboard/Public/notebooks/OADC_CCLE_RNAseq_visualization.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/OADC_CCLE_RNAseq_visualization.png
+Completed 39.0 MiB/77.0 MiB (50.0 MiB/s) with 19 file(s) remainingCompleted 39.3 MiB/77.0 MiB (50.1 MiB/s) with 19 file(s) remainingCompleted 39.5 MiB/77.0 MiB (50.3 MiB/s) with 19 file(s) remainingCompleted 39.8 MiB/77.0 MiB (50.6 MiB/s) with 19 file(s) remainingCompleted 40.0 MiB/77.0 MiB (50.9 MiB/s) with 19 file(s) remainingCompleted 40.3 MiB/77.0 MiB (50.9 MiB/s) with 19 file(s) remainingCompleted 40.5 MiB/77.0 MiB (51.2 MiB/s) with 19 file(s) remainingCompleted 40.8 MiB/77.0 MiB (51.4 MiB/s) with 19 file(s) remainingCompleted 41.0 MiB/77.0 MiB (51.7 MiB/s) with 19 file(s) remainingCompleted 41.3 MiB/77.0 MiB (51.9 MiB/s) with 19 file(s) remainingCompleted 41.5 MiB/77.0 MiB (52.2 MiB/s) with 19 file(s) remainingCompleted 41.8 MiB/77.0 MiB (52.4 MiB/s) with 19 file(s) remainingCompleted 42.0 MiB/77.0 MiB (52.7 MiB/s) with 19 file(s) remainingCompleted 42.3 MiB/77.0 MiB (52.9 MiB/s) with 19 file(s) remainingCompleted 42.5 MiB/77.0 MiB (53.1 MiB/s) with 19 file(s) remainingCompleted 42.8 MiB/77.0 MiB (53.3 MiB/s) with 19 file(s) remainingCompleted 43.0 MiB/77.0 MiB (53.5 MiB/s) with 19 file(s) remainingCompleted 43.3 MiB/77.0 MiB (53.8 MiB/s) with 19 file(s) remainingCompleted 43.5 MiB/77.0 MiB (54.1 MiB/s) with 19 file(s) remainingCompleted 43.8 MiB/77.0 MiB (54.3 MiB/s) with 19 file(s) remainingCompleted 44.0 MiB/77.0 MiB (54.6 MiB/s) with 19 file(s) remainingCompleted 44.3 MiB/77.0 MiB (54.9 MiB/s) with 19 file(s) remainingCompleted 44.5 MiB/77.0 MiB (55.1 MiB/s) with 19 file(s) remainingCompleted 44.8 MiB/77.0 MiB (55.4 MiB/s) with 19 file(s) remainingCompleted 45.0 MiB/77.0 MiB (55.6 MiB/s) with 19 file(s) remainingCompleted 45.3 MiB/77.0 MiB (55.7 MiB/s) with 19 file(s) remainingCompleted 45.5 MiB/77.0 MiB (55.9 MiB/s) with 19 file(s) remainingCompleted 45.8 MiB/77.0 MiB (56.1 MiB/s) with 19 file(s) remainingCompleted 46.0 MiB/77.0 MiB (56.3 MiB/s) with 19 file(s) remainingCompleted 46.3 MiB/77.0 MiB (56.5 MiB/s) with 19 file(s) remainingCompleted 46.5 MiB/77.0 MiB (56.8 MiB/s) with 19 file(s) remainingCompleted 46.8 MiB/77.0 MiB (57.0 MiB/s) with 19 file(s) remainingCompleted 47.0 MiB/77.0 MiB (57.1 MiB/s) with 19 file(s) remainingupload: dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.html
+Completed 47.0 MiB/77.0 MiB (57.1 MiB/s) with 18 file(s) remainingCompleted 47.3 MiB/77.0 MiB (57.3 MiB/s) with 18 file(s) remainingCompleted 47.5 MiB/77.0 MiB (57.5 MiB/s) with 18 file(s) remainingCompleted 47.8 MiB/77.0 MiB (57.8 MiB/s) with 18 file(s) remainingCompleted 48.0 MiB/77.0 MiB (57.8 MiB/s) with 18 file(s) remainingCompleted 48.3 MiB/77.0 MiB (58.0 MiB/s) with 18 file(s) remainingCompleted 48.5 MiB/77.0 MiB (58.2 MiB/s) with 18 file(s) remainingCompleted 48.8 MiB/77.0 MiB (58.4 MiB/s) with 18 file(s) remainingCompleted 49.0 MiB/77.0 MiB (58.7 MiB/s) with 18 file(s) remainingCompleted 49.3 MiB/77.0 MiB (58.9 MiB/s) with 18 file(s) remainingCompleted 49.5 MiB/77.0 MiB (59.1 MiB/s) with 18 file(s) remainingCompleted 49.8 MiB/77.0 MiB (59.3 MiB/s) with 18 file(s) remainingCompleted 50.0 MiB/77.0 MiB (59.6 MiB/s) with 18 file(s) remainingCompleted 50.3 MiB/77.0 MiB (59.8 MiB/s) with 18 file(s) remainingCompleted 50.5 MiB/77.0 MiB (60.0 MiB/s) with 18 file(s) remainingCompleted 50.8 MiB/77.0 MiB (60.2 MiB/s) with 18 file(s) remainingCompleted 51.0 MiB/77.0 MiB (60.1 MiB/s) with 18 file(s) remainingCompleted 51.3 MiB/77.0 MiB (60.3 MiB/s) with 18 file(s) remainingCompleted 51.5 MiB/77.0 MiB (60.5 MiB/s) with 18 file(s) remainingCompleted 51.8 MiB/77.0 MiB (60.7 MiB/s) with 18 file(s) remainingCompleted 52.0 MiB/77.0 MiB (61.0 MiB/s) with 18 file(s) remainingCompleted 52.3 MiB/77.0 MiB (61.2 MiB/s) with 18 file(s) remainingCompleted 52.5 MiB/77.0 MiB (61.4 MiB/s) with 18 file(s) remainingCompleted 52.8 MiB/77.0 MiB (61.7 MiB/s) with 18 file(s) remainingCompleted 53.0 MiB/77.0 MiB (61.9 MiB/s) with 18 file(s) remainingCompleted 53.3 MiB/77.0 MiB (62.1 MiB/s) with 18 file(s) remainingCompleted 53.5 MiB/77.0 MiB (62.3 MiB/s) with 18 file(s) remainingCompleted 53.8 MiB/77.0 MiB (62.6 MiB/s) with 18 file(s) remainingCompleted 54.0 MiB/77.0 MiB (62.8 MiB/s) with 18 file(s) remainingCompleted 54.3 MiB/77.0 MiB (63.0 MiB/s) with 18 file(s) remainingCompleted 54.5 MiB/77.0 MiB (63.2 MiB/s) with 18 file(s) remainingCompleted 54.8 MiB/77.0 MiB (63.4 MiB/s) with 18 file(s) remainingCompleted 55.0 MiB/77.0 MiB (63.6 MiB/s) with 18 file(s) remainingCompleted 55.3 MiB/77.0 MiB (63.8 MiB/s) with 18 file(s) remainingCompleted 55.5 MiB/77.0 MiB (64.0 MiB/s) with 18 file(s) remainingCompleted 55.8 MiB/77.0 MiB (64.3 MiB/s) with 18 file(s) remainingCompleted 56.0 MiB/77.0 MiB (64.5 MiB/s) with 18 file(s) remainingCompleted 56.3 MiB/77.0 MiB (64.7 MiB/s) with 18 file(s) remainingCompleted 56.5 MiB/77.0 MiB (64.9 MiB/s) with 18 file(s) remainingCompleted 56.8 MiB/77.0 MiB (65.1 MiB/s) with 18 file(s) remainingCompleted 57.0 MiB/77.0 MiB (65.3 MiB/s) with 18 file(s) remainingCompleted 57.3 MiB/77.0 MiB (65.5 MiB/s) with 18 file(s) remainingCompleted 57.5 MiB/77.0 MiB (65.6 MiB/s) with 18 file(s) remainingCompleted 57.8 MiB/77.0 MiB (65.9 MiB/s) with 18 file(s) remainingCompleted 58.0 MiB/77.0 MiB (66.0 MiB/s) with 18 file(s) remainingCompleted 58.3 MiB/77.0 MiB (66.2 MiB/s) with 18 file(s) remainingCompleted 58.3 MiB/77.0 MiB (66.2 MiB/s) with 18 file(s) remainingupload: dashboard/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/OADC_CCLE_gene_expression_data_analysis.png
+Completed 58.3 MiB/77.0 MiB (66.2 MiB/s) with 17 file(s) remainingCompleted 58.6 MiB/77.0 MiB (66.2 MiB/s) with 17 file(s) remainingCompleted 58.8 MiB/77.0 MiB (66.5 MiB/s) with 17 file(s) remainingCompleted 59.1 MiB/77.0 MiB (66.7 MiB/s) with 17 file(s) remainingCompleted 59.3 MiB/77.0 MiB (66.9 MiB/s) with 17 file(s) remainingCompleted 59.6 MiB/77.0 MiB (67.1 MiB/s) with 17 file(s) remainingCompleted 59.8 MiB/77.0 MiB (67.2 MiB/s) with 17 file(s) remainingCompleted 60.1 MiB/77.0 MiB (67.4 MiB/s) with 17 file(s) remainingCompleted 60.3 MiB/77.0 MiB (67.6 MiB/s) with 17 file(s) remainingCompleted 60.6 MiB/77.0 MiB (67.8 MiB/s) with 17 file(s) remainingCompleted 60.8 MiB/77.0 MiB (68.0 MiB/s) with 17 file(s) remainingCompleted 61.1 MiB/77.0 MiB (68.1 MiB/s) with 17 file(s) remainingCompleted 61.3 MiB/77.0 MiB (68.3 MiB/s) with 17 file(s) remainingCompleted 61.6 MiB/77.0 MiB (68.5 MiB/s) with 17 file(s) remainingCompleted 61.8 MiB/77.0 MiB (68.7 MiB/s) with 17 file(s) remainingCompleted 62.1 MiB/77.0 MiB (68.9 MiB/s) with 17 file(s) remainingCompleted 62.3 MiB/77.0 MiB (69.2 MiB/s) with 17 file(s) remainingCompleted 62.6 MiB/77.0 MiB (69.4 MiB/s) with 17 file(s) remainingCompleted 62.8 MiB/77.0 MiB (69.6 MiB/s) with 17 file(s) remainingCompleted 63.1 MiB/77.0 MiB (69.8 MiB/s) with 17 file(s) remainingCompleted 63.3 MiB/77.0 MiB (70.0 MiB/s) with 17 file(s) remainingCompleted 63.6 MiB/77.0 MiB (70.1 MiB/s) with 17 file(s) remainingCompleted 63.8 MiB/77.0 MiB (70.4 MiB/s) with 17 file(s) remainingCompleted 64.1 MiB/77.0 MiB (70.5 MiB/s) with 17 file(s) remainingCompleted 64.3 MiB/77.0 MiB (70.7 MiB/s) with 17 file(s) remainingCompleted 64.6 MiB/77.0 MiB (70.9 MiB/s) with 17 file(s) remainingCompleted 64.8 MiB/77.0 MiB (71.2 MiB/s) with 17 file(s) remainingCompleted 65.1 MiB/77.0 MiB (71.1 MiB/s) with 17 file(s) remainingCompleted 65.3 MiB/77.0 MiB (71.3 MiB/s) with 17 file(s) remainingCompleted 65.6 MiB/77.0 MiB (71.5 MiB/s) with 17 file(s) remainingCompleted 65.8 MiB/77.0 MiB (71.7 MiB/s) with 17 file(s) remainingCompleted 66.1 MiB/77.0 MiB (71.9 MiB/s) with 17 file(s) remainingCompleted 66.3 MiB/77.0 MiB (72.1 MiB/s) with 17 file(s) remainingCompleted 66.6 MiB/77.0 MiB (72.3 MiB/s) with 17 file(s) remainingCompleted 66.8 MiB/77.0 MiB (72.6 MiB/s) with 17 file(s) remainingCompleted 67.1 MiB/77.0 MiB (72.7 MiB/s) with 17 file(s) remainingCompleted 67.3 MiB/77.0 MiB (72.9 MiB/s) with 17 file(s) remainingCompleted 67.6 MiB/77.0 MiB (73.1 MiB/s) with 17 file(s) remainingCompleted 67.8 MiB/77.0 MiB (72.8 MiB/s) with 17 file(s) remainingCompleted 68.1 MiB/77.0 MiB (73.0 MiB/s) with 17 file(s) remainingCompleted 68.3 MiB/77.0 MiB (73.3 MiB/s) with 17 file(s) remainingCompleted 68.6 MiB/77.0 MiB (73.2 MiB/s) with 17 file(s) remainingCompleted 68.8 MiB/77.0 MiB (73.2 MiB/s) with 17 file(s) remainingupload: dashboard/Public/notebooks/PDC_clustergram.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/PDC_clustergram.png
+Completed 68.8 MiB/77.0 MiB (73.2 MiB/s) with 16 file(s) remainingCompleted 69.0 MiB/77.0 MiB (73.1 MiB/s) with 16 file(s) remainingCompleted 69.3 MiB/77.0 MiB (73.3 MiB/s) with 16 file(s) remainingCompleted 69.5 MiB/77.0 MiB (73.5 MiB/s) with 16 file(s) remainingCompleted 69.8 MiB/77.0 MiB (73.7 MiB/s) with 16 file(s) remainingCompleted 70.0 MiB/77.0 MiB (73.9 MiB/s) with 16 file(s) remainingCompleted 70.3 MiB/77.0 MiB (74.1 MiB/s) with 16 file(s) remainingCompleted 70.5 MiB/77.0 MiB (74.2 MiB/s) with 16 file(s) remainingCompleted 70.8 MiB/77.0 MiB (74.4 MiB/s) with 16 file(s) remainingCompleted 71.0 MiB/77.0 MiB (74.6 MiB/s) with 16 file(s) remainingCompleted 71.3 MiB/77.0 MiB (74.8 MiB/s) with 16 file(s) remainingCompleted 71.5 MiB/77.0 MiB (75.0 MiB/s) with 16 file(s) remainingCompleted 71.8 MiB/77.0 MiB (75.2 MiB/s) with 16 file(s) remainingCompleted 72.0 MiB/77.0 MiB (75.4 MiB/s) with 16 file(s) remainingCompleted 72.3 MiB/77.0 MiB (75.6 MiB/s) with 16 file(s) remainingCompleted 72.5 MiB/77.0 MiB (75.1 MiB/s) with 16 file(s) remainingCompleted 72.6 MiB/77.0 MiB (72.8 MiB/s) with 16 file(s) remainingupload: dashboard/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/JCOIN_MOUD_accessibility_jupyter_notebook_BRH.html
+Completed 72.6 MiB/77.0 MiB (72.8 MiB/s) with 15 file(s) remainingCompleted 72.8 MiB/77.0 MiB (70.0 MiB/s) with 15 file(s) remainingupload: dashboard/Public/notebooks/Predicting_Insights_Into_Heart_Health.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/Predicting_Insights_Into_Heart_Health.html
+Completed 72.8 MiB/77.0 MiB (70.0 MiB/s) with 14 file(s) remainingCompleted 73.1 MiB/77.0 MiB (69.4 MiB/s) with 14 file(s) remainingCompleted 73.3 MiB/77.0 MiB (69.6 MiB/s) with 14 file(s) remainingCompleted 73.4 MiB/77.0 MiB (69.6 MiB/s) with 14 file(s) remainingupload: dashboard/Public/notebooks/Predicting_Insights_Into_Heart_Health.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/Predicting_Insights_Into_Heart_Health.png
+Completed 73.4 MiB/77.0 MiB (69.6 MiB/s) with 13 file(s) remainingCompleted 73.7 MiB/77.0 MiB (69.6 MiB/s) with 13 file(s) remainingCompleted 73.9 MiB/77.0 MiB (69.7 MiB/s) with 13 file(s) remainingCompleted 74.2 MiB/77.0 MiB (69.8 MiB/s) with 13 file(s) remainingCompleted 74.4 MiB/77.0 MiB (69.0 MiB/s) with 13 file(s) remainingCompleted 74.5 MiB/77.0 MiB (68.1 MiB/s) with 13 file(s) remainingupload: dashboard/Public/notebooks/IBD_notebook.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/IBD_notebook.png
+Completed 74.5 MiB/77.0 MiB (68.1 MiB/s) with 12 file(s) remainingCompleted 74.7 MiB/77.0 MiB (68.0 MiB/s) with 12 file(s) remainingCompleted 75.0 MiB/77.0 MiB (68.1 MiB/s) with 12 file(s) remainingCompleted 75.1 MiB/77.0 MiB (68.0 MiB/s) with 12 file(s) remainingupload: dashboard/Public/notebooks/PDC_clustergram_nextflow.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/PDC_clustergram_nextflow.html
+Completed 75.1 MiB/77.0 MiB (68.0 MiB/s) with 11 file(s) remainingCompleted 75.1 MiB/77.0 MiB (67.6 MiB/s) with 11 file(s) remainingupload: dashboard/Public/notebooks/TCGA_PRAD_Analysis.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/TCGA_PRAD_Analysis.png
+Completed 75.1 MiB/77.0 MiB (67.6 MiB/s) with 10 file(s) remainingCompleted 75.2 MiB/77.0 MiB (67.5 MiB/s) with 10 file(s) remainingupload: dashboard/Public/notebooks/MIDRC_Clinical_Data_Demo.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/MIDRC_Clinical_Data_Demo.png
+Completed 75.2 MiB/77.0 MiB (67.5 MiB/s) with 9 file(s) remainingCompleted 75.3 MiB/77.0 MiB (67.1 MiB/s) with 9 file(s) remainingupload: dashboard/Public/notebooks/PDC_clustergram.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/PDC_clustergram.html
+Completed 75.3 MiB/77.0 MiB (67.1 MiB/s) with 8 file(s) remainingCompleted 75.5 MiB/77.0 MiB (67.2 MiB/s) with 8 file(s) remainingCompleted 75.8 MiB/77.0 MiB (67.4 MiB/s) with 8 file(s) remainingCompleted 75.9 MiB/77.0 MiB (62.7 MiB/s) with 8 file(s) remainingupload: dashboard/Public/notebooks/TCGA_PRAD_Analysis.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/TCGA_PRAD_Analysis.html
+Completed 75.9 MiB/77.0 MiB (62.7 MiB/s) with 7 file(s) remainingCompleted 76.1 MiB/77.0 MiB (62.6 MiB/s) with 7 file(s) remainingupload: dashboard/Public/notebooks/IBD_notebook.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/IBD_notebook.html
+Completed 76.1 MiB/77.0 MiB (62.6 MiB/s) with 6 file(s) remainingCompleted 76.3 MiB/77.0 MiB (62.7 MiB/s) with 6 file(s) remainingCompleted 76.6 MiB/77.0 MiB (62.8 MiB/s) with 6 file(s) remainingCompleted 76.7 MiB/77.0 MiB (62.5 MiB/s) with 6 file(s) remainingupload: dashboard/Public/notebooks/canine_datacommons_fastq_reader.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/canine_datacommons_fastq_reader.png
+Completed 76.7 MiB/77.0 MiB (62.5 MiB/s) with 5 file(s) remainingCompleted 76.7 MiB/77.0 MiB (62.2 MiB/s) with 5 file(s) remainingupload: dashboard/Public/notebooks/canine_datacommons_fastq_reader.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/canine_datacommons_fastq_reader.html
+Completed 76.7 MiB/77.0 MiB (62.2 MiB/s) with 4 file(s) remainingCompleted 76.7 MiB/77.0 MiB (62.2 MiB/s) with 4 file(s) remainingupload: dashboard/Public/notebooks/nextflow_logo.png to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/nextflow_logo.png
+Completed 76.7 MiB/77.0 MiB (62.2 MiB/s) with 3 file(s) remainingCompleted 76.9 MiB/77.0 MiB (60.3 MiB/s) with 3 file(s) remainingupload: dashboard/Public/notebooks/data_access_how_to.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/data_access_how_to.html
+Completed 76.9 MiB/77.0 MiB (60.3 MiB/s) with 2 file(s) remainingupload: dashboard/Public/notebooks/OADC_CCLE_RNAseq_visualization.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/OADC_CCLE_RNAseq_visualization.html
+Completed 76.9 MiB/77.0 MiB (60.3 MiB/s) with 1 file(s) remaining
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+Completed 77.0 MiB/77.0 MiB (57.5 MiB/s) with 1 file(s) remainingupload: dashboard/Public/notebooks/multi_container_nextflow.html to s3://dashboard-707767160287-devplanetv1-gen3/ajsnow.planx-pla.net/Public/notebooks/multi_container_nextflow.html
+null
+null
+null
+null
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2024.02
+Running terraform plan   --var-file ./config.tfvars -out plan.terraform /home/ajsnow/cloud-automation/tf_files/aws/data_bucket/
+[32mINFO: 20:34:26 -[39m Entering module manifest checks
+[32mINFO: 20:34:26 -[39m Module loaded /home/ajsnow/cloud-automation/tf_files/aws/data_bucket/manifest.json
+[32mINFO: 20:34:26 -[39m Moving on with terraform 0.12
+gen3_aws_run terraform12 plan --var-file ./config.tfvars -out plan.terraform /home/ajsnow/cloud-automation/tf_files/aws/data_bucket/
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/requestor:2024.02
+707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2024.02
+service/sheepdog-service configured
+[0m[1mRefreshing Terraform state in-memory prior to plan...[0m
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+[0m
+[0m[1mmodule.s3_bucket.data.aws_cloudwatch_log_group.logs_destination: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.aws_iam_role.mybucket_reader: Refreshing state... [id=bucket_reader_devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.aws_iam_role.mybucket_writer: Refreshing state... [id=bucket_writer_devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.aws_s3_bucket.log_bucket: Refreshing state... [id=s3logs-devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.aws_iam_instance_profile.mybucket_writer: Refreshing state... [id=bucket_writer_devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.aws_iam_instance_profile.mybucket_reader: Refreshing state... [id=bucket_reader_devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.trail_policy: Refreshing state...[0m
+secret "metadata-config" deleted
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.aws_s3_bucket_policy.log_bucket_writer_by_ct: Refreshing state... [id=s3logs-devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.aws_s3_bucket_public_access_block.s3-log_bucket_privacy: Refreshing state... [id=s3logs-devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.data.aws_iam_policy_document.log_bucket_writer: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.module.cdis_s3_logs.aws_iam_policy.log_bucket_writer: Refreshing state... [id=arn:aws:iam::707767160287:policy/bucket_writer_s3logs-devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.aws_s3_bucket.mybucket: Refreshing state... [id=devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.mybucket_writer: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.mybucket_reader: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.aws_iam_policy.mybucket_writer: Refreshing state... [id=arn:aws:iam::707767160287:policy/bucket_writer_devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.aws_iam_policy.mybucket_reader: Refreshing state... [id=arn:aws:iam::707767160287:policy/bucket_reader_devplanetv2-thanos-bucket][0m
+[0m[1mmodule.s3_bucket.aws_iam_role_policy_attachment.mybucket_reader: Refreshing state... [id=bucket_reader_devplanetv2-thanos-bucket-20230330220300041000000003][0m
+[0m[1mmodule.s3_bucket.aws_iam_role_policy_attachment.mybucket_writer: Refreshing state... [id=bucket_writer_devplanetv2-thanos-bucket-20230330220259986000000002][0m
+
+------------------------------------------------------------------------
+secret/metadata-config created
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place
+ [36m<=[0m read (data resources)
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.s3_bucket.data.aws_iam_policy_document.mybucket_reader[0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "mybucket_reader"  {
+      [32m+[0m [0m[1m[0mid[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mjson[0m[0m = (known after apply)
+
+      [32m+[0m [0mstatement {
+          [32m+[0m [0m[1m[0mactions[0m[0m   = [
+              [32m+[0m [0m"s3:Get*",
+              [32m+[0m [0m"s3:List*",
+            ]
+          [32m+[0m [0m[1m[0meffect[0m[0m    = "Allow"
+          [32m+[0m [0m[1m[0mresources[0m[0m = [
+              [32m+[0m [0m"arn:aws:s3:::devplanetv2-thanos-bucket",
+              [32m+[0m [0m"arn:aws:s3:::devplanetv2-thanos-bucket/*",
+            ]
+        }
+    }
+
+[1m  # module.s3_bucket.data.aws_iam_policy_document.mybucket_writer[0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "aws_iam_policy_document" "mybucket_writer"  {
+      [32m+[0m [0m[1m[0mid[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mjson[0m[0m = (known after apply)
+
+      [32m+[0m [0mstatement {
+          [32m+[0m [0m[1m[0mactions[0m[0m   = [
+              [32m+[0m [0m"s3:Get*",
+              [32m+[0m [0m"s3:List*",
+            ]
+          [32m+[0m [0m[1m[0meffect[0m[0m    = "Allow"
+          [32m+[0m [0m[1m[0mresources[0m[0m = [
+              [32m+[0m [0m"arn:aws:s3:::devplanetv2-thanos-bucket",
+              [32m+[0m [0m"arn:aws:s3:::devplanetv2-thanos-bucket/*",
+            ]
+        }
+      [32m+[0m [0mstatement {
+          [32m+[0m [0m[1m[0mactions[0m[0m   = [
+              [32m+[0m [0m"s3:DeleteObject",
+              [32m+[0m [0m"s3:GetObject",
+              [32m+[0m [0m"s3:PutObject",
+            ]
+          [32m+[0m [0m[1m[0meffect[0m[0m    = "Allow"
+          [32m+[0m [0m[1m[0mresources[0m[0m = [
+              [32m+[0m [0m"arn:aws:s3:::devplanetv2-thanos-bucket/*",
+            ]
+        }
+    }
+
+[1m  # module.s3_bucket.aws_iam_policy.mybucket_reader[0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_iam_policy" "mybucket_reader" {
+        [1m[0marn[0m[0m         = "arn:aws:iam::707767160287:policy/bucket_reader_devplanetv2-thanos-bucket"
+        [1m[0mdescription[0m[0m = "Read devplanetv2-thanos-bucket"
+        [1m[0mid[0m[0m          = "arn:aws:iam::707767160287:policy/bucket_reader_devplanetv2-thanos-bucket"
+        [1m[0mname[0m[0m        = "bucket_reader_devplanetv2-thanos-bucket"
+        [1m[0mpath[0m[0m        = "/"
+      [33m~[0m [0m[1m[0mpolicy[0m[0m      = jsonencode(
+            {
+              [31m-[0m [0mStatement = [
+                  [31m-[0m [0m{
+                      [31m-[0m [0mAction   = [
+                          [31m-[0m [0m"s3:List*",
+                          [31m-[0m [0m"s3:Get*",
+                        ]
+                      [31m-[0m [0mEffect   = "Allow"
+                      [31m-[0m [0mResource = [
+                          [31m-[0m [0m"arn:aws:s3:::devplanetv2-thanos-bucket/*",
+                          [31m-[0m [0m"arn:aws:s3:::devplanetv2-thanos-bucket",
+                        ]
+                      [31m-[0m [0mSid      = ""
+                    },
+                ]
+              [31m-[0m [0mVersion   = "2012-10-17"
+            }
+        ) [33m->[0m [0m(known after apply)
+    }
+
+[1m  # module.s3_bucket.aws_iam_policy.mybucket_writer[0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_iam_policy" "mybucket_writer" {
+        [1m[0marn[0m[0m         = "arn:aws:iam::707767160287:policy/bucket_writer_devplanetv2-thanos-bucket"
+        [1m[0mdescription[0m[0m = "Read or write devplanetv2-thanos-bucket"
+        [1m[0mid[0m[0m          = "arn:aws:iam::707767160287:policy/bucket_writer_devplanetv2-thanos-bucket"
+        [1m[0mname[0m[0m        = "bucket_writer_devplanetv2-thanos-bucket"
+        [1m[0mpath[0m[0m        = "/"
+      [33m~[0m [0m[1m[0mpolicy[0m[0m      = jsonencode(
+            {
+              [31m-[0m [0mStatement = [
+                  [31m-[0m [0m{
+                      [31m-[0m [0mAction   = [
+                          [31m-[0m [0m"s3:List*",
+                          [31m-[0m [0m"s3:Get*",
+                        ]
+                      [31m-[0m [0mEffect   = "Allow"
+                      [31m-[0m [0mResource = [
+                          [31m-[0m [0m"arn:aws:s3:::devplanetv2-thanos-bucket/*",
+                          [31m-[0m [0m"arn:aws:s3:::devplanetv2-thanos-bucket",
+                        ]
+                      [31m-[0m [0mSid      = ""
+                    },
+                  [31m-[0m [0m{
+                      [31m-[0m [0mAction   = [
+                          [31m-[0m [0m"s3:PutObject",
+                          [31m-[0m [0m"s3:GetObject",
+                          [31m-[0m [0m"s3:DeleteObject",
+                        ]
+                      [31m-[0m [0mEffect   = "Allow"
+                      [31m-[0m [0mResource = "arn:aws:s3:::devplanetv2-thanos-bucket/*"
+                      [31m-[0m [0mSid      = ""
+                    },
+                ]
+              [31m-[0m [0mVersion   = "2012-10-17"
+            }
+        ) [33m->[0m [0m(known after apply)
+    }
+
+[1m  # module.s3_bucket.aws_s3_bucket.mybucket[0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_s3_bucket" "mybucket" {
+        [1m[0macl[0m[0m                         = "private"
+        [1m[0marn[0m[0m                         = "arn:aws:s3:::devplanetv2-thanos-bucket"
+        [1m[0mbucket[0m[0m                      = "devplanetv2-thanos-bucket"
+        [1m[0mbucket_domain_name[0m[0m          = "devplanetv2-thanos-bucket.s3.amazonaws.com"
+        [1m[0mbucket_regional_domain_name[0m[0m = "devplanetv2-thanos-bucket.s3.amazonaws.com"
+        [1m[0mforce_destroy[0m[0m               = false
+        [1m[0mhosted_zone_id[0m[0m              = "Z3AQBSTGFYJSTF"
+        [1m[0mid[0m[0m                          = "devplanetv2-thanos-bucket"
+        [1m[0mregion[0m[0m                      = "us-east-1"
+        [1m[0mrequest_payer[0m[0m               = "BucketOwner"
+        [1m[0mtags[0m[0m                        = {
+            "Environment" = "devplanetv2"
+            "Name"        = "devplanetv2-thanos-bucket"
+            "Purpose"     = "data bucket"
+        }
+
+      [33m~[0m [0mlifecycle_rule {
+            [1m[0mabort_incomplete_multipart_upload_days[0m[0m = 7
+            [1m[0menabled[0m[0m                                = true
+            [1m[0mid[0m[0m                                     = "tf-s3-lifecycle-20230330220258946200000001"
+            [1m[0mtags[0m[0m                                   = {}
+
+          [31m-[0m [0mexpiration {
+              [31m-[0m [0m[1m[0mdays[0m[0m                         = 0 [90m->[0m [0m[90mnull[0m[0m
+              [31m-[0m [0m[1m[0mexpired_object_delete_marker[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+            }
+        }
+
+        logging {
+            [1m[0mtarget_bucket[0m[0m = "s3logs-devplanetv2-thanos-bucket"
+            [1m[0mtarget_prefix[0m[0m = "log/devplanetv2-thanos-bucket/"
+        }
+
+        server_side_encryption_configuration {
+            rule {
+                apply_server_side_encryption_by_default {
+                    [1m[0msse_algorithm[0m[0m = "AES256"
+                }
+            }
+        }
+
+        versioning {
+            [1m[0menabled[0m[0m    = false
+            [1m[0mmfa_delete[0m[0m = false
+        }
+    }
+
+[0m[1mPlan:[0m 0 to add, 3 to change, 0 to destroy.[0m
+[33m
+[1m[33mWarning: [0m[0m[1mInterpolation-only expressions are deprecated[0m
+
+[0m  on ../../../../../cloud-automation/tf_files/aws/modules/s3-bucket/cloud.tf line 18, in resource "aws_s3_bucket" "mybucket":
+  18:   bucket = [4m"${local.clean_bucket_name}"[0m
+[0m
+Terraform 0.11 and earlier required all non-constant expressions to be
+provided via interpolation syntax, but this pattern is now deprecated. To
+silence this warning, remove the "${ sequence from the start and the }"
+sequence from the end of this expression, leaving just the inner expression.
+
+Template interpolation syntax is still used to construct strings from
+expressions when the template includes multiple interpolation sequences or a
+mixture of literal strings and interpolations. This deprecation applies only
+to templates that consist entirely of a single interpolation sequence.
+
+(and 23 more similar warnings elsewhere)
+[0m[0m
+
+------------------------------------------------------------------------
+
+This plan was saved to: plan.terraform
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "plan.terraform"
+
+
+WARNING: applying this plan will change your infrastructure.
+    Do not apply a plan that 'destroys' resources unless you know what you are doing.
+
+Use 'gen3 tfapply' to apply this plan, and backup the configuration variables
+[32mINFO: 20:34:36 -[39m Running: terraform apply plan.terraform
+service/sheepdog-canary-service unchanged
+[32mINFO: 20:34:36 -[39m Entering module manifest checks
+[32mINFO: 20:34:36 -[39m Module loaded /home/ajsnow/cloud-automation/tf_files/aws/data_bucket/manifest.json
+The sheepdog service has been deployed onto the k8s cluster.
+[32mINFO: 20:34:36 -[39m Moving on with terraform 0.12
+gen3_aws_run terraform12 apply plan.terraform
+deployment.apps/manifestservice-deployment configured
+[0m[1mmodule.s3_bucket.aws_s3_bucket.mybucket: Modifying... [id=devplanetv2-thanos-bucket][0m[0m
+[0m[1mmodule.s3_bucket.aws_s3_bucket.mybucket: Modifications complete after 1s [id=devplanetv2-thanos-bucket][0m[0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.mybucket_reader: Refreshing state...[0m
+[0m[1mmodule.s3_bucket.data.aws_iam_policy_document.mybucket_writer: Refreshing state...[0m
+[33m
+[1m[33mWarning: [0m[0m[1mInterpolation-only expressions are deprecated[0m
+
+[0m  on ../../../../../cloud-automation/tf_files/aws/modules/s3-bucket/cloud.tf line 18, in resource "aws_s3_bucket" "mybucket":
+  18:   bucket = [4m"${local.clean_bucket_name}"[0m
+[0m
+Terraform 0.11 and earlier required all non-constant expressions to be
+provided via interpolation syntax, but this pattern is now deprecated. To
+silence this warning, remove the "${ sequence from the start and the }"
+sequence from the end of this expression, leaving just the inner expression.
+
+Template interpolation syntax is still used to construct strings from
+expressions when the template includes multiple interpolation sequences or a
+mixture of literal strings and interpolations. This deprecation applies only
+to templates that consist entirely of a single interpolation sequence.
+
+(and 23 more similar warnings elsewhere)
+[0m[0m
+[0m[1m[32m
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.[0m
+[0m[1m[32m
+Outputs:
+
+bucket_name = devplanetv2-thanos-bucket
+log_bucket_name = s3logs-devplanetv2-thanos-bucket
+ro_role_id = bucket_reader_devplanetv2-thanos-bucket
+rw_role_id = bucket_writer_devplanetv2-thanos-bucket[0m
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'ajsnow@cdistestdevadmin.(none)')
+[32mINFO: 20:34:41 -[39m Backing up files to s3
+[32mINFO: 20:34:41 -[39m Backing up config.tfvars to s3://cdis-state-ac707767160287-gen3/devplanetv2-thanos-bucket_databucket/config.tfvars
+service/fence-service configured
+deployment.apps/requestor-deployment configured
+Completed 88 Bytes/88 Bytes (787 Bytes/s) with 1 file(s) remainingupload: ./config.tfvars to s3://cdis-state-ac707767160287-gen3/devplanetv2-thanos-bucket_databucket/config.tfvars
+[32mINFO: 20:34:44 -[39m Backing up backend.tfvars to s3://cdis-state-ac707767160287-gen3/devplanetv2-thanos-bucket_databucket/backend.tfvars
+Completed 143 Bytes/143 Bytes (1.3 KiB/s) with 1 file(s) remainingupload: ./backend.tfvars to s3://cdis-state-ac707767160287-gen3/devplanetv2-thanos-bucket_databucket/backend.tfvars
+[32mINFO: 20:34:47 -[39m Backing up README.md to s3://cdis-state-ac707767160287-gen3/devplanetv2-thanos-bucket_databucket/README.md
+Completed 104 Bytes/104 Bytes (1.1 KiB/s) with 1 file(s) remainingupload: ./README.md to s3://cdis-state-ac707767160287-gen3/devplanetv2-thanos-bucket_databucket/README.md
+deployment.apps/presigned-url-fence-deployment configured
+service/presigned-url-fence-service configured
+service/manifestservice-service unchanged
+The manifest service has been deployed onto the k8s cluster.
+service/fence-canary-service unchanged
+networkpolicy.networking.k8s.io/netpolicy-ingress-to-esproxy unchanged
+service/requestor-service unchanged
+serviceaccount/thanos annotated
+networkpolicy.networking.k8s.io/netpolicy-egress-to-esproxy unchanged
+fence version (2024.02) is greater than 2022.07
+Deleting fence-visa-update cronjob
+secret "thanos-objstore-config" deleted
+secret/thanos-objstore-config created
+deployment.apps/thanos-query unchanged
+service/thanos-query unchanged
+servicemonitor.monitoring.coreos.com/prom-thanos-query unchanged
+statefulset.apps/thanos-store unchanged
+servicemonitor.monitoring.coreos.com/thanos-store unchanged
+statefulset.apps/thanos-compactor unchanged
+service/thanos-compactor unchanged
+servicemonitor.monitoring.coreos.com/thanos-compactor unchanged
+cronjob.batch/es-garbage created
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+waiting for esproxy to be ready
+wait too long for esproxy
