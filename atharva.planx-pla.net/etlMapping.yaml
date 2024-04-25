@@ -1,3 +1,4 @@
+mappings:
   - name: atharva.planx-pla.net_clinical_trials
     doc_type: clinical_trials
     type: aggregator
