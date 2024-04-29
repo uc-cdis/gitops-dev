@@ -305,46 +305,46 @@
       "dropdowns": {},
       "buttons": [
         {
-            "enabled": true,
-            "type": "data",
-            "title": "Download All Clinical",
-            "leftIcon": "user",
-            "rightIcon": "download",
-            "fileName": "clinical.json",
-            "dropdownId": "download",
-            "tooltipText": "You have not selected any cases to download. Please use the checkboxes on the left to select specific cases you would like to download."
+          "enabled": true,
+          "type": "data",
+          "title": "Download All Clinical",
+          "leftIcon": "user",
+          "rightIcon": "download",
+          "fileName": "clinical.json",
+          "dropdownId": "download",
+          "tooltipText": "You have not selected any cases to download. Please use the checkboxes on the left to select specific cases you would like to download."
         },
         {
-            "enabled": false,
-            "type": "manifest",
-            "title": "Download Manifest",
-            "leftIcon": "datafile",
-            "rightIcon": "download",
-            "fileName": "manifest.json",
-            "dropdownId": "download"
+          "enabled": false,
+          "type": "manifest",
+          "title": "Download Manifest",
+          "leftIcon": "datafile",
+          "rightIcon": "download",
+          "fileName": "manifest.json",
+          "dropdownId": "download"
         },
         {
-            "enabled": true,
-            "type": "export",
-            "title": "Export All to Terra",
-            "rightIcon": "external-link",
-            "tooltipText": "You have not selected any cases to export. Please use the checkboxes on the left to select specific cases you would like to export."
+          "enabled": true,
+          "type": "export",
+          "title": "Export All to Terra",
+          "rightIcon": "external-link",
+          "tooltipText": "You have not selected any cases to export. Please use the checkboxes on the left to select specific cases you would like to export."
         },
         {
-            "enabled": true,
-            "type": "export-to-pfb",
-            "title": "Export to PFB",
-            "leftIcon": "datafile",
-            "rightIcon": "download"
+          "enabled": true,
+          "type": "export-to-pfb",
+          "title": "Export to PFB",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
         },
         {
-            "enabled": true,
-            "type": "export-to-workspace",
-            "title": "Export to Workspace",
-            "leftIcon": "datafile",
-            "rightIcon": "download"
+          "enabled": true,
+          "type": "export-to-workspace",
+          "title": "Export to Workspace",
+          "leftIcon": "datafile",
+          "rightIcon": "download"
         }
-    ],
+      ],
       "guppyConfig": {
         "dataType": "file",
         "fieldMapping": [
