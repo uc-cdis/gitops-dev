@@ -55,11 +55,14 @@
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "lb_type": "internal",
-    "dd_enabled": null,
     "es7": true
   },
   "indexd": {
     "arborist": "true"
+  },
+  "metadata": {
+    "USE_AGG_MDS": true,
+    "AGG_MDS_NAMESPACE": "hara"
   },
   "canary": {
     "default": 0
