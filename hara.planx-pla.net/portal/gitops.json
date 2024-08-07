@@ -1,5 +1,5 @@
 {
-  "gaTrackingId": "UA-119127212-4",
+  "homepageHref": "https://hara.planx-pla.net",
   "graphql": {
     "boardCounts": [],
     "chartCounts": [],
@@ -7,6 +7,7 @@
   },
   "components": {
     "appName": "HEAL QA Data Commons Portal",
+    "metaDescription": "The HEAL Platform shares data from the NIH HEAL Initiative&reg; with the community of researchers, healthcare providers, community leaders, policy makers, and other stakeholders.",
     "index": {
       "introduction": {
         "heading": "Data Commons",
@@ -23,6 +24,30 @@
         }
       ]
     },
+    "systemUse": {
+      "systemUseTitle": "HEAL Data Platform Data Use Agreement",
+      "systemUseText": [
+        "The HEAL Data Platform provides access to data from HEAL-funded and related studies. The Platform is funded by and operated on behalf of the NIH HEAL Initiative®. Users of the Platform must agree to abide by the following terms of use:",
+        "1. Access to all data is granted and managed by the host repository and may involve an application and approval process and/or be subject to a repository-specific Data Use Agreement (DUA) or additional terms and conditions. Users who obtain data through the HEAL Platform must abide by these at all times.",
+        "2. Any attempt to re-identify or contact individual study participants for any reason, including for obtaining or linking additional information for analytic purposes, is strictly forbidden.",
+        "3. Redistribution of data by posting them on a website or submitting them to a data or code repository is forbidden. Users wishing to share their work so that others may reproduce their results should post their code only to a code repository (e.g., GitHub) and include instructions for accessing or requesting access to the data directly from the HEAL Data Platform, making sure to include information on the version of the data product used in the analysis.",
+        "4. Use of data in publications or presentations must acknowledge the source of the data by providing the following two citations:",
+        "   a. The recommended citation for study records on the HEAL Data Platform is: Author Names (Year). Study Title [version number]. HEAL Data Platform. Study Record. [DOI].",
+        "   b. In addition, you must cite the corresponding data resource on the host repository using their suggested citation format.",
+        "5. You are strongly encouraged to notify the HEAL Initiative (HEALquestion@od.nih.gov) once a paper using the data has been accepted for publication, so that it may be added to the list of publications that have used the data.",
+        "6. All data are provided as-is and without any assurances either explicit or implied. Neither the HEAL Data Platform nor the host data repository assumes any responsibility for results obtained from the data.",
+        "7. Your authorization credentials (e.g., your username and password or API key) are for your use only and must not be shared with others for any purpose.",
+        "8. The system must be used lawfully and in accordance with all applicable Federal, State, Local and Institutional regulations or policies.",
+        "",
+        "By clicking Accept below, I hereby certify that:",
+        "a. I have read and understand all of the terms and conditions above and agree to abide by them, as well as any other terms and conditions that may apply to specific datasets as described by the host repository or in a separate, written Data Use Agreement (DUA).",
+        "b. I understand that unless explicitly prohibited by these terms and conditions, I may make these data available to individuals working directly under my supervision, and if I do it is my responsibility to make sure that they adhere to these terms and conditions at all times.",
+        "c. I understand that failure to comply with these terms and conditions may result in immediate termination of access privileges by the HEAL Data Platform and the host repository."
+      ],
+      "displayUseMsg": "cookie",
+      "expireUseMsgDays": 1,
+      "showOnlyOnLogin": true
+    },
     "navigation": {
       "title": "HEAL QA Data Commons",
       "items": [
@@ -30,13 +55,13 @@
           "icon": "query",
           "link": "/discovery",
           "name": "Discovery",
-          "tooltip": "Use free-text search and tags to rapidly find relevant studies, discover new datasets across multiple resources, and easily export selected data files to the analysis workspace."
+          "tooltip": "Use free-text search and tags to find studies, discover datasets, and export selected data files to an analysis workspace."
         },
         {
           "icon": "workspace",
           "link": "/workspace",
           "name": "Workspace",
-          "tooltip": "Gen3 workspaces are secure data analysis environments in the cloud that can access data from one or more data resources."
+          "tooltip": "Gen3 workspaces are secure cloud environments where users can analyze data from one or more data resources."
         },
         {
           "name": "Example Analysis",
@@ -55,15 +80,15 @@
     "topBar": {
       "items": [
         {
-          "link": "https://qa-heal.planx-pla.net/dashboard/Public/documentation/index.html",
-          "name": "HEAL Documentation"
+          "link": "https://hara.planx-pla.net/documentation",
+          "name": "Help and Guidance"
         }
       ]
     },
     "login": {
-      "title": "BRAIN Commons",
+      "title": "HEAL QA Data Commons",
       "subTitle": "Explore, Analyze, and Share Data",
-      "text": "This website supports the management, analysis and sharing of data for the research community and aims to accelerate discovery and development of therapies, diagnostic tests, and other technologies.",
+      "text": "This website supports the discovery, analysis and sharing of data and aims to support the accelerated discovery and development of therapies, diagnostic tests, and other technologies.",
       "contact": "If you have any questions about access or the registration process, please contact ",
       "email": "heal-support@datacommons.io",
       "image": "/../../../../custom/sponsors/gitops-sponsors/heal_login_color_sides"
@@ -83,25 +108,18 @@
       "#99286B",
       "#402264"
     ],
-    "footerLogos": [
-      {
-        "src": "/src/img/gen3.png",
-        "href": "https://ctds.uchicago.edu/gen3",
-        "alt": "Gen3 Data Commons"
-      },
-      {
-        "src": "/src/img/createdby.png",
-        "href": "https://ctds.uchicago.edu/",
-        "alt": "Center for Translational Data Science at the University of Chicago"
-      }
-    ]
+    "footer": {
+      "externalURL": "/external/footer"
+    }
   },
   "requiredCerts": [],
   "featureFlags": {
     "explorer": false,
     "analysis": false,
     "discovery": true,
-    "discoveryUseAggMDS": true
+    "discoveryUseAggMDS": true,
+    "studyRegistration": true,
+    "workspaceRegistration": true
   },
   "discoveryConfig": {
     "features": {
@@ -109,35 +127,20 @@
         "enabled": false,
         "field": "advSearchFilters",
         "filters": [
-          {
-            "key": "Research Focus Area"
-          },
-          {
-            "key": "Administering IC(s)"
-          },
-          {
-            "key": "Simulated vs. Real Data"
-          },
-          {
-            "key": "Year Grant Awarded"
-          },
-          {
-            "key": "Study Description"
-          }
+          { "key": "Research Focus Area" },
+          { "key": "Administering IC(s)" },
+          { "key": "Simulated vs. Real Data" },
+          { "key": "Year Grant Awarded" },
+          { "key": "Study Description" }
         ]
       },
       "exportToWorkspace": {
         "enabled": true,
         "manifestFieldName": "__manifest",
-        "enableDownloadManifest": true,
-        "enableDownloadZip": true,
+        "downloadManifestButtonText": "Download",
+        "enableDownloadManifest": false,
         "downloadZipButtonText": "Download Zip",
-        "downloadManifestButtonText": "Download Manifest",
-        "documentationLinks": {
-          "gen3Client": "https://gen3.org/resources/user/gen3-client/",
-          "gen3Workspaces": "https://gen3.org/resources/user/analyze-data/"
-        },
-        "verifyExternalLogins": true
+        "enableDownloadZip": true
       },
       "pageTitle": {
         "enabled": false
@@ -145,7 +148,6 @@
       "search": {
         "searchBar": {
           "enabled": true,
-          "inputSubtitle": "Examples: pain, buprenorphine, intervention",
           "searchableTextFields": [
             "summary",
             "location",
@@ -168,26 +170,40 @@
             "dataset_4_description",
             "data_dictionary"
           ]
-        },
-        "tagSearchDropdown": {
-          "enabled": true,
-          "collapsibleButtonText": "Study Characteristics"
         }
       },
       "authorization": {
-        "enabled": true
+        "enabled": true,
+        "supportedValues": {
+          "accessible": {
+            "enabled": true,
+            "menuText": "Accessible"
+          },
+          "unaccessible": {
+            "enabled": true,
+            "menuText": "Not Accessible"
+          },
+          "pending": {
+            "enabled": false
+          },
+          "notAvailable": {
+            "enabled": false
+          }
+        }
       }
     },
     "aggregations": [
-      {
-        "name": "Studies",
-        "field": "project_number",
-        "type": "count"
-      }
+        {
+            "name": "Studies",
+            "field": "project_number",
+            "type": "count"
+        }
     ],
     "tagSelector": {
+      "title": "Tags by category",
       "showTagCategoryNames": true
     },
+    "studies": [],
     "studyColumns": [
       {
         "name": "Project Title",
@@ -246,7 +262,7 @@
         },
         {
           "groupName": "Host Institution",
-          "groupWidth": "full",
+          "groupWidth": "half",
           "includeName": false,
           "fields": [
             {
@@ -273,7 +289,7 @@
         },
         {
           "groupName": "Clinical Trial",
-          "groupWidth": "full",
+          "groupWidth": "half",
           "includeName": false,
           "fields": [
             {
@@ -283,11 +299,6 @@
             {
               "name": "Study Name",
               "field": "study_name"
-            },
-            {
-              "name": "Study URL",
-              "field": "study_url",
-              "contentType": "link"
             },
             {
               "name": "Study Description",
@@ -325,7 +336,7 @@
           "groupWidth": "full",
           "fields": [
             {
-              "name": "Study Characteristics",
+              "name": "Tags",
               "field": "tags",
               "contentType": "tags",
               "includeIfNotAvailable": false
@@ -412,8 +423,7 @@
             }
           ]
         }
-      ],
-      "tagsDisplayName": "Study Characteristics"
+      ]
     },
     "minimalFieldMapping": {
       "authzField": "authz",
@@ -423,63 +433,36 @@
     },
     "tagCategories": [
       {
-        "name": "Study Setting",
-        "displayName": "Study Setting",
-        "color": "#532565",
-        "display": true
-      },
-      {
-        "name": "Subject Characteristics",
-        "displayName": "Subject Characteristics",
-        "color": "#982568",
+        "name": "Demographic Info",
+        "color": "rgba(64, 34, 100, 1)",
         "display": true
       },
       {
         "name": "Study Design",
-        "displayName": "Study Design",
-        "color": "#981f32",
+        "color": "rgba(153, 40, 107, 1)",
         "display": true
       },
       {
-        "name": "Intervention/Treatment",
-        "displayName": "Intervention/Treatment",
-        "color": "#bf362e",
+        "name": "HEAL Specific",
+        "color": "rgba(161, 36, 46, 1)",
         "display": true
       },
       {
-        "name": "Pain",
-        "color": "#e07c3e",
-        "display": true
-      },
-      {
-        "name": "Substance Use",
-        "displayName": "Substance Use",
-        "color": "#532565",
-        "display": true
-      },
-      {
-        "name": "Data Type",
-        "displayName": "Data Type",
-        "color": "#982568",
+        "name": "Other",
+        "color": "rgba(207, 54, 38, 1)",
         "display": true
       },
       {
         "name": "Commons",
         "displayName": "Data Resources",
-        "color": "#981f32",
-        "display": true
-      },
-      {
-        "name": "Other",
-        "color": "#bf362e",
-        "display": false
+        "color": "rgba(21, 6, 76, 1)"
       }
     ]
   },
   "resourceBrowser": {
-    "title": "Static HEAL Jupyter Notebooks",
+    "title": "Static HEAL Tutorial Notebooks",
     "public": true,
-    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Workspace.",
+    "description": "The Jupyter notebooks contained in this notebook viewer pull data from various sources to generate and output useful tables, charts, graphs, and models. Each notebook is static, meaning the data being used by the notebooks is not updated in real time. These notebooks are also available in the Gen3 Tutorials Workspace. Please note these notebooks are meant for illustrative purposes only, and are not meant to portray peer-reviewed research.",
     "resources": [
       {
         "title": "BACPAC Synthetic Data Analysis",
@@ -510,6 +493,36 @@
         "description": "In this R notebook, we used the Opioid Environment Policy Scan (OEPS) and the Opioid Environment Toolkit to characterize the multi-dimensional risk environment impacting opioid use.",
         "link": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.html",
         "imageUrl": "/dashboard/Public/notebooks/Opioid_Environment_Toolkit_And_OEPS_R.png"
+      },
+      {
+        "title": "JCOIN MOUD Accessibility Analysis",
+        "description": "In this Jupyter notebook, we used the data from the OEPS database to analyze the Medication for Opioid Use Disorder (MOUD) providers accessibility at state and county level across the United States",
+        "imageUrl": "/dashboard/Public/notebooks/jcoin_moud_analysis.png",
+        "link": "/dashboard/Public/notebooks/JCOIN-MOUD_accessibility_analysis_02092022.html"
+      },
+      {
+        "title": "Changes In Opioid Treatment Policy During COVID-19",
+        "description": "In this notebook we used data from NIDA-PDAPS and CDC WONDER mortality data to visualize the relationship between statewide changes in opioid treatment policy and opioid overdose mortality rates in 2020.",
+        "imageUrl": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.png",
+        "link": "/dashboard/Public/notebooks/JCOIN_Tracking_Opioid_Stigma.html"
+      },
+      {
+        "title": "Rates Of Opioid Overdose Deaths And COVID-19 In 2020",
+        "description": "In this notebook we examine correlations between statewide rates of opioid overdose deaths and COVID-19 cases and deaths.",
+        "imageUrl": "/dashboard/Public/notebooks/COVID-19_and_Opioids_part1.png",
+        "link": "/dashboard/Public/notebooks/COVID-19_and_Opioids_part1.html"
+      },
+      {
+        "title": "Monitoring The Future: 12th Grader Opiate Use - Part 1",
+        "description": "In this notebook we use a variety of machine learning methods to analyze patterns in 12th grader opiate use as reported in the Monitoring The Future survey results from 2019.",
+        "imageUrl": "/dashboard/Public/notebooks/Monitoring_The_Future_Part1.png",
+        "link": "/dashboard/Public/notebooks/Monitoring_The_Future_Part1.html"
+      },
+      {
+        "title": "Monitoring The Future: 12th Grader Opiate Use - Part 2",
+        "description": "In this notebook we use a variety of machine learning methods to analyze patterns in 12th grader opiate use as reported in the Monitoring The Future survey results from 2012 through 2021.",
+        "imageUrl": "/dashboard/Public/notebooks/Monitoring_The_Future_Part2.png",
+        "link": "/dashboard/Public/notebooks/Monitoring_The_Future_Part2.html"
       }
     ]
   },
@@ -518,12 +531,66 @@
   "showFenceAuthzOnProfile": false,
   "showExternalLoginsOnProfile": true,
   "componentToResourceMapping": {},
-  "dataExplorerConfig": {
-    "terraExportURL": null,
-    "sevenBridgesExportURL": null
-  },
-  "fileExplorerConfig": {
-    "terraExportURL": null,
-    "sevenBridgesExportURL": null
+  "registrationConfigs": {
+    "features": {
+      "studyRegistrationConfig": {
+        "studyRegistrationTrackingField": "registrant_username",
+        "studyRegistrationValidationField": "is_registered",
+        "studyRegistrationAccessCheckField": "registration_authz",
+        "studyRegistrationFormDisclaimerField": "Information provided on this page will be used for correspondence regarding your request and may be shared with the NIH and/or the HEAL Data Stewards",
+        "clinicalTrialFields": [
+          "NCTId",
+          "OfficialTitle",
+          "BriefTitle",
+          "Acronym",
+          "StudyType",
+          "OverallStatus",
+          "StartDate",
+          "StartDateType",
+          "CompletionDate",
+          "CompletionDateType",
+          "IsFDARegulatedDrug",
+          "IsFDARegulatedDevice",
+          "IsPPSD",
+          "BriefSummary",
+          "DetailedDescription",
+          "Condition",
+          "DesignAllocation",
+          "DesignPrimaryPurpose",
+          "Phase",
+          "DesignInterventionModel",
+          "EnrollmentCount",
+          "EnrollmentType",
+          "DesignObservationalModel",
+          "InterventionType",
+          "PrimaryOutcomeMeasure",
+          "SecondaryOutcomeMeasure",
+          "OtherOutcomeMeasure",
+          "Gender",
+          "GenderBased",
+          "MaximumAge",
+          "MinimumAge",
+          "IPDSharing",
+          "IPDSharingTimeFrame",
+          "IPDSharingAccessCriteria",
+          "IPDSharingURL",
+          "SeeAlsoLinkURL",
+          "AvailIPDURL",
+          "AvailIPDId",
+          "AvailIPDComment"
+        ],
+        "dataDictionarySubmissionBucket": "",
+        "dataDictionarySubmissionDisclaimerField": "All submitted data dictionaries will be available to public.",
+        "dataDictionaryField": "data_dictionaries"
+      },
+      "workspaceRegistrationConfig": {
+        "workspacePolicyId": "workspace_strides_integrated",
+        "workspaceInfoMessage": "The HEAL workspace provides a standardized computational environment for accessing and analyzing data from HEAL studies. Please fill out this form to request access to the workspace and start computing!",
+        "successRedirect": {
+          "link": "/discovery",
+          "text": "Go to Discovery Page"
+        }
+      }
+    }
   }
 }

@@ -8,135 +8,28 @@
   },
   "versions": {
     "arborist": "quay.io/cdis/arborist:master",
-    "mariner": "quay.io/cdis/mariner-server:1.1.1",
     "wts": "quay.io/cdis/workspace-token-service:master",
     "access-backend": "quay.io/cdis/access-backend:master",
-    "arranger": "quay.io/cdis/arranger:master",
-    "arranger-adminapi": "quay.io/cdis/arranger-server:master",
-    "arranger-dashboard": "quay.io/cdis/arranger-dashboard:master",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:master",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "indexd": "quay.io/cdis/indexd:master",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "peregrine": "quay.io/cdis/peregrine:master",
-    "pidgin": "quay.io/cdis/pidgin:master",
+    "metadata": "quay.io/cdis/metadata-service:master",
     "portal": "quay.io/cdis/data-portal:master",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master",
-    "dashboard": "quay.io/cdis/gen3-statics:master"
+    "tube": "quay.io/cdis/tube:feat_new-es-7",
+    "guppy": "quay.io/cdis/guppy:feat_es7"
   },
   "arborist": {
     "deployment_version": "2"
   },
   "indexd": {
     "arborist": "true"
-  },
-    "mariner": {
-    "storage": {
-      "s3": {
-        "name": "devplanetv1--avantol--mariner-707767160287",
-        "region": "us-east-1"
-      }
-    },
-    "secrets": {
-      "awsusercreds": {
-        "name": "workflow-bot-g3auto",
-        "key": "awsusercreds.json"
-      }
-    },
-    "jobs": {
-      "engine": {
-        "labels": {
-          "app": "mariner-engine"
-        },
-        "serviceaccount": "mariner-service-account",
-        "restart_policy": "never"
-      },
-      "task": {
-        "labels": {
-          "app": "mariner-task"
-        },
-        "restart_policy": "never"
-      }
-    },
-    "containers": {
-      "engine": {
-        "name": "mariner-engine",
-        "image": "quay.io/cdis/mariner-engine:1.1.1",
-        "pull_policy": "always",
-        "command": [
-          "/mariner",
-          "run", 
-          "$(RUN_ID)"
-        ],
-        "resources": {
-          "limits": {
-            "memory": "1Gi",
-            "cpu": "400m"
-          }
-        }
-      },
-      "s3sidecar": {
-        "name": "mariner-s3sidecar",
-        "image": "quay.io/cdis/mariner-s3sidecar:1.1.1",
-        "pull_policy": "always",
-        "command": [
-          "/sidecar"
-        ],
-        "resources": {
-          "limits": {
-            "memory": "256Mi",
-            "cpu": "100m"
-          }
-        },
-        "securitycontext": {
-          "privileged": true
-        }
-      },
-      "gen3fusesidecar": {
-        "name": "mariner-gen3fusesidecar",
-        "image": "quay.io/cdis/gen3fuse-sidecar:0.2.1",
-        "pull_policy": "always",
-        "command": [
-          "/bin/bash",
-          "/marinerRun.sh"
-        ],
-        "lifecycle": {
-          "prestop": [
-            "/bin/bash",
-            "-c",
-            "fusermount -u -z /$COMMONS_DATA"
-          ]
-        },
-        "resources": {
-          "limits": {
-            "memory": "256Mi",
-            "cpu": "100m"
-          }
-        },
-        "securitycontext": {
-          "privileged": true
-        }
-      },
-      "task": {
-        "name": "mariner-task",
-        "image": "alpine",
-        "pull_policy": "always",
-        "command": [
-          "/bin/sh"
-        ],
-        "resources": {
-          "limits": {
-            "memory": "512Mi",
-            "cpu": "900m"
-          }
-        }
-      }
-    }
   },
   "sower": [
     {
@@ -460,13 +353,14 @@
     "environment": "devplanetv1",
     "hostname": "avantol.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
-    "portal_app": "dev",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.4.0/schema.json",
+    "portal_app": "gitops",
     "netpolicy": "off",
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
+    "es7": true
   },
   "canary": {
     "default": 0

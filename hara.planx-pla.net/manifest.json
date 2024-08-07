@@ -7,65 +7,80 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "ambassador": "quay.io/datawire/ambassador:1.4.2",
-    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2021.12",
-    "audit-service": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/audit-service:2021.12",
+    "arborist": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/arborist:2023.12",
     "aws-es-proxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/aws-es-proxy:v1.3.1",
-    "dashboard": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-statics:2021.12",
-    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2021.12",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
-    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2021.12",
-    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2021.12",
-    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2021.12",
-    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2021.12",
-    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2021.12",
-    "pidgin": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/pidgin:2021.12",
-    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2021.12",
-    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2021.12",
-    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2021.12",
-    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2021.12",
-    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2021.12",
-    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2021.12",
-    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2021.12",
-    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2021.12"
+    "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:2023.12",
+    "indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:2023.12",
+    "peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:2023.12",
+    "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:2023.12",
+    "sheepdog": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sheepdog:2023.12",
+    "portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:2023.12",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
+    "spark": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-spark:2023.12",
+    "tube": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/tube:2023.12",
+    "guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:2023.12",
+    "sower": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/sower:2023.12",
+    "hatchery": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/hatchery:2023.12",
+    "ambassador": "quay.io/datawire/ambassador:1.4.2",
+    "wts": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/workspace-token-service:2023.12",
+    "manifestservice": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/manifestservice:2023.12",
+    "ssjdispatcher": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/ssjdispatcher:2023.12",
+    "metadata": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/metadata-service:2023.12"
+  },
+  "google": {
+    "enabled": "yes"
   },
   "arborist": {
     "deployment_version": "2"
   },
-  "indexd": {
-    "arborist": "true"
-  },
-  "metadata": {
-    "USE_AGG_MDS": true,
-    "AGG_MDS_NAMESPACE": "qa-heal"
-  },
   "ssjdispatcher": {
     "job_images": {
-      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2021.12"
+      "indexing": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexs3client:2023.12"
     }
   },
+  "sower": [],
   "global": {
-    "environment": "devplanetv1",
+    "environment": "devplanetv2",
     "hostname": "hara.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/heal_dictionary/1.1.0/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/4.4.0/schema.json",
     "portal_app": "gitops",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
     "sync_from_dbgap": "False",
     "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
     "dispatcher_job_num": "10",
+    "public_datasets": true,
     "netpolicy": "on",
+    "tier_access_level": "regular",
+    "tier_access_limit": 50,
     "lb_type": "internal",
-    "dd_enabled": null
+    "es7": true
+  },
+  "indexd": {
+    "arborist": "true"
+  },
+  "metadata": {
+    "USE_AGG_MDS": true,
+    "AGG_MDS_NAMESPACE": "hara"
   },
   "canary": {
     "default": 0
   },
-  "portal": {
-    "GEN3_BUNDLE": "heal"
+  "guppy": {
+    "indices": [
+      {
+        "index": "hara.planx-pla.net_subject",
+        "type": "subject"
+      },
+      {
+        "index": "hara.planx-pla.net_file",
+        "type": "file"
+      }
+    ],
+    "config_index": "hara.planx-pla.net_array-config",
+    "auth_filter_field": "auth_resource_path"
   },
-  "sower": [],
   "hatchery": {
     "user-namespace": "jupyter-pods-hara",
     "sidecar": {

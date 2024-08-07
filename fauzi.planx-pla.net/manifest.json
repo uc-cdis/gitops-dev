@@ -10,19 +10,18 @@
     "arborist": "quay.io/cdis/arborist:master",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.9",
     "fence": "quay.io/cdis/fence:master",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "indexd": "quay.io/cdis/indexd:master",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "peregrine": "quay.io/cdis/peregrine:master",
     "pidgin": "quay.io/cdis/pidgin:master",
     "portal": "quay.io/cdis/data-portal:master",
-    "tube": "quay.io/cdis/tube:0.3.24",
+    "tube": "quay.io/cdis/tube:feat_new-es-7",
     "wts": "quay.io/cdis/workspace-token-service:master",
-    "guppy": "quay.io/cdis/guppy:master",
+    "guppy": "quay.io/cdis/guppy:feat_es7",
     "spark": "quay.io/cdis/gen3-spark:master",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:master",
-    "spark": "quay.io/cdis/gen3-spark:master",
     "dashboard": "quay.io/cdis/gen3-statics:master",
     "datasim": "quay.io/cdis/data-simulator:0.1.1"
   },
@@ -41,7 +40,8 @@
     "sync_from_dbgap": "False",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
+    "es7": true
   },
   "indexd": {
     "arborist": "true"

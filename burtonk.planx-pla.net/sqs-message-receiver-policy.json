@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+              "sqs:ReceiveMessage",
+              "sqs:GetQueueAttributes",
+              "sqs:DeleteMessage"
+            ],
+            "Resource": [
+                "arn:aws:sqs:us-east-1:707767160287:devplanetv1--burtonk--audit-sqs"
+            ]
+        }
+    ]
+}

@@ -12,7 +12,7 @@
     "arborist": "quay.io/cdis/arborist:master",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "fence": "quay.io/cdis/fence:master",
-    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.2-debian-cloudwatch",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "hatchery": "quay.io/cdis/hatchery:master",
     "indexd": "quay.io/cdis/indexd:master",
     "metadata": "quay.io/cdis/metadata-service:master",
@@ -24,7 +24,8 @@
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
-    "tube": "quay.io/cdis/tube:master",
+    "tube": "quay.io/cdis/tube:feat_new-es-7",
+    "guppy": "quay.io/cdis/guppy:feat_es7",
     "ssjdispatcher": "quay.io/cdis/ssjdispatcher:master",
     "wts": "quay.io/cdis/workspace-token-service:master",
     "dashboard": "quay.io/cdis/gen3-statics:master"
@@ -233,7 +234,8 @@
     "tier_access_level": "regular",
     "tier_access_limit": 50,
     "netpolicy": "on",
-    "public_datasets": true
+    "public_datasets": true,
+    "es7": true
   },
   "canary": {
     "default": 0

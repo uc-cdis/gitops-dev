@@ -2,133 +2,125 @@
     "user-namespace": "jupyter-pods-mingfei",
     "sub-dir": "/lw-workspace",
     "user-volume-size": "10Gi",
-    "sidecar": {
-        "cpu-limit": "1.0",
-        "memory-limit": "1Gi",
-        "image": "quay.io/cdis/gen3fuse-sidecar:master",
-        "env": {
-            "NAMESPACE": "mingfei",
-            "HOSTNAME": "mingfei.planx-pla.net"
-        },
-        "args": [],
-        "command": ["/bin/bash", "/sidecarDockerrun.sh"],
-        "lifecycle-pre-stop": ["su", "-c", "echo test", "-s", "/bin/sh", "root"]
+   "sidecar": {
+    "cpu-limit": "1.0",
+    "memory-limit": "256Mi",
+    "image": "quay.io/cdis/ecs-ws-sidecar:fix_certs",
+    "env": {
+      "NAMESPACE": "mingfei"
     },
+    "args": [],
+    "command": [
+      "/bin/bash",
+      "/sidecar.sh"
+    ],
+    "lifecycle-pre-stop": [
+      "su",
+      "-c",
+      "echo test",
+      "-s",
+      "/bin/sh",
+      "root"
+    ]
+  }, 
     "containers": [{
-        "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "2Gi",
-        "name": "Jupyter Notebook no pd",
-        "image": "quay.io/cdis/jupyter-covid19:jupyter-covid1.2.2",
-        "env": {
-            "NAMESPACE": "mingfei",
-            "HOSTNAME": "mingfei.planx-pla.net",
-            "FRAME_ANCESTORS": "https://mingfei.planx-pla.net"
-        },
-        "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''", "--NotebookApp.shutdown_no_activity_timeout=3600"],
-        "command": ["start-notebook.sh"],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js;"],
-        "user-uid": 1000
-    },
-    {
-        "target-port": 8888,
-        "cpu-limit": "1.0",
-        "memory-limit": "2Gi",
-        "name": "Jupyter Notebook with pd",
-        "image": "quay.io/cdis/jupyter-covid19:jupyter-covid1.2.2",
-        "env": {
-            "NAMESPACE": "mingfei",
-            "HOSTNAME": "mingfei.planx-pla.net",
-            "FRAME_ANCESTORS": "https://mingfei.planx-pla.net"
-        },
-        "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''", "--NotebookApp.shutdown_no_activity_timeout=3600"],
-        "command": ["start-notebook.sh"],
-        "path-rewrite": "/lw-workspace/proxy/",
-        "use-tls": "false",
-        "ready-probe": "/lw-workspace/proxy/",
-        "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
-        "user-uid": 1000,
-        "fs-gid": 100,
-        "user-volume-location": "/home/jovyan/pd"
-    },
-    {
-        "target-port": 5800,
-        "cpu-limit": "1.0",
-        "memory-limit": "1024Mi",
-        "name": "RStudio",
-        "image": "quay.io/cdis/rstudio:master",
-        "env": {
-            "DISABLE_AUTH": "true"
-        },
-        "args": [],
-        "path-rewrite": "/",
-        "use-tls": "false",
-        "ready-probe": "/",
-        "use-shared-memory": "true",
-        "friends": [{
-            "name": "firefox",
-            "image": "quay.io/cdis/docker-firefox:master",
-            "securityContext": {
-                "privileged": true
+            "target-port": 8888,
+            "cpu-limit": "1.0",
+            "memory-limit": "2Gi",
+            "name": "Jupyter Notebook no pd",
+            "image": "jupyter/scipy-notebook:latest",
+            "env": {
+                "NAMESPACE": "mingfei",
+                "HOSTNAME": "mingfei.planx-pla.net",
+                "FRAME_ANCESTORS": "https://mingfei.planx-pla.net"
             },
-            "env": [{
-                "name": "LANDING_URL",
-                "value": "http://localhost:8787/"
-            }],
-            "resources": {
-                "limits": {
-                    "cpu": "1.0",
-                    "memory": "5Gi"
-                }
+            "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''", "--NotebookApp.shutdown_no_activity_timeout=3600"],
+            "command": ["start-notebook.sh"],
+            "path-rewrite": "/lw-workspace/proxy/",
+            "use-tls": "false",
+            "ready-probe": "/lw-workspace/proxy/",
+            "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found;"],
+            "user-uid": 1000
+        },
+        {
+            "target-port": 8888,
+            "cpu-limit": "1.0",
+            "memory-limit": "2Gi",
+            "name": "Jupyter Notebook with pd",
+            "image": "quay.io/cdis/jupyter-superslim:master",
+            "env": {
+                "NAMESPACE": "mingfei",
+                "HOSTNAME": "mingfei.planx-pla.net",
+                "FRAME_ANCESTORS": "https://mingfei.planx-pla.net"
             },
-            "ports": [{
-                "containerPort": 5800
+            "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''", "--NotebookApp.shutdown_no_activity_timeout=420"],
+            "command": ["start-notebook.sh"],
+            "path-rewrite": "/lw-workspace/proxy/",
+            "use-tls": "false",
+            "ready-probe": "/lw-workspace/proxy/",
+            "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"],
+            "user-uid": 1000,
+            "fs-gid": 100,
+            "user-volume-location": "/home/jovyan/pd"
+        },
+        {
+            "target-port": 8787,
+            "cpu-limit": "1.0",
+            "memory-limit": "512Mi",
+            "name": "(Generic) R Studio",
+            "image": "heliumdatastage/rstudio-server:1",
+            "env": {
+                "DISABLE_AUTH": "true"
+            },
+            "args": [],
+            "path-rewrite": "/",
+            "use-tls": "false",
+            "ready-probe": "/",
+            "lifecycle-post-start": ["/bin/sh", "-c", "ln -s /data /home/rstudio/pd/; true"],
+            "fs-gid": 100,
+            "user-volume-location": "/home/rstudio/pd"
+        },
+        {
+            "target-port": 5800,
+            "cpu-limit": "1.0",
+            "memory-limit": "512Mi",
+            "name": "Jupyter Notebook with noVNC",
+            "image": "quay.io/cdis/jupyter-superslim:master",
+            "env": {
+                "NAMESPACE": "default",
+                "HOSTNAME": "mingfei.planx-pla.net",
+                "FRAME_ANCESTORS": "https://mingfei.planx-pla.net"
+            },
+            "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''"],
+            "command": ["start-notebook.sh"],
+            "path-rewrite": "/",
+            "use-tls": "false",
+            "ready-probe": "/",
+            "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s /data /home/$IAM/pd/; true"],
+            "user-uid": 1000,
+            "fs-gid": 100,
+            "user-volume-location": "/home/jovyan/pd",
+            "use-shared-memory": "true",
+            "friends": [{
+                "name": "firefox",
+                "image": "quay.io/cdis/docker-firefox:master",
+                "securityContext": {
+                    "privileged": true
+                },
+                "env": [{
+                    "name": "LANDING_URL",
+                    "value": "http://localhost:8888/lw-workspace/proxy/"
+                }],
+                "resources": {
+                    "limits": {
+                        "cpu": "1.0",
+                        "memory": "5Gi"
+                    }
+                },
+                "ports": [{
+                    "containerPort": 5800
+                }]
             }]
-        }]
-    },
-    {
-        "target-port": 5800,
-        "cpu-limit": "1.0",
-        "memory-limit": "512Mi",
-        "name": "Jupyter Notebook with noVNC",
-        "image": "quay.io/cdis/jupyter-covid19:jupyter-covid1.2.2",
-        "env": {
-            "NAMESPACE": "default",
-            "HOSTNAME": "mingfei.planx-pla.net",
-            "FRAME_ANCESTORS": "https://mingfei.planx-pla.net"
-        },
-        "args": ["--NotebookApp.base_url=/lw-workspace/proxy/", "--NotebookApp.password=''", "--NotebookApp.token=''"],
-        "command": ["start-notebook.sh"],
-        "path-rewrite": "/",
-        "use-tls": "false",
-        "ready-probe": "/",
-        "lifecycle-post-start": ["/bin/sh", "-c", "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; ln -s $(pwd) /home/$IAM/pd/dockerHome; mkdir -p /home/$IAM/.jupyter/custom; echo \"define(['base/js/namespace'], function(Jupyter){Jupyter._target = '_self';})\" >/home/$IAM/.jupyter/custom/custom.js; ln -s /data /home/$IAM/pd/; true"],
-        "user-uid": 1000,
-        "fs-gid": 100,
-        "user-volume-location": "/home/jovyan/pd",
-        "use-shared-memory": "true",
-        "friends": [{
-            "name": "firefox",
-            "image": "quay.io/cdis/docker-firefox:master",
-            "securityContext": {
-                "privileged": true
-            },
-            "env": [{
-                "name": "LANDING_URL",
-                "value": "http://localhost:8888/lw-workspace/proxy/"
-            }],
-            "resources": {
-                "limits": {
-                    "cpu": "1.0",
-                    "memory": "5Gi"
-                }
-            },
-            "ports": [{
-                "containerPort": 5800
-            }]
-        }]
-    }]
+        }
+    ]
 }
