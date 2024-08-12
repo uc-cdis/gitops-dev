@@ -1,0 +1,139 @@
+{
+  "user-namespace": "jupyter-pods",
+  "sub-dir": "/lw-workspace",
+  "user-volume-size": "10Gi",
+  "prisma": {
+    "enable": true,
+    "console-address": "https://us-west1.cloud.twistlock.com/gov-3229443"
+  },
+  "default-pay-model": {
+    "workspace_type": "Trial Workspace",
+    "local": true
+  },
+  "pay-models-dynamodb-table": "bmh-admin-portal-backend-bmhworkspacetableD4D73E43-34AAJOR7A5AG",
+  "sidecar": {
+    "cpu-limit": "1.0",
+    "memory-limit": "256Mi",
+    "image": "quay.io/cdis/ecs-ws-sidecar:2024.02",
+    "env": {
+      "NAMESPACE": "default",
+      "HOSTNAME": "brh.data-commons.org"
+    },
+    "args": [],
+    "command": [
+      "/bin/bash",
+      "./sidecar.sh"
+    ],
+    "lifecycle-pre-stop": [
+      "su",
+      "-c",
+      "echo test",
+      "-s",
+      "/bin/sh",
+      "root"
+    ]
+  },
+  "containers": [
+    {
+      "target-port": 8888,
+      "cpu-limit": "2.0",
+      "memory-limit": "8Gi",
+      "name": "(Generic) Jupyter Lab Notebook with R Kernel",
+      "image": "quay.io/cdis/brh-notebooks:generic_rkernel__cde777374d413c9ca93e582fd31c39952d5a22f6",
+      "env": {
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.default_url=/lab",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.ip='*'",
+        "--NotebookApp.notebook_dir='/home/jovyan'",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "2.0",
+      "memory-limit": "8Gi",
+      "name": "(Tutorials) Example Analysis Jupyter Notebooks",
+      "image": "quay.io/cdis/brh-notebooks:combined_demos__ac58320468729a6f02930e2fe6d4913c0a3f418d",
+      "env": {
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.default_url=/lab",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
+    },
+    {
+      "target-port": 8888,
+      "cpu-limit": "4.0",
+      "memory-limit": "10Gi",
+      "name": "(Nextflow) Test Nextflow in BRH",
+      "image": "quay.io/cdis/jupyter-notebook:feat_nextflow",
+      "env": {
+        "FRAME_ANCESTORS": "https://brh.data-commons.org"
+      },
+      "args": [
+        "--NotebookApp.base_url=/lw-workspace/proxy/",
+        "--NotebookApp.default_url=/lab",
+        "--NotebookApp.password=''",
+        "--NotebookApp.token=''",
+        "--NotebookApp.shutdown_no_activity_timeout=5400",
+        "--NotebookApp.quit_button=False"
+      ],
+      "command": [
+        "start-notebook.sh"
+      ],
+      "path-rewrite": "/lw-workspace/proxy/",
+      "use-tls": "false",
+      "ready-probe": "/lw-workspace/proxy/",
+      "lifecycle-post-start": [
+        "/bin/sh",
+        "-c",
+        "export IAM=`whoami`; rm -rf /home/$IAM/pd/dockerHome; rm -rf /home/$IAM/pd/lost+found; ln -s /data /home/$IAM/pd/; true"
+      ],
+      "user-uid": 1000,
+      "fs-gid": 100,
+      "user-volume-location": "/home/jovyan/pd",
+      "gen3-volume-location": "/home/jovyan/.gen3"
+    }
+  ]
+}
