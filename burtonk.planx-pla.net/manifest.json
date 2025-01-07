@@ -8,20 +8,23 @@
   },
   "versions": {
     "arborist": "quay.io/cdis/arborist:master",
-    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:master",
-    "fence": "quay.io/cdis/fence:master",
-    "guppy": "quay.io/cdis/guppy:master",
-    "hatchery": "quay.io/cdis/hatchery:master",
+    "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
+    "audit-service": "quay.io/cdis/audit-service:master",
+    "fence": "quay.io/cdis/fence:chore_PPS-301",
+    "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
     "indexd": "quay.io/cdis/indexd:master",
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "peregrine": "quay.io/cdis/peregrine:master",
-    "pidgin": "quay.io/cdis/pidgin:master",
+    "metadata": "quay.io/cdis/metadata-service:master",
+    "frontend-framework": "quay.io/cdis/bdc-data-commons:fix_create-empty-list",
     "portal": "quay.io/cdis/data-portal:master",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:master",
+    "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
     "tube": "quay.io/cdis/tube:master",
-    "dashboard": "quay.io/cdis/gen3-statics:master"
+    "guppy": "quay.io/cdis/guppy:master",
+    "gen3-user-data-library":"quay.io/cdis/gen3-user-data-library:1.0.0"
   },
   "arborist": {
     "deployment_version": "2"
@@ -29,31 +32,155 @@
   "indexd": {
     "arborist": "true"
   },
+  "sower": [
+    {
+      "name": "pelican-export",
+      "action": "export",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/pelican-export:master",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "DICTIONARY_URL",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "dictionary_url"
+              }
+            }
+          },
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          },
+          {
+            "name": "ROOT_NODE",
+            "value": "case"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "pelican-creds-volume",
+            "readOnly": true,
+            "mountPath": "/pelican-creds.json",
+            "subPath": "config.json"
+          },
+          {
+            "name": "peregrine-creds-volume",
+            "readOnly": true,
+            "mountPath": "/peregrine-creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "4Gi"
+      },
+      "volumes": [
+        {
+          "name": "pelican-creds-volume",
+          "secret": {
+            "secretName": "pelicanservice-g3auto"
+          }
+        },
+        {
+          "name": "peregrine-creds-volume",
+          "secret": {
+            "secretName": "peregrine-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    },
+    {
+      "name": "pelican-import",
+      "action": "import",
+      "container": {
+        "name": "job-task",
+        "image": "quay.io/cdis/pelican-import:master",
+        "pull_policy": "Always",
+        "env": [
+          {
+            "name": "DICTIONARY_URL",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "dictionary_url"
+              }
+            }
+          },
+          {
+            "name": "GEN3_HOSTNAME",
+            "valueFrom": {
+              "configMapKeyRef": {
+                "name": "manifest-global",
+                "key": "hostname"
+              }
+            }
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "sheepdog-creds-volume",
+            "readOnly": true,
+            "mountPath": "/sheepdog-creds.json",
+            "subPath": "creds.json"
+          }
+        ],
+        "cpu-limit": "1",
+        "memory-limit": "4Gi"
+      },
+      "volumes": [
+        {
+          "name": "sheepdog-creds-volume",
+          "secret": {
+            "secretName": "sheepdog-creds"
+          }
+        }
+      ],
+      "restart_policy": "Never"
+    }
+  ],
   "global": {
     "environment": "burtonk",
     "hostname": "burtonk.planx-pla.net",
     "revproxy_arn": "arn:aws:acm:us-east-1:707767160287:certificate/c676c81c-9546-4e9a-9a72-725dd3912bc8",
-    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/datadictionary/develop/schema.json",
+    "dictionary_url": "https://s3.amazonaws.com/dictionary-artifacts/gtexdictionary/create_original_files_node/schema.json",
     "portal_app": "gitops",
-    "sync_from_dbgap": "False",
+    "sync_from_dbgap": "True",
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
-    "netpolicy": "on",
-    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml"
+    "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
+    "es7": true
   },
   "guppy": {
     "indices": [
       {
-        "index": "dev_case",
-        "type": "case"
+        "index": "kyle_etl",
+        "type": "subject"
       },
       {
-        "index": "dev_file",
+        "index": "kyle_file",
         "type": "file"
       }
     ],
-    "config_index": "dev_case-array-config",
+    "config_index": "kyle_array-config",
     "auth_filter_field": "auth_resource_path"
+  },
+  "arranger": {
+    "project_id": "dev",
+    "auth_filter_field": "gen3_resource_path",
+    "auth_filter_node_types": [
+      "subject"
+    ]
+  },
+  "jupyterhub": {
+    "enabled": "no"
   },
   "canary": {
     "default": 0
