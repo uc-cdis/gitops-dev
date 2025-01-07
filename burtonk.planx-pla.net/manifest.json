@@ -7,7 +7,6 @@
     "autodeploy": "yes"
   },
   "versions": {
-    "access-backend": "quay.io/cdis/access-backend:master",
     "arborist": "quay.io/cdis/arborist:master",
     "aws-es-proxy": "quay.io/cdis/aws-es-proxy:0.8",
     "audit-service": "quay.io/cdis/audit-service:master",
@@ -17,13 +16,15 @@
     "jupyterhub": "quay.io/occ_data/jupyterhub:master",
     "peregrine": "quay.io/cdis/peregrine:master",
     "metadata": "quay.io/cdis/metadata-service:master",
-    "frontend-framework": "quay.io/cdis/bih-data-commons:main",
+    "frontend-framework": "quay.io/cdis/bdc-data-commons:fix_create-empty-list",
+    "portal": "quay.io/cdis/data-portal:master",
     "revproxy": "quay.io/cdis/nginx:1.17.6-ctds-1.0.1",
     "sheepdog": "quay.io/cdis/sheepdog:master",
     "sower": "quay.io/cdis/sower:master",
     "spark": "quay.io/cdis/gen3-spark:master",
     "tube": "quay.io/cdis/tube:master",
-    "guppy": "quay.io/cdis/guppy:master"
+    "guppy": "quay.io/cdis/guppy:master",
+    "gen3-user-data-library":"quay.io/cdis/gen3-user-data-library:1.0.0"
   },
   "arborist": {
     "deployment_version": "2"
@@ -155,8 +156,7 @@
     "kube_bucket": "kube_bucket.devplanetv1.gen3",
     "logs_bucket": "logs-devplanetv1-gen3",
     "useryaml_s3path": "s3://cdis-gen3-users/dev/user.yaml",
-    "es7": true,
-    "frontend_root": "gen3ff"
+    "es7": true
   },
   "guppy": {
     "indices": [
