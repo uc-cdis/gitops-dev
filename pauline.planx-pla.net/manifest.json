@@ -4,6 +4,7 @@
     "_aws-es-proxy": "quay.io/cdis/aws-es-proxy:v1.3.1",
     "fence": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/fence:master",
     "fluentd": "fluent/fluentd-kubernetes-daemonset:v1.15.3-debian-cloudwatch-1.0",
+    "funnel": "latest",
     "gen3-workflow": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-workflow:feat_plugin-support",
     "_guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:master",
     "_indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd::master",
