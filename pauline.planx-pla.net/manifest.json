@@ -7,7 +7,7 @@
     "funnel": "latest",
     "gen3-workflow": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/gen3-workflow:feat_plugin-support",
     "_guppy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/guppy:master",
-    "_indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd::master",
+    "_indexd": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/indexd:master",
     "_peregrine": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/peregrine:master",
     "_portal": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/data-portal:master",
     "revproxy": "707767160287.dkr.ecr.us-east-1.amazonaws.com/gen3/nginx:master",
